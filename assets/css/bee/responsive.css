@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+
+@media screen and (min-width: 1920px) {
+    .full-screen .tc-15-step,
+    .full-screen .tc-15-page,
+    .full-screen .tc-15-msg,
+    .full-screen .tc-action-grid,
+    .full-screen .tc-15-action-panel,
+    .full-screen .tc-15-table-panel,
+    .full-screen .tc-panel,
+    .full-screen .tc-panel.panel-table,
+    .full-screen .tc-15-table-panel,
+    .full-screen .tc-15-page
+    {
+        max-width: 100%;
+    }
+}

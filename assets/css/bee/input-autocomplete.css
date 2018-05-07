@@ -1,0 +1,128 @@
+.tc-15-autocomplete{
+	position: relative;
+	width: 180px;
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	height: 30px;
+}
+.tc-15-autocomplete .tc-15-autocomplete-inner{
+	border-radius: 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.tc-15-autocomplete .tc-15-autocomplete-input-wrap{
+	display: inline-block;
+	width: 100%;
+}
+.tc-15-autocomplete .tc-15-autocomplete-input-wrap input{
+	width: 100%;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	box-sizing: border-box;
+	height: 30px;
+	line-height: 30px;
+}
+.tc-15-autocomplete .tc-15-dropdown-icon{
+	background-color: #fff;
+	width: 28px;
+	height: auto;
+	line-height: normal;
+	font-size: 0;
+	outline: 0;
+	text-align: center;
+	box-sizing: border-box;
+	position: absolute;
+	right: 1px;
+	top: 1px;
+	bottom: 1px;
+	border: none;
+	border-left: 1px solid #ddd;
+}
+.tc-15-autocomplete .tc-15-dropdown-icon:hover{
+	background-color: #f2f2f2;
+	border-color: #ddd;
+}
+.tc-15-autocomplete .tc-15-dropdown-icon .dropdown-icon{
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url(./img/slice/svg/page-next.svg);
+	vertical-align: middle;
+	background-position: inherit;
+}
+.tc-15-autocomplete.open .tc-15-dropdown-icon .dropdown-icon{
+	background-image: url(./img/slice/svg/page-next.svg);
+}
+
+
+.tc-15-autocomplete .tc-15-autocomplete-menu{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-top: 5px;
+	border: 1px solid #d1d2d3;
+	max-height: 300px;
+	z-index: 9999;
+	font-size: 12px;
+	overflow-y: auto;
+	background-color: #fff;
+	box-sizing: border-box;
+	display: none;
+}
+.tc-15-autocomplete.open .tc-15-autocomplete-menu{
+	display: block;
+}
+
+
+.tc-15-autocomplete .tc-15-autocomplete-menu > li{
+	color: #000;
+}
+.tc-15-autocomplete .tc-15-autocomplete-menu > li.autocomplete-cur,
+.tc-15-autocomplete .tc-15-autocomplete-menu > li:hover{
+	background-color: #f2f2f2;
+}
+.tc-15-autocomplete .tc-15-autocomplete-menu .autocomplete-empty,
+.tc-15-autocomplete .tc-15-autocomplete-menu .autocomplete-empty:hover{
+	color: #a2a2a2;
+	cursor: default;
+	background-color: #fff;
+	text-decoration: none;
+}
+.tc-15-autocomplete .tc-15-autocomplete-menu > li .form-ctrl-label{
+	padding: 0 10px;
+	display: block;
+	line-height: 28px;
+}
+.tc-15-autocomplete .tc-15-autocomplete-menu a{
+	display: block;
+	padding: 0px 10px;
+	color: inherit;
+	text-decoration: none;
+	line-height: 30px;
+	height: 30px;
+}
+.tc-15-autocomplete .tc-15-autocomplete-menu em{
+	color: #006eff;
+}
+
+/*错误提示*/
+.is-error .tc-15-input-text{
+	color: #e1504a;
+	border-color: #e1504a;
+}
+
+/*大型号*/
+.tc-15-autocomplete.xl .tc-15-autocomplete-input-wrap input{
+	height: 35px;
+}
+.tc-15-autocomplete.xl .tc-15-autocomplete-menu{
+	max-height: 15em;
+	line-height: 2.5em;
+}
+.tc-15-autocomplete.xl .tc-15-dropdown-icon{
+	width: 35px;
+	height: 33px;
+	line-height: 33px;
+	font-size: 0;
+}

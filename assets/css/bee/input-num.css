@@ -1,0 +1,121 @@
+.tc-15-input-num {
+	display: inline-block;
+	height: 30px;
+	font: 14px/35px "Tahoma", "microsoft yahei";
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+	line-height: 28px;
+	font-size: 12px;
+	vertical-align: middle;
+}
+.tc-15-input-num:after {
+	clear: both;
+	display: table;
+	content: ""
+}
+.tc-15-input-num .minus,
+.tc-15-input-num .plus,
+.tc-15-input-num .num {
+	width: 28px;
+	height: 28px;
+	font-size: 0;
+	line-height: 28px;
+	float: left;
+	border: 1px solid #ddd;
+	text-align: center;
+	background: #fff;
+	position: relative;
+	margin-left: 0px;
+	z-index: 0;
+}
+.tc-15-input-num .plus:before,
+.tc-15-input-num .minus:before
+{
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-image: url(img/slice/svg/add-icon.svg);
+	display: inline-block;
+	margin-top: 6px;
+}
+.tc-15-input-num .minus:before{
+	background-image: url(img/slice/svg/minus-icon.svg);
+}
+.tc-15-input-num .plus.disabled:before{
+	background-image: url(img/slice/svg/add-icon.svg?fill=#bbb);
+}
+.tc-15-input-num .minus.disabled:before{
+	background-image: url(img/slice/svg/minus-icon.svg?fill=#bbb);
+}
+
+
+.tc-15-input-num .minus:hover,
+.tc-15-input-num .plus:hover {
+	color: #000;
+	cursor: pointer;
+	background-color: #f2f2f2;
+}
+.tc-15-input-num .minus {
+	border-radius: 0;
+	margin-left: 0;
+	border-right: none;
+}
+.tc-15-input-num .plus {
+	border-radius: 0;
+	margin-right: 5px;
+	border-left: none;
+}
+.tc-15-input-num .num {
+	padding: 0;
+	width: 58px;
+	background: #fff;
+	font-family: "microsoft yahei";
+	font-size: 12px;
+}
+.tc-15-input-num .num:hover,
+.tc-15-input-num .num:focus
+{
+	border-color: #006eff;
+	z-index: 1;
+	outline: none;
+}
+.tc-15-input-num .minus:focus,
+.tc-15-input-num .plus:focus{
+	border-color:#ddd;
+	outline: none;
+}
+
+
+.tc-15-rich-dialog .tc-15-input-num,
+.tc-15-input-num.m {
+	height: 30px;
+	font: 12px/30px "Tahoma", "microsoft yahei";
+}
+
+
+.tc-15-rich-dialog .tc-15-input-num .minus,
+.tc-15-rich-dialog .tc-15-input-num .plus,
+.tc-15-input-num.m .minus,
+.tc-15-input-num.m .plus{
+	width: 28px;
+	height: 28px;
+	font-size: 0;
+	line-height: 28px;
+}
+.tc-15-input-num.m .num{
+	font-size: 12px;
+	width: 60px;
+	width: 28px;
+	height: 28px;
+}
+.tc-15-input-num .minus.disabled,
+.tc-15-input-num .plus.disabled {
+	cursor: default;
+	color: #bbb;
+	background-color: #f2f2f2;
+}
+.tc-15-input-num .minus.disabled:focus,
+.tc-15-input-num .plus.disabled:focus {
+	border-color: #ddd;
+}

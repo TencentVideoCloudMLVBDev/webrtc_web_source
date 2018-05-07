@@ -1,0 +1,45 @@
+@charset "utf-8";
+/*
+ * 流程图 垂直
+ *2017-09
+ * By youngerwang
+ */
+.tc-processes-vertical{position: relative;}
+.tc-processes-vertical .process-final{ margin-top:8px; font-size: 14px; font-weight: 700;}
+.tc-processes-vertical .process-final .n-success-icon{margin-right: 5px;}
+.tc-processes-vertical ol{
+    
+display: table;
+    
+width: 100%;
+}
+.tc-processes-vertical li{position: relative;min-height:50px;display: table-row;table-layout: fixed;}
+.tc-processes-vertical li:after{content: ""; display: block; clear: both; min-height:50px;}
+.tc-processes-vertical li:first-child:before{top:5px;}
+.tc-processes-vertical li:last-child:before{height:12px;}
+.tc-processes-vertical li:last-child:after{min-height:0;}
+
+.tc-processes-vertical .pv-title{width:70px;height:100%;display: table-cell;position: relative;z-index: 1;vertical-align: top;white-space: nowrap;}
+.tc-processes-vertical .pv-title .title{font-size: 12px; font-weight: 400; padding-right:20px; text-align: right; color:#bbb;}
+.tc-processes-vertical li.current .pv-title .title{color:#000;}
+.tc-processes-vertical li.succeed .pv-title .title{color:#000;}
+
+.tc-processes-vertical .pv-content{display: table-cell;padding:0 0 22px 24px;position: relative;min-height:28px;vertical-align: top;}
+.tc-processes-vertical .pv-content:before{content: ""; display: block; position: absolute; top:10px; bottom:-4px; left:0px;border-left:1px solid #ddd;}
+.tc-processes-vertical .pv-content:after{content: ""; display: inline-block; position: absolute; top:4px; left:-4px;width:5px; height:5px;  border-radius: 100%; border:2px solid transparent; background-color: #ddd;}
+.tc-processes-vertical li:last-child .pv-content{padding:0 0 0 24px;}
+.tc-processes-vertical li:last-child .pv-content:before{border:none;}
+.tc-processes-vertical li.succeed .pv-content:before{ border-color:#006eff;  z-index: 1;}
+.tc-processes-vertical li.current .pv-content:after{top:3px; left:-5px; width:7px; height:7px;border-color:#006eff; background-color: #fff;}
+.tc-processes-vertical li.succeed .pv-content:after{ background-color: #006eff;}
+.tc-processes-vertical li.succeed .pv-content{color:#bbb;}
+.tc-processes-vertical .pv-content h4{font-size: 12px; font-weight: 700; margin-bottom: 4px;}
+.tc-processes-vertical .pv-content p{line-height:20px; font-size: 12px;}
+.tc-processes-vertical .pv-content .op-area{margin-top:15px; margin-bottom: 5px;}/* margin-bottom 补齐p的下边距 */
+.tc-processes-vertical .pv-content .time{margin-left:10px;}
+
+
+.tc-processes-vertical.dot-num{counter-reset: step;}
+.tc-processes-vertical.dot-num .pv-content:after{counter-increment: step;content: counter(step);font-size: 12px;width: 21px;height: 21px;left: -11px;text-align: center;line-height: 22px;background-color: #fff;border: 1px solid #ddd;top:-3px;}
+
+

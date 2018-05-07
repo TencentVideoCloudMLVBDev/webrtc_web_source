@@ -1,0 +1,146 @@
+
+.tc-15-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border: 1px solid #ddd;
+    background: url(img/slice/svg/select-arrow.svg) #fff no-repeat right center;
+    color: #000;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 24px 0px 10px;
+    vertical-align: middle;
+    box-sizing:border-box;
+    min-width: 180px;
+    font-size: 12px;
+    border-radius: 0;
+    -webkit-transition: all .3s cubic-bezier(.645,.045,.355,1);
+    transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.tc-15-select::-ms-expand{
+    display: none;
+}
+.tc-15-select:hover,
+.tc-15-select:focus {
+    outline:0 none;
+    color: #000;
+    background-color: #F2F2F2;
+    border-color: #ddd;
+}
+
+.tc-15-select[disabled] {
+    cursor: default;
+    background-color: #f2f2f2;
+    background: url(img/slice/svg/page-next.svg) no-repeat 96% center;
+    border-color: #ddd;
+    color: #bbb;
+}
+
+.tc-15-select.xl{
+    min-width: 330px;
+}
+.tc-15-select.s{
+    min-width: 100px;
+}
+
+
+.tc-15-select.m,
+.tc-15-rich-dialog .tc-15-select-wrap .tc-15-select,
+.tc-15-select-wrap.m .tc-15-select{
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 28px 0px 10px;
+	font-size:12px;
+	min-width: 180px;
+}
+
+/* IEâ‰¤10 hack */
+/*.tc-15-select{*/
+	/*!*padding: 8px 8px 7px 6px\9;*!*/
+/*}*/
+/*.tc-15-select.m,*/
+/*.tc-15-rich-dialog .tc-15-select-wrap .tc-15-select,*/
+/*.tc-15-select-wrap.m .tc-15-select{*/
+	/*padding: 5px 5px 4px 6px\9;*/
+/*}*/
+
+/* IEâ‰¥10 hack */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.tc-15-select,
+	.tc-15-select.m,
+    .tc-15-rich-dialog .tc-15-select-wrap .tc-15-select,
+    .tc-15-select-wrap.m .tc-15-select{
+    	padding-right:24px;
+    }
+}
+
+.tc-15-select.is-error,
+.is-error .tc-15-select{
+	color:#E1504A;
+	border-color:#E1504A;
+}
+
+
+
+.tc-15-select-wrap {
+    vertical-align: middle;
+    line-height: 12px;
+    margin-right: 10px;
+    display: inline-block;
+    font-size: 0;
+}
+
+.tc-15-select-tips {
+    line-height: 13px;
+    font-size: 12px;
+    color: #ababab;
+    position: relative;
+    margin-top: 5px;
+}
+
+.tc-15-select-wrap.error > .tc-15-select-tips {
+    color: #e1504a
+}
+
+/*.tc-15-rich-dialog .tc-15-select-wrap .tc-15-select,
+.tc-15-select-wrap.m .tc-15-select{
+    min-width: 135px;
+    font-size: 12px;
+    height: 16px;
+}*/
+
+.tc-15-select-verify {
+    display: none;
+    height: 16px;
+    padding: 0 0 0 27px;
+    background: url(img/ico-state.png) no-repeat 6px 0;
+    vertical-align: inherit
+}
+
+.tc-15-select-wrap.succeed > .tc-15-select-verify {
+    display: inline-block;
+}
+
+.tc-15-select-wrap.error > .tc-15-select-verify {
+    display: inline-block;
+    background-position: 6px -17px;
+    color: #e1504a
+}
+
+.title-select-panel .tc-15-select {
+    min-width: 65px;
+    max-width: inherit;
+    margin: 7px 10px 0 0;
+    border-color: transparent;
+    padding-right: 20px;
+}
+
+.tc-15-list-wrap.form .tc-15-select-wrap.m {
+    margin-top: 2px;
+}
+
+.tc-15-rich-dialog .tc-15-list-wrap.form .tc-15-select-wrap.m {
+    margin-top: 0;
+}

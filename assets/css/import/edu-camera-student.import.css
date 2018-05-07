@@ -1,0 +1,21 @@
+@charset "utf-8";
+/*标题 start*/
+.edu-student-title{
+	color: #444;height: 39px;line-height: 39px;
+	margin-bottom: 20px;font-weight: normal;font-size: 16px;
+}
+
+.edu-full .edu-header,.edu-full .edu-student-title,.edu-full .edu-member-list,.edu-full .edu-right-sidebar{
+	display: none;
+}
+.edu-full .edu-container{
+	top:0;
+}
+.edu-full .edu-main-tab-video{
+	top:0;
+}
+.edu-full .edu-main-inner{
+	margin-right: 0;background-color: #262626;
+	padding: 80px 20px 60px;
+}
+/*标题 end*/

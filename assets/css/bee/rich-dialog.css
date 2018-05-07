@@ -1,0 +1,605 @@
+.tc-15-rich-dialog {
+    min-width: 420px;
+    width: 550px;
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 1px 1.732px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.tc-15-rich-dialog-hd {
+    font-size: 14px;
+    color: #000;
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 26px;
+}
+
+.tc-15-rich-dialog-hd:after,
+.tc-15-rich-dialog-bd:after,
+.tc-15-rich-dialog-ft:after {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.tc-15-rich-dialog-hd strong {
+    font-weight: bold;
+    margin-bottom: 14px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.tc-15-rich-dialog-bd {
+    color: #444;
+    margin-bottom: 30px;
+}
+.tc-15-rich-dialog-bd .tc-dialog-title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+    margin-top: 0px;
+    line-height: 36px;
+}
+
+.tc-15-rich-dialog-ft {
+    border-top: 0;
+    position: relative;
+}
+
+.tc-15-rich-dialog-ft-pre {
+    position: absolute;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 35px;
+}
+
+.tc-15-rich-dialog-ft-pre label {
+    cursor: pointer
+}
+
+.tc-15-rich-dialog-ft-pre .tc-15-checkbox {
+    float: left;
+    margin: 10px 6px 0 0;
+}
+
+.tc-15-rich-dialog-ft .tc-15-page-simple {
+    position: static;
+    margin-top: 1px;
+}
+
+.tc-15-rich-dialog-ft .tc-15-page-pre {
+    height: 26px;
+    width: 26px;
+    background: url(img/slice/svg/left-arrow-icon.svg) no-repeat center center;
+    border-radius: 0;
+    display: block;
+    border-color: #ddd;
+}
+.tc-15-rich-dialog-ft .tc-15-page-pre:hover{
+    background: url(img/page-s.png) #f2f2f2 no-repeat -2px -25px;
+}
+
+.tc-15-rich-dialog-ft-btn-wrap {
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    font-size: 0;
+}
+
+.tc-15-rich-dialog-ft-btn-wrap > .tc-15-btn {
+    margin: 0 5px
+}
+
+.tc-15-rich-dialog.m {
+    min-width: 420px;
+    width: initial;
+    box-sizing: border-box;
+    max-width: 960px;
+    /* display: inline-block; */
+    width: 550px;
+}
+
+.tc-15-rich-dialog.xl {
+    width: 800px;
+}
+
+.tc-15-rich-dialog.xxl {
+    width: 950px;
+}
+
+.tc-15-rich-dialog-alert-icon {
+    display: table-cell;
+    padding: 0 15px 0 0;
+    -webkit-user-select: none;
+}
+
+.tc-15-rich-dialog-alert-icon > span {
+    width: 74px;
+    height: 74px;
+    display: inline-block;
+    vertical-align: baseline;
+    background-image:url(img/slice/b-error-icon.png);
+}
+
+.dialog-panel{
+	bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+	overflow-y: auto;
+	z-index: 1000;
+}
+/*ÃƒÂ¦Ã¢â‚¬â€Ã‚Â§ÃƒÂ§Ã¢â‚¬Â°Ã‹â€ ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ¥Ã¢â‚¬Â¡Ã‚ÂºÃƒÂ§Ã‚ÂªÃ¢â‚¬â€ÃƒÂ¥Ã‚ÂÃ‚Â£*/
+
+
+/*ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ¥Ã‚Â±Ã¢â‚¬Å¡ÃƒÂ¥Ã¢â‚¬Â¦Ã‚Â¬ÃƒÂ¥Ã¢â‚¬Â¦Ã‚Â±ÃƒÂ¦Ã‚Â Ã‚Â·ÃƒÂ¥Ã‚Â¼Ã‚Â*/
+.dialog_layer_v2 {
+    position: absolute;
+    z-index: 999;
+    border: none;
+    font-size: 14px;
+    width: 480px;
+    max-width: 950px;
+    box-shadow: 1px 1.732px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dialog_layer_v2 .dialog_layer_main {
+    overflow: inherit;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.tc-15-rich-dialog .dialog_layer_main{
+    padding: 0px;
+}
+.dialog_layer_v2 .dialog_layer_title {
+    height: auto;
+    width: 100%;
+    border-bottom: none;
+    position: relative;
+    min-height: 26px;
+    line-height: inherit;
+    margin-bottom: 20px;
+}
+.dialog_layer_v2 .dialog_layer_title h3 {
+    float: none;
+    height: inherit;
+    color: #000;
+    overflow: hidden;
+    margin: 0;
+    padding-left: 0;
+    font-weight: bold;
+    line-height: 26px;
+    font-size: 14px;
+}
+
+.dialog_layer_v2 .dialog_layer_title .close {
+    position: absolute;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    color: #a2a2a2;
+    float: none;
+    top: 0;
+    right: -8px;
+}
+
+.dialog_layer_v2 .dialog_layer_title .close:hover {
+    color: #006eff;
+    background-color: rgba(0,0,0,.05);
+    text-decoration: none;
+}
+
+.dialog_layer_v2 .dialog_layer_title .close:active {
+    color: #003580;
+}
+
+.dialog_layer_v2 .dialog_layer_title .close i {
+    position: relative;
+    top: 1px;
+    right: -6px;
+    font: normal 18px Tahoma;
+    color: #888;
+}
+
+.dialog_layer_v2 .sub_title_2 {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 30px;
+    padding: 0 0 0 10px;
+    border-top: 1px solid #d6d6d6;
+    background: #ebebeb;
+}
+
+.dialog_layer_v2 .dialog_layer_cont .text_group {
+    margin-right: 25px;
+}
+
+.dialog_layer_v2 .dialog_layer_title .tip_error {
+    position: absolute;
+    top: 3px;
+    left: 190px;
+    color: #ff6f6f;
+}
+
+.dialog_layer_v2 .dialog_layer_cont {
+    line-height: 20px;
+    padding: 0;
+    background: white;
+    font-size: 12px;
+    min-height: auto;
+    margin-bottom: 27px;
+    color: #444;
+}
+
+.dialog_layer_v2 .dialog_layer_cont:before,
+.dialog_layer_v2 .dialog_layer_cont:after {
+    content: '';
+    display: table
+}
+
+.dialog_layer_v2 .dialog_layer_cont:after {
+    clear: both
+}
+
+.dialog_layer_v2 .dialog_layer_cont {
+    *zoom: 1
+}
+
+.dialog_layer_v2 .dialog_layer_cont h3.til {
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.dialog_layer_v2 .dialog_layer_cont h3.til em {
+    font-style: normal;
+    color: #FA7821
+}
+
+.dialog_layer_v2 .dialog_layer_760 {
+    width: 760px;
+}
+
+.dialog_layer_v2 .dialog_layer_cont .tip_word_only {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft {
+    padding: 0;
+    border-top: none;
+    position: relative;
+    text-align: center;
+    background-color: #fff;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .back-btn {
+    width: 23px;
+    height: 23px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    background-color:#fff;
+    padding-top: 11px;
+    padding-left: 11px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .back-btn:before {
+    background-image:url(img/slice/page-s-left-blue.png);
+    width: 7px;
+    height:11px;
+    content:'';
+    display:block;
+    background-position: inherit;
+    margin-left: 1px;
+}
+
+.dialog_layer_v2 .dialog_layer_back {
+    position: absolute;
+    left: 10px;
+}
+
+.dialog_layer_v2 .dialog_layer_right {
+    position: absolute;
+    right: 20px;
+    top: 24px;
+}
+
+.dialog_layer_v2 .ui_step_2 {
+    margin-top: -13px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn {
+    font-size: 12px;
+    font-weight: normal;
+    margin: 0 3px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 6px 20px;
+    color: #fff;
+    border-radius: 0;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn_unclick {
+    cursor: default;
+    border-color: #c0c4cd;
+    background-color: #e8e8e8;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn_unclick:hover {
+    background-color: #e8e8e8;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn_unclick span {
+    color: #ababab;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn_blue_loading {
+    padding: 6px 20px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn_blue_loading_large {
+    padding: 6px 26px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .tip_word {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .tip_word_2 {
+    position: absolute;
+    top: 17px;
+    left: 20px;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .btn_white_2 {
+    color: #000;
+}
+
+.dialog_layer_v2 .dialog_layer_ft .tip {
+    margin-bottom: 15px;
+    color: #f00;
+}
+
+.coin-alert .ui-popmsg .info .tit {
+    padding-top: 5px;
+}
+
+.ui-popmsg .info .tit {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #404a58;
+    padding-bottom: 5px;
+}
+
+.ui-popmsg .info .txt {
+    display: inline-block;
+    text-align: left;
+    font-size: 12px;
+    color: #888;
+    color: #404a58;
+}
+
+.dialog_layer_v2 .tip_box,
+.dialog_layer_v2 .error_tip_box {
+    background: #e5f0ff;
+    background-repeat: repeat;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+    border: 1px solid #97c7ff;
+    line-height: 20px;
+    color: #003b80;
+}
+
+.dialog_layer_v2 .error_tip_box {
+    color: #000;
+    background-color: #F9DCDB;
+    border-color: #E7736E;
+}
+
+.dialog_layer_v2 .tip_box .link {
+    color: #006eff
+}
+
+.dialog_layer_v2 .tip_box .links {
+    margin-left: 10px;
+}
+
+.dialog_layer_v2 .links .ico {
+    margin: -4px 5px 0 0;
+}
+
+.dialog_layer_cont h2 {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.dialog_layer_v2 .tc-15-table-panel{
+    margin-left:0;
+    margin-right:0;
+}
+
+/*ÃƒÂ§Ã‚Â¡Ã‚Â®ÃƒÂ¥Ã‚Â®Ã…Â¡ ÃƒÂ¥Ã‚ÂÃ¢â‚¬â€œÃƒÂ¦Ã‚Â¶Ã‹â€ */
+
+.btn {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 2px;
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px 20px;
+    background-repeat: no-repeat;
+    text-decoration: none;
+    outline: none;
+    min-width: 24px;
+}
+
+.btn_blue,
+.btn_blue_loading {
+    border: 1px solid #006eff;
+    background: #006eff;
+    text-decoration: none;
+}
+
+.dialog_layer_ft .btn_blue:hover {
+    background-color: #0068f2;
+    border: 1px solid #0068f2;
+}
+
+.btn_white_2 {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background: #fcfcfc;
+    color: #006eff;
+    text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+    border-color: #0068f2;
+    background: #0068f2;
+    text-decoration: none;
+}
+
+.btn_white_2:hover,
+.btn_white_2:focus {
+    background: #f2f2f2;
+    border-color: #ddd;
+}
+
+
+/*ÃƒÂ¦Ã‚ÂÃ‚ÂÃƒÂ§Ã‚Â¤Ã‚ÂºÃƒÂ§Ã‚Â±Ã‚Â»ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ§Ã‚ÂªÃ¢â‚¬â€ start*/
+
+.width-auto {
+    width: auto;
+}
+.dialog-prompt{
+	width:auto;
+}
+.dialog-confirm-box {
+    padding: 15px 20px;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+/*ÃƒÂ¦Ã¢â‚¬â€Ã‚Â§ÃƒÂ§Ã¢â‚¬Â°Ã‹â€ ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ¥Ã¢â‚¬Â¡Ã‚ÂºÃƒÂ§Ã‚ÂªÃ¢â‚¬â€ÃƒÂ¥Ã‚ÂÃ‚Â£*/
+.dialog-confirm-box {
+    padding: 15px 20px;
+    min-width: 200px;
+    max-width: 400px;
+}
+.dialog_layer_v2 .dialog_layer_cont .m-error-icon,
+.dialog_layer_v2 .dialog_layer_cont .m-success-icon {
+    vertical-align: middle;
+	margin-right:10px;
+}
+.dialog_layer_v2 .dialog_layer_cont .dialog-confirm-title strong {
+    font-size: 18px;
+    color: #171d25;
+    vertical-align: middle;
+}
+.dialog_layer_v2 .dialog_layer_cont .dialog-confirm-text {
+    font-size: 12px;
+    color: #74777c;
+    margin-top: 10px;
+    line-height: 22px;
+}
+.dialog_layer_v2.dialog-prompt .dialog_layer_title{
+	border-bottom:0;
+	height: 28px;
+}
+.dialog_layer_v2.dialog-prompt .dialog_layer_title .close i {
+    top: 8px;
+    right: 14px;
+}
+.dialog_layer_v2.dialog-prompt .dialog_layer_cont{
+	padding:0 20px;
+	min-height: 54px;
+}
+.dialog_layer_v2.dialog-prompt .dialog-confirm-box{
+	padding: 0 50px;
+}
+
+/*tc-15*/
+.tc-15-rich-dialog .tc-15-rich-dialog-bd .m-error-icon,
+.tc-15-rich-dialog .tc-15-rich-dialog-bd .m-success-icon {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.tc-15-rich-dialog .tc-15-rich-dialog-bd .dialog-confirm-title strong {
+    font-size: 18px;
+    color: #171d25;
+    vertical-align: middle;
+}
+.tc-15-rich-dialog .tc-15-rich-dialog-bd .dialog-confirm-text {
+    font-size: 12px;
+    color: #74777c;
+    margin-top: 5px;
+    line-height: 22px;
+    padding-left: 42px;
+}
+.tc-15-rich-dialog.dialog-prompt .tc-15-rich-dialog-hd{
+	min-height: 28px;
+    line-height: 28px;
+}
+.tc-15-rich-dialog.dialog-prompt .tc-15-rich-dialog-hd .tc-15-btn-close{
+    top: 14px;
+    right: 14px;
+}
+.tc-15-rich-dialog.dialog-prompt .tc-15-rich-dialog-bd{
+	border-top:0;
+	padding:0 20px;
+	min-height: 54px;
+}
+.tc-15-rich-dialog.dialog-prompt .dialog-confirm-box{
+	padding: 0 50px;
+}
+.tc-15-rich-dialog .tc-15-rich-dialog-bd .dialog-confirm-title strong {
+    font-size: 18px;
+    color: #171d25;
+    vertical-align: middle;
+    line-height: 36px;
+}
+/*tc-15*/
+/*ÃƒÂ¦Ã‚ÂÃ‚ÂÃƒÂ§Ã‚Â¤Ã‚ÂºÃƒÂ§Ã‚Â±Ã‚Â»ÃƒÂ¥Ã‚Â¼Ã‚Â¹ÃƒÂ§Ã‚ÂªÃ¢â‚¬â€ end*/
+
+
+.tc-model-bg{
+    background-color: #000;
+    opacity: .5;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.tc-15-rich-dialog .tc-icon-box{
+    display: table;
+    width: 100%;
+    /* table-layout: fixed; */
+}
+.tc-15-rich-dialog .tc-icon-box .col{
+    display: table-cell;
+    vertical-align: top;
+}
+.tc-15-rich-dialog .tc-icon-box .col:first-child{
+    /* padding-right: 10px; */
+    width: 1px;
+}
+
+

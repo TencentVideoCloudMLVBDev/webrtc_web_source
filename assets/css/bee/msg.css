@@ -1,0 +1,207 @@
+.tc-15-msg {
+    font-size: 12px;
+    line-height: inherit;
+    padding: 10px 30px 10px 20px;
+    vertical-align: middle;
+    color: #003b80;
+    border: 1px solid #97c7ff;
+    border-radius: 2px;
+    background: #e5f0ff;
+    position:relative;
+    box-sizing: border-box;
+    max-width: 1360px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tc-15-msg .notice-btn-close,
+.tc-15-msg .tc-icon-btn
+{
+    position:absolute;
+    top: 5px;
+    right: 5px;
+    height: 16px;
+    width: 16px;
+    text-align: center;
+    font-size: 0;
+    line-height: normal;
+    background-image: none;
+    padding: 5px;
+}
+.tc-15-msg .tc-icon-btn{
+    height: 26px;
+    line-height: 26px;
+    width: 26px;
+    padding: 0;
+}
+
+.tc-15-msg .tc-icon-btn:hover{
+    background-color: transparent;
+}
+.tc-15-msg .tc-icon-btn:hover .close-icon,
+.tc-15-msg .notice-btn-close:hover:after
+{
+    background-image: url(img/slice/svg/btn-dismiss-hover.svg);
+}
+.tc-15-msg .notice-btn-close:after{
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url(img/slice/svg/btn-dismiss.svg);
+    background-position: inherit;
+    top: 0;
+}
+
+.tc-15-msg.warning .notice-btn-close{
+    background-image:none;
+}
+.tc-15-msg.succeed .notice-btn-close{
+    background-image:none;
+}
+.tc-15-msg.error .notice-btn-close{
+    background-image:none;
+}
+
+.tc-15-msg.expand{
+    margin-left:0;
+    margin-right:0;
+}
+.tc-15-msg.error {
+    color: #b43537;
+    border: 1px solid #f6b5b5;
+    background-color: #fcecec;
+}
+.tc-15-msg.succeed {
+    color: #007e3b;
+    border: 1px solid #9ce4bc;
+    background-color: #e6f8ee;
+}
+
+.tc-15-msg.warning {
+    background-color: #fff4e3;
+    color: #c07400;
+    border-color: #ffd18b;
+}
+.tc-15-rich-dialog.alert .tc-15-msg,
+.tc-15-rich-dialog.confirm .tc-15-msg,
+.tc-15-confirm-popout .tc-15-msg {
+    border: 0;
+    background: none;
+    padding: 0;
+    margin: 0 20px;
+    font-size: 12px;
+    line-height: 21px;
+    color: #666;
+}
+.tc-15-confirm-popout .tc-15-msg{
+	margin:0;
+}
+.tc-15-rich-dialog.alert .tc-15-msg strong,
+.tc-15-rich-dialog.confirm .tc-15-msg strong,
+.tc-15-confirm-popout .tc-15-msg strong {
+    font-size: 14px;
+    color: #000;
+    margin-bottom: 10px;
+    display: inline-block;
+    line-height: 1;
+}
+.tc-15-rich-dialog.alert .tc-15-msg {
+    display: table-cell;
+    margin: 0;
+   /* padding: 0 20px 0 0;*/
+}
+
+.tc-15-rich-dialog.confirm .tc-15-msg {
+    margin:0;
+}
+/*日志通知*/
+.tip-msg-win{
+	width:220px;
+}
+.tip-msg-win .logs-btn-close,
+.tip-notice-win .notice-btn-close{
+	position:absolute;
+	right: 10px;
+	top: 5px;
+	margin: 6px 0 0 0;
+}
+.tip-notice-win{
+	width: 290px;
+}
+.tip-msg-win .tc-15-msg{
+	margin:0 0 10px;
+	position:relative;
+	display: inline-block;
+	min-width: 198px;
+}
+.tip-msg-win .tc-15-msg .tip-info{
+	font-size: 0;
+}
+.tip-msg-win .tc-15-msg .msg-title{
+	display:block;
+	font-weight:bold;
+}
+.tip-notice-win .tc-15-msg {
+    color: #006eff;
+    margin: 0 0 10px;
+    padding-left: 20px;
+}
+.tip-notice-win .tc-15-msg strong {
+    font-size: 14px;
+}
+.tip-msg-win .msg-span{
+	padding-left: 5px;
+	padding-right:10px;
+	display: inline-block;
+	font-size: 12px;
+	vertical-align: top;
+	line-height: 16px;
+	max-width: 135px;
+}
+.tip-msg-win .msg-text{
+	margin-right:-10px;
+}
+.tip-msg-win i{
+	top: 0px;
+	left: 0;
+	width: 16px;
+	position: relative;
+	height: 16px;
+	vertical-align: top;
+}
+/*日志通知*/
+/*加载通知*/
+.top-alert {
+    height: 35px;
+    left: 50%;
+    margin-left: -300px;
+    min-width: 400px;
+    padding-top: 5px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+}
+.top-alert span {
+    background-color: #fff;
+    border: 1px solid #d1d2d3;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 12px;
+    height: 33px;
+    line-height: 33px;
+    overflow: hidden;
+    padding: 0 22px 0 53px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.top-alert-icon-doing{
+	background:url(img/top-alert-icon-doing.gif) no-repeat 19px 3px;
+}
+.top-alert-icon-done {
+    background: url(img/top-panel-alert.png) no-repeat 19px -6px
+}
+.top-alert-icon-waring {
+    background: url(img/top-panel-alert.png) no-repeat 19px -54px
+}
+/*加载通知*/

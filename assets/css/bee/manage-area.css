@@ -1,0 +1,213 @@
+.manage-area {
+    /*position: relative;*/
+    background-color: #fff;
+    height: 100%;
+    /*overflow-y: auto;*/
+    /*overflow-x: hidden;*/
+    overflow: initial;
+}
+
+.manage-area-title {
+    margin: 0;
+    font-size: 0;
+    height: auto;
+    line-height: inherit;
+    min-height: inherit;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 14px 0;
+}
+
+.manage-area-title:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.manage-area-title.with-bottom-border {
+    border-bottom: 1px solid #ddd;
+}
+
+.manage-area-main {
+    background-color: #f2f2f2;
+}
+
+.manage-area-main:after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.manage-area-title h2 {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 22px;
+    font-weight: normal;
+    margin-right: 20px;
+    max-width: 70%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 二级详情页 */
+.manage-area-title.secondary-title {
+    border-bottom: 1px solid #ddd;
+}
+
+.secondary-title .back-link {
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.secondary-title h2 {
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 50%;
+    color: #171d25;
+}
+
+.manage-area-title.secondary-title h2 {
+    vertical-align: middle;
+}
+
+.secondary-title .back-link .btn-back-icon {
+    margin-right: 10px;
+    vertical-align: -2px;
+}
+
+.secondary-title .line-icon {
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    height: 19px;
+    text-indent: -999px;
+    border-left: 1px solid #a2a2a2;
+}
+
+/* 右侧内容 */
+.manage-area-title-right {
+    /* position:absolute; */
+    /* top:0; */
+    /* right:0; */
+    /* height:100%; */
+    /* line-height:normal; */
+    /* display: inline-block; */
+    float: right;
+    line-height: 30px;
+    padding-top: 0px;
+    position: relative;
+}
+
+.manage-area-title-right:before {
+    display: inline-block;
+    content: "";
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    font-size: 0;
+}
+
+.manage-area-title-right a {
+    font-size: 12px;
+    vertical-align: middle;
+    color: #444;
+}
+.manage-area-title-right a:hover{
+    color: #006eff;
+}
+.manage-area-title-right a .external-link-icon{
+    background-image:url(img/slice/svg/external-link-icon.svg);
+}
+.manage-area-title-right a:hover .external-link-icon{
+    background-image:url(img/slice/svg/external-link-icon.svg?fill=#006eff);
+}
+.manage-area-title-right .tc-15-btn {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.manage-area-title-right a.tc-15-btn {
+    margin-top: 0;
+}
+
+.manage-area-title-right .pagination {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.secondary-main {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    overflow: visible;
+    background-color: #f2f2f2;
+}
+
+.secondary-main .tc-15-action-panel,
+.secondary-main .tc-15-table-panel,
+.secondary-main .tc-15-page {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*.guide-link .external-link-icon {*/
+    /*vertical-align: -3px;*/
+    /*margin-left: 5px;*/
+/*}*/
+
+/* iframe嵌套页面样式修正 */
+.iframe-wrap.container {
+    top: 0;
+    left: 0;
+}
+
+.iframe-wrap.container .main {
+    left: 0;
+}
+
+.iframe-wrap .sidebar-panel {
+    top: 0;
+}
+
+.manage-area-main > .tc-15-tab-alt:first-child,
+.main .tc-15-tab.tc-first-tab {
+    margin-top: -21px;
+    background-color: transparent;
+    max-width: inherit;
+    position: relative;
+    z-index: 99;
+}
+
+.manage-area{
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+
+.manage-area .manage-area-title{
+    padding-left:20px !important;
+    padding-right:20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    background-color: #fff !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.main,
+.manage-area,
+.manage-area-main{
+    background-color: #ededed !important;
+}

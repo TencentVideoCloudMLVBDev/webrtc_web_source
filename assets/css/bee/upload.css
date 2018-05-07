@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+
+/*表格列表上传*/
+
+.file-upload-dialog {
+    position: relative;
+    min-height: 350px;
+}
+
+.upload-helper {
+    margin-bottom: 20px;
+}
+
+.upload-btn-wrap,
+.tc-upload-btn {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    height: 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+    font-size: 12px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.upload-btn-wrap:hover,
+.tc-upload-btn:hover {
+    text-decoration: none;
+    background: #f2f2f2;
+    border-color: #ddd;
+    color: #444;
+}
+
+.tc-15-input-text+.tc-upload-btn {
+    margin-left: 10px;
+}
+
+
+
+.upload-btn-wrap .file-input-wrap,
+.tc-upload-btn .file-input-wrap {
+    width: 100%;
+    position: relative;
+    opacity: 1;
+    height: 30px;
+    overflow: hidden;
+}
+
+.upload-btn-wrap .file-input-wrap input,
+.tc-upload-btn .file-input-wrap input {
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+}
+
+.upload-btn-wrap .file-input-wrap span,
+.tc-upload-btn .file-input-wrap span {
+    padding: 0 20px;
+}
+
+.upload-helper .text-label {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+.file-upload-dialog .tc-15-table-panel .text-overflow i {
+    vertical-align: -3px;
+    margin:0 4px 0 0;
+}
+
+.file-upload-dialog .tc-15-table-panel .text-overflow .n-restart-icon {
+    background-image: url(img/slice/svg/restart-icon.svg?fill=#888);
+}
+
+.file-upload-dialog .tc-15-table-panel {
+    border-bottom: 1px solid #ddd;
+    z-index: 2;
+    /*min-height: 296px;*/
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box .drag-helper {
+    /*display: none; */
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    bottom: 0;
+    right: -1px;
+    left: -1px;
+    box-sizing: border-box;
+    width: auto;
+    background: #fff;
+    border: 1px dashed #ddd;
+    /*border-top: 1px dashed transparent;*/
+    height: 257px;
+    line-height: 257px;
+    text-align: center;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box .drag-tr {
+    display: none;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box .drag-tr td {
+    padding: 0;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box .drag-tr.show {
+    display: block;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box .drag-tr:last-child {
+    display: block;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box tr:last-child:first-child td {
+    border-bottom: 1px solid #ddd;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-box .drag-helper.drag-over {
+    border: 1px dashed #006eff;
+    background: #f2f2f2;
+}
+
+.file-upload-dialog .tc-15-table-panel .tc-15-table-fixed-body {
+    min-height: 255px;
+    border-bottom: 0;
+}
+
+
+
+
+/*表单*/
+
+.form-list .form-input .form-upload {
+    position: relative;
+}
+
+.form-list .form-input .form-upload .icon-valid-flag {
+    position: absolute;
+    left: 149px;
+    top: 7px;
+}
+
+.form-list .form-input .tc-15-btn {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.form-list .form-input .tc-link-btn {
+    margin-left: 10px;
+}
+
+.form-list .is-loading .icon-loading {
+    position: absolute;
+    left: 127px;
+    top: 7px;
+    font-size: 12px;
+}
+
+.form-list .is-loading .icon-loading:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-image: url(img/slice/svg/loading.svg);
+    -moz-animation: spin .6s infinite linear;
+    -webkit-animation: spin .6s infinite linear;
+    animation: spin .6s infinite linear;
+    vertical-align: -3px;
+    margin-right: 5px;
+}
+
+
+.tc-upload-box {
+    border: 1px dashed #ddd;
+    padding: 10px;
+    display: table;
+    table-layout: fixed;
+    min-width: 330px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.tc-upload-box .tc-upload-null {
+    font-size: 12px;
+    text-align: center;
+    line-height: 100px;
+    min-height: 100px;
+}
+
+.tc-upload-box .text-weak {
+    color: #888;
+}
+
+.tc-upload-box .col {
+    display: table-cell;
+    font-size: 12px;
+    vertical-align: top;
+}
+
+.tc-upload-box .col:first-child {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0;
+}
+
+.tc-upload-box .col:last-child {
+    padding-left: 10px;
+    white-space: nowrap;
+    position: relative;
+}
+
+.tc-upload-box .col:last-child .icon-loading {
+    position: relative;
+    left: initial;
+    top: initial;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.tc-upload-box .col:last-child .text-weak {
+    color: #888;
+    margin-top: 10px;
+    line-height: 22px;
+}
+
+.tc-upload-box .col:last-child .text-weak .ml10 {
+    margin-left: 10px;
+}
+
+.tc-upload-box col img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tc-upload-box .btn-box {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+
+.tc-upload-box .btn-box a {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.tc-upload-box .btn-box .upload-helper {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.is-error .tc-upload-box {
+    border-color: #E1504A;
+}
+
+.tc-upload-box .tc-upload-mask {
+    background-color: #f2f2f2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    color: #000;
+    font-size: 12px;
+    text-align: center;
+    line-height: 125px;
+    display: none;
+}
+
+.tc-upload-box.hover .tc-upload-mask {
+    display: block;
+}
+
+.tc-upload-text {
+    position: relative;
+}
+
+.tc-upload-text input[type='file'] {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    left: 0;
+    width: 100%;
+}

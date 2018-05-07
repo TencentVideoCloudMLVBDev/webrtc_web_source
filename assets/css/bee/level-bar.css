@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+.tc-level-bar-wrap {
+    position: relative;
+    padding-top: 4px;
+    height: 32px
+}
+.tc-level-bar {
+    height: 4px;
+    background: #ebeef5
+}
+.tc-level-bar em {
+    display: block;
+    height: 100%;
+    background: #006eff
+}
+
+.tc-level-bar-tags {
+    display: table;
+    position: relative;
+    table-layout: fixed;
+    margin-top: -8px;
+    width: 100%;
+}
+.tc-level-bar-tags li {
+    display: table-cell;
+    position: relative;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #999;
+    text-align: center;
+}
+.tc-level-bar-tags .dot {
+    position: absolute;
+    right: 0;
+    top: 2px;
+    box-sizing: border-box;
+    margin-right: -4px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #d0d2da;
+    border-radius: 50%;
+    background: #fff
+}
+.tc-level-bar-tags span {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    white-space: nowrap;
+}
+.tc-level-bar-tags span:before {
+    content: '';
+    display: inline-block;
+    width: 50%;
+}
+.tc-level-bar-tags li:first-child {
+    width: 0;
+}
+.tc-level-bar-tags li:first-child .dot {
+    right: auto;
+    left: 0;
+}
+.tc-level-bar-tags li:first-child span {
+    right: auto;
+    left: 0;
+    text-align: left
+}
+.tc-level-bar-tags li:first-child span:before {
+    display: none;
+}
+.tc-level-bar-tags li.last .dot {
+    margin-right: 0;
+}
+.tc-level-bar-tags li.last span:before {
+    display: none;
+}
+.tc-level-bar-tags li.active {
+    color: #006eff
+}
+.tc-level-bar-tags li.active .dot {
+    border-color: #006eff
+}
+.tc-level-bar-tags li.current {
+    color: #006eff
+}
+.tc-level-bar-tags li.current .dot {
+    top: 0;
+    margin-left: -6px;
+    width: 12px;
+    height: 12px;
+    border-color: #006eff
+}
+.tc-level-bar-tags li.current:first-child .dot {
+    margin-left: 0
+}
+.tc-level-bar-tags li.current .dot:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -3px 0 0 -3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #006eff
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <TITLE>腾讯云教育直播室</TITLE>
+    <style>    
+        .joinButton {
+        background: transparent;
+        }
+        .joinButton:hover {
+        color: green;
+        text-decoration: underline;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+        .tc-member-list-container {
+            margin-top: 10px; 
+            width: 100%; 
+            height: 210px; 
+            background-color: #eee;
+        }
+        #sketchpad {
+            width: 100%;
+            height: 100%;
+        }
+        .processbar {
+            left:50%;
+            top:50%;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            position:absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .processbar p{
+            text-align: center;
+            color: #ebebeb;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 100px; 
+        }
+    </style>
+    <!--<link href="./assets/css/global-compat.css" rel="stylesheet" >-->
+    <link href="./assets/css/index.css" rel="stylesheet" >
+    <link href="./assets/css/webrtc.css" rel="stylesheet" >
+    <script src="./vue/vue.js"></script>
+    <script src="./vue/vue-router.js"></script>
+    <script src="./vue/vue-resource.js"></script>
+    <script type="text/javascript" src="./third/moment.js" charset="utf-8"></script>
+
+    <!-- <script type="text/javascript" src="https://img.qcloud.com/open/qcloud/video/act/avtivex_demo/sdk/ImSDK/webim.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://img.qcloud.com/open/qcloud/video/act/avtivex_demo/sdk/ImSDK/webim_handler.js" charset="utf-8"></script> -->
+
+    <script type="text/javascript" src="./component/WebRTCRoom.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://sqimg.qq.com/expert_qq/edu/1.2.1/sketchpad_sdk.mini.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+  </head>
+  <body class="bg_blue">
+    <div id="vue-app">
+        <router-view></router-view>                                                                                            
+    </div>
+
+    <script src="https://sqimg.qq.com/expert_qq/webim/1.7.1/webim.min.js"></script>
+    <script type="text/javascript" src="./component/im.js" charset="utf-8"></script>
+    <script src="https://sqimg.qq.com/expert_qq/webrtc/2.2/WebRTCAPI.min.js"></script>
+    <script type="text/javascript" src="./component/banner.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/sketchpad.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/courselist.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/createcourse.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/joinclass.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/mainwindow.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/app.js" charset="utf-8"></script>
+    
+    <script>
+    </script>
+  </body>
+</html>

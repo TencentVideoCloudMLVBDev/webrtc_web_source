@@ -1,0 +1,78 @@
+.tc-15-progress {
+	height: 6px;
+	margin-bottom: 23px;
+	min-width: 100px;
+	background-color: #e5e5e5;
+	border-radius: 0;
+	position: relative;
+	border:none;
+}
+.tc-15-progress .tc-15-progress-value {
+	height: 6px;
+	background: #006eff;
+	content: "";
+	display: block;
+	border-radius: 0;
+	position: initial;
+}
+.tc-15-progress .tc-15-progress-value span {
+	display: block;
+	position: absolute;
+	font-size: 12px;
+	line-height:20px;
+	left: 0;
+	top: 8px;
+}
+.tc-15-progress.succeed {
+	border-color: #06c290
+}
+.tc-15-progress.succeed .tc-15-progress-value {
+	background: #0abf5b;
+}
+.tc-15-progress.error {
+	border-color: #e1504a
+}
+.tc-15-progress.error .tc-15-progress-value {
+	background: #e54545;
+}
+
+
+/* 环形进度条 */
+.tc-progress-circle{margin:0 auto; text-align: center;}
+.tc-progress-circle .circle-area {display: inline-block; width:160px; height:160px; position: relative; bottom:12px;}
+.tc-progress-circle .circle-area .svg-path{
+	transform: rotate(-90deg); transform-origin: center;
+	-webkit-transform: rotate(270deg); -webkit-transform-origin: center;
+	-moz-transform: rotate(270deg); -moz-transform-origin: center;
+	-ms-transform: rotate(-90deg); -ms-transform-origin: center;
+}
+.tc-progress-circle .circle-area .base-ring{  stroke:#f2f2f2; }
+.tc-progress-circle .circle-area .current-ring{stroke-dasharray: 0 434px; stroke:#006eff; stroke-dashoffset: 0px;/*-webkit-transition: all .5s ease;*/
+
+}
+.tc-progress-circle .circle-area .cur-text{font-family: qcloud-num; height:50px; line-height: 50px; font-size:48px; color:#000; position: absolute;left:0; right:0; top:50%; margin-top:-25px; }
+.tc-progress-circle .circle-area .cur-text .chinese{font-size: 24px; display: inline-block; vertical-align: top; }
+.tc-progress-circle .circle-area .cur-text .symbol{font-size: 14px; color:#888;}
+.tc-progress-circle .progress-state{display: none; position: absolute; top:50%; left:50%; margin:-24px 0 0 -24px;}
+.tc-progress-circle .progress-state .check-mark{stroke:#0ABF5B; stroke-dashoffset: -60px; stroke-dasharray:60px;}
+.tc-progress-circle .tips-text{line-height: 1.6; font-size: 14px;color:#888;}
+
+.tc-progress-circle.progress-completed{}
+/*.tc-progress-circle.progress-completed .cur-text{display: none;}*/
+/*.tc-progress-circle.progress-completed .progress-state{display: inline-block;}*/
+.tc-progress-circle.progress-completed .progress-state .check-mark{
+	-webkit-animation:check-mark-anim .5s linear forwards;
+	-moz-animation:check-mark-anim .5s linear forwards;
+	-ms-animation:check-mark-anim .5s linear forwards;
+}
+.tc-progress-circle.progress-completed .circle-area .current-ring{stroke:#0ABF5B;  }
+/*
+@-webkit-keyframes check-mark-anim {
+	100%{stroke-dashoffset: 0px;}
+ }
+@-moz-keyframes check-mark-anim {
+	100%{stroke-dashoffset: 0px;}
+}
+@-ms-keyframes check-mark-anim {
+	100%{stroke-dashoffset: 0px;}
+}*/

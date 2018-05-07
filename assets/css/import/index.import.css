@@ -1,0 +1,218 @@
+@charset 'utf-8';
+
+.edu-index-body-container{
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.edu-index-body{
+	width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+    min-height: 640px;
+}
+.edu-index-pop-ups{
+	width:420px;
+	background-color:#fff;
+	padding:30px 26px 24px 26px;
+	box-sizing:border-box;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+.edu-index-logo{
+	width:227px;
+	height:34px;
+	margin:0 auto;
+	margin-bottom:33px;
+}
+.edu-index-logo img{
+	max-width:100%;
+	max-height:100%;
+}
+.edu-index-class-middle{
+	border:solid 1px #ddd;
+	box-sizing:border-box;
+	min-height:248px;
+}
+
+/*输入课程 s*/
+.edu-index-class-input{
+	padding-top: 1px;
+}
+.edu-index-class-input li input{
+	padding:0 14px;
+	width:100%;
+	box-sizing:border-box;
+	line-height:38.5px;
+	height:38.5px;
+	color:#888;
+	border:solid 1px #ddd;
+	z-index:1;
+	position:relative;
+}
+.edu-index-class-input li input:focus{
+	z-index:2;
+}
+.edu-index-class-input li:last-of-type input{
+	margin-top:-1px;
+}
+.edu-index-class-input li input:focus{
+	border-color:#006eff;
+    outline:0;
+}
+.edu-index-class-input input::-moz-placeholder{color:#bbb;}
+.edu-index-class-input input::-webkit-input-placeholder{color:#bbb;}
+.edu-index-class-input input:-ms-input-placeholder{color:#bbb;}
+/*输入课程 e*/
+
+/*创建课堂 s*/
+.edu-index-class-prompt{
+	width:100%;
+	min-height:248px;
+	display:table;
+}
+.edu-index-class-prompt p{
+	vertical-align:middle;
+	display:table-cell;
+	text-align:center;
+	color:#999;
+}
+.edu-index-class-prompt p:before{
+	content:'';
+	display:block;
+	margin:0 auto 9px auto;
+	width:36px;
+	height:38px;
+	background-image:url(../img/slice/index-class.svg);
+}
+/*创建课堂 s*/
+
+/*课堂列表 s*/
+.edu-index-class-list{
+	max-height:248px;
+	overflow-x: auto;
+}
+
+.edu-index-class-list::-webkit-scrollbar{  
+    width:12px;
+}
+.edu-index-class-list::-webkit-scrollbar-thumb{  
+    border-radius:10px;   
+    background-color:#dbdbdb;  
+    border:solid 2px transparent;
+    background-clip:content-box;
+}
+
+.edu-index-class-list li{
+	line-height:42px;
+	padding:0 14px;
+	text-align:right;
+	border-bottom:solid 1px #ddd;
+}
+.edu-index-class-list li:last-of-type{
+	border-bottom:none;
+}
+.edu-index-class-list li span{
+	float:left;
+}
+.edu-index-class-list li:hover{
+	background-color:#f2f2f2;
+}
+/*课堂列表 e*/
+
+.edu-index-button{
+	padding-top:34px;
+}
+
+/*设备检测 s*/
+.edu-index-video-preview{
+	max-width:100%;
+	width:100%;
+	border-bottom:solid 1px #ddd;
+	padding-bottom:16px;
+}
+.edu-index-video-preview img{
+	max-width:100%;
+	width:100%;
+	font-size:0;
+}
+.ui_progress .edu-index-sound-box{
+	height:30px;
+}
+.ui_progress .edu-index-sound-box .progress_bar{
+	padding-top: 12px;
+}
+.ui_progress .progress_area .progress_bar .edu-index-sound{
+	height:2px;
+	border-radius:5px;
+}
+.ui_progress .progress_area .progress_bar .edu-index-sound .progress_in{
+	height:0.5px;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+}
+.ui_progress .progress_area .progress_bar .edu-index-sound .btn_drag{
+	width:24px;
+	height:24px;
+	border:none;
+	top:-16px;
+	background-color:transparent;
+}	
+.ui_progress .progress_area .progress_bar .edu-index-sound .btn_drag:before{
+	width:24px;
+	height:24px;
+	background-image:url(../img/slice/index-sound.svg);
+}
+.ui_progress .progress_area .progress_bar .edu-index-sound .btn_drag:hover{
+	background-color:transparent;
+}
+.ui_progress .edu-index-sound-box .input_area{
+	line-height:29px;
+	padding-left:3px;
+}
+.edu-index-sound-detection{
+	position:relative;
+}
+.edu-index-sound-gray span,.edu-index-sound-green span{
+	width:6px;
+	height:10px;
+	display:inline-block;
+	background-color:#d1d2d3;
+	margin-right:3px;
+	font-size:0px;
+}
+.edu-index-sound-green{
+	position:absolute;
+	height:100%;
+	left:0px;
+	top:0px;
+	overflow:hidden;
+	word-wrap:break-word;
+}
+.edu-index-sound-green span{
+	background-color:#00cc00;
+}
+/*设备检测 e*/
+
+
+.edu-copy-prompt{
+	position:absolute;
+	background-color:rgba(171, 171, 171, 0.5);
+	height:30px;
+	line-height:30px;
+	padding:0 20px;
+	top: 50%;
+    left: 50%;
+    color:#fff;
+	-webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+} 

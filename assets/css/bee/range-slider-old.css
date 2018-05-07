@@ -1,0 +1,109 @@
+/* 老样式 */
+.ui_progress {
+    margin-bottom: 10px;
+}
+.ui_progress .progress_area {
+    height: 35px;
+}
+.ui_progress .progress_area .progress_bar {
+    width: 300px;
+    height: 15px;
+    float: left;
+    margin-right: 5px;
+    padding-top: 10px;
+    cursor: pointer;
+}
+.ui_progress .progress_area .progress_bar .progress_bg {
+    background: #e5e5e5;
+    width: 300px;
+    height: 6px;
+    position: relative;
+}
+.ui_progress .progress_area .progress_bar .progress_in {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 4px;
+    border: 1px solid #006eff;
+    background: #006eff;
+    border-radius: 0;
+    _zoom: 1;
+    _overflow: hidden;
+}
+.ui_progress .progress_area .progress_bar .btn_drag {
+    position: absolute;
+    display: inline-block;
+    width: 19px;
+    height: 30px;
+    background-image: none;
+    border: 1px solid #006eff;
+    box-sizing: border-box;
+    background-color: #fff;
+    top: -12px;
+}
+.ui_progress .progress_area .progress_bar .btn_drag:before{
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-image: url(img/slice/svg/slider-thumb.svg);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+
+.ui_progress .progress_area .progress_bar .btn_drag:hover {
+    background-image: none;
+    background-color: #f2f2f2;
+}
+.ui_progress .progress_area .progress_bar .scale {
+    position: relative;
+    width: 300px;
+}
+.ui_progress .progress_area .progress_bar .scale .scale_dot {
+    position: absolute;
+    height: 5px;
+    width: 1px;
+    border-right: 1px solid #ddd;
+    top: 0px;
+    _zoom: 1;
+    _overflow: hidden;
+}
+.ui_progress .progress_area .progress_bar .scale .dot_pass {
+    border-right: 1px solid #ddd;
+}
+.ui_progress .progress_area .input_area {
+    display:inline-block;
+    vertical-align:middle;
+}
+.ui_progress .text{
+    color: #888 !important;
+}
+.ui_progress .progress_area .input_area input {
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #fff;
+    color: #000;
+    height: 25px;
+    line-height: 25px;
+    width: 35px;
+    font-weight: normal;
+    text-align: center;
+    outline: none;
+}
+.ui_progress .progress_area .input_area input:hover,
+.ui_progress .progress_area .input_area input:focus{
+    border-color:#006eff;
+}
+
+
+.ui_progress .text_area {
+    font-size:12px;
+    position: relative;
+    top: -10px;
+    float: left;
+    width: 300px;
+}
+.ui_progress .text_area .text {
+    position: absolute;
+}

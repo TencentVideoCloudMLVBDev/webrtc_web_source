@@ -1,0 +1,72 @@
+@charset "utf-8";
+/*.edu-header-title h2{
+	color: #bbb;
+	line-height: 48px;
+	font-size: 12px;
+	text-align: center;
+}*/
+body,html{
+	min-width:initial;
+	/*overflow: hidden;*/
+}
+.edu-header,.edu-header .topnav,.top-panel{
+	background-color: #262626;
+	height: 50px;
+	line-height: 50px;
+}
+.edu-container{
+	position: absolute;
+	background: #fff;
+	top:50px;
+	left:0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: hidden;
+	height: auto;
+}
+.edu-container-inner{
+	position: relative;
+	height:100%;width: 100%;
+}
+/*左侧固定 start*/
+.edu-left-sidebar{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width:200px; 
+	height: 100%;
+	background-color: #333333;
+	color: #fff;
+}
+/*左侧固定 end*/
+
+/*主界面start*/
+.edu-main{
+	margin-left: 200px;
+	height: 100%;
+	position: relative;
+}
+	/*内容快 start*/
+	.edu-main-inner{
+		background-color: #fff;
+		margin-right: 220px;
+		/* box-sizing:border-box; */
+		height: 100%;
+		overflow-x:auto;
+	}
+	/*内容快 end*/
+
+	/*右侧固定start*/
+	.edu-right-sidebar{
+		position: absolute;
+		top:0px;
+		right:0px;
+		bottom: 0px;
+		width:200px; 
+		height: 100%;
+		background-color: #f2f2f2;
+		font-family:'MicrosoftYaHei';
+		transform: translateZ(0);
+	}
+	/*右侧固定 end*/
+/*主界面 end*/

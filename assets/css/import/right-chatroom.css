@@ -1,0 +1,90 @@
+@charset 'utf-8';
+.edu-right-chatroom{
+	position:relative;
+	height:100%;
+}
+.edu-chatroom-notification{
+	padding:25px 20px 0px 20px;
+}
+.edu-chatroom-notification h4{
+	font-size:16px;
+	font-weight:normal;
+	margin-bottom:15px;
+}
+.edu-chatroom-notification ul li{
+	line-height:25px;
+	color:#888;
+}
+.edu-notification-time{
+	text-align:center;
+	position:relative;
+	margin-top:10px;
+}
+.edu-notification-time:before{
+	content:' ';
+	display:block;
+	width:100%;
+	height:1px;
+	position:absolute;
+	top:50%;
+	background-color:#ddd;
+	z-index:-1;
+}
+.edu-notification-time span{
+	padding:0 3px;
+	display:inline-block;
+	background-color:#f2f2f2;
+	color:#c3c3c3;
+}
+
+.edu-chatroom-list{
+	padding:20px;
+}
+.edu-chatroom-list li{
+	padding-bottom:5px;
+	line-height: 20px;
+}
+.edu-chatroom-list li.edu-chatroom-student span{
+	color:#006eff;
+}
+.edu-chatroom-list li.edu-chatroom-admin{
+	font-weight:bold;
+}
+.edu-chatroom-speaking{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+	border-top:solid 1px #ddd;
+	width:100%;
+}
+.edu-chatroom-speaking .tc-15-input-textarea{
+	background-color:transparent;
+	border:none;
+	padding:10px 20px;
+	width:100%;
+	height:80px;
+	line-height:20px;
+}
+.edu-chatroom-speaking .tc-15-input-textarea:focus{
+	border:none;
+}
+.edu-expression-icon{
+	text-align:right;
+	vertical-align:middle;
+	padding-bottom:26px;
+}
+.edu-expression-icon .expression-icon{
+	background-image:url(../img/slice/expression-icon.svg);
+	width:22px;
+	height:22px;
+	margin-right:5px;
+	display:inline-block;
+	vertical-align:middle;
+	cursor:pointer;
+}
+.edu-expression-icon .expression-icon:hover{
+	background-image:url(../img/slice/expression-icon-hover.svg);
+}
+.edu-expression-icon .tc-15-btn.weak{
+	margin-right:20px;
+}

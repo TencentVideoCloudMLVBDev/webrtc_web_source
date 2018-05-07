@@ -1,0 +1,120 @@
+.tc-15-slider-wrap {
+	vertical-align: middle;
+	position: relative;
+	font-size: 0;
+	line-height: 27px;
+	display:inline-block;
+}
+.tc-15-slider-wrap:before {
+	content: "";
+	position: absolute;
+	height: 3px;
+	width: 250px;
+	border: 1px solid #e2e5ec;
+	border-radius: 2px;
+	background: #e2e5ec;
+	left: 0;
+	top: 11px;
+}
+.tc-15-slider-wrap:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.tc-15-slider-range {
+	width: 252px;
+	height: 42px;
+	position: relative;
+	float: left;
+	margin-right: 10px;
+	font-size:12px;
+}
+.tc-15-slider {
+	position: absolute;
+	width: 15px;
+	height: 25px;
+	border: 1px solid #64a0dd;
+	background: #b0d8ff;
+	left: 110px;
+	border-radius: 2px;
+	cursor: pointer;
+	display: block;
+	-webkit-user-select: none;
+}
+.tc-15-slider:hover, .tc-15-slider:focus {
+	background: #7cbdff;
+}
+.tc-15-slider-inner {
+	position: relative;
+	width: 1px;
+	height: 7px;
+	background: #6392c1;
+	margin: 9px 0 0 7px;
+}
+.tc-15-slider-inner:before, .tc-15-slider-inner:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 1px;
+	height: 7px;
+	background: #6392c1;
+	top: 0;
+}
+.tc-15-slider-inner:before {
+	left: -2px;
+}
+.tc-15-slider-inner:after {
+	right: -2px;
+}
+.tc-15-slider-for-vis {
+	position: absolute;
+	height: 3px;
+	width: 250px;
+	border: 1px solid #72ade8;
+	background: #d7ebff;
+	top: 11px;
+	left: 0;
+	border-radius: 2px 0 0 2px;
+	border-right: 0;
+	width: 110px
+}
+.tc-15-slider-valuemin, .tc-15-slider-valuemax {
+	position: absolute;
+	top: 17px;
+	color: #9799a3;
+	width: 50%;
+}
+.tc-15-slider-valuemin:after, .tc-15-slider-valuemax:after {
+	width: 1px;
+	height: 4px;
+	position: absolute;
+	top: -1px;
+	content: "";
+	display: block;
+	background: #72ade8;
+}
+.tc-15-slider-valuemin {
+	left: 0;
+}
+.tc-15-slider-valuemax {
+	right: 0;
+	text-align: right;
+}
+.tc-15-slider-valuemin:after {
+	left: 4px;
+}
+.tc-15-slider-valuemax:after {
+	right: 4px;
+}
+.tc-15-slider-tips {
+  font-size: 12px;
+  color: #ababab;
+  clear: both;
+  line-height: 13px;
+}
+.tc-15-list-wrap.form .tc-15-slider-wrap {
+	margin-top: 4px;
+}
+.tc-15-rich-dialog .tc-15-list-wrap.form .tc-15-slider-wrap {
+	margin-top: 0;
+}

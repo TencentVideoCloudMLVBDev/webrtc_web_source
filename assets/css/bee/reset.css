@@ -1,0 +1,106 @@
+html{
+    font-size: 12px;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+p,
+form,
+legend,
+button,
+select,
+input,
+textarea,
+table {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+input,
+button,
+textarea,
+select {
+    font-family: Roboto, San Francisco, "Helvetica Neue", Helvetica, Arial, PingFangSC-Light, "Hiragina Sans GB", "WenQuanYi Micro Hei", 'microsoft yahei ui','microsoft yahei', sans-serif;
+    font-size: 12px;
+}
+
+/*label,*/
+/*button,*/
+/*input[type="button"],*/
+/*input[type="submit"],*/
+/*input[type="reset"] {*/
+    /*-webkit-user-select: none;*/
+/*}*/
+
+button,
+select,
+input {
+    box-sizing: content-box;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+li {
+    list-style: none
+}
+
+em,
+i,
+b {
+    font-style: normal;
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+img {
+    border: 0;
+}
+
+
+/*********** 公用样式先放这里 ***********/
+
+
+/* 全局公用类 */
+.none,
+.hide {
+    display: none;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: '';
+    display: table
+}
+
+.clearfix:after {
+    clear: both
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.clr:after {
+    content: "";
+    display: table;
+    clear: both;
+}

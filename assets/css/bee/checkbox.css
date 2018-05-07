@@ -1,0 +1,104 @@
+
+.tc-15-checkbox {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    -webkit-appearance: none;
+    *
+    background: none;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.tc-15-checkbox:hover,
+.tc-15-checkbox:focus {
+    border-color: #bbb;
+}
+
+.tc-15-checkbox:checked {
+    background-image: url(img/slice/svg/checkbox.svg);
+    background-color: #006eff;
+    border: none;
+    background-position: inherit;
+}
+.tc-15-checkbox:checked:hover {
+    background-image: url(img/slice/svg/checkbox.svg);
+    background-color: #0068f2;
+    background-position: inherit;
+}
+.tc-15-checkbox:checked:focus {
+    background-image: url(img/slice/svg/checkbox.svg);
+    background-color: #0068f2;
+    background-position: inherit;
+}
+
+.tc-15-checkbox[disabled] {
+    background-image:none;
+    background-color: #ddd;
+    border: none;
+    background-position: inherit;
+}
+
+.tc-15-checkbox[disabled]:checked {
+    background-image: url(img/slice/svg/checkbox.svg);
+    background-position: inherit;
+}
+.tc-15-checkbox[disabled],
+.tc-15-checkbox[disabled] + label,
+.form-ctrl-label.disabled,
+.tc-15-checkbox-wrap.disabled{
+    cursor:default;
+    cursor:not-allowed;
+}
+
+/* ä¸Žlabelç»„åˆä½¿ç”¨ */
+.form-ctrl-label-stacked{
+    display:block;
+    margin-bottom:10px;
+}
+.form-ctrl-label{
+    margin-right:15px;
+}
+
+.form-ctrl-label,
+.form-ctrl-label-stacked,
+.tc-15-checkbox-wrap{
+    font-size: 12px;
+    cursor:pointer;
+    vertical-align:middle;
+    line-height: 1;
+}
+.tc-15-checkbox + .form-ctrl-label,
+.tc-15-checkbox + label{
+    margin-left:5px;
+    color:#404a58;
+}
+.form-ctrl-label .tc-15-checkbox,
+.form-ctrl-label-stacked .tc-15-checkbox,
+.tc-15-checkbox-wrap .tc-15-checkbox{
+    vertical-align: -3px;
+    margin-right: 5px;
+}
+.tc-15-checkbox-wrap{
+    margin-left:20px;
+}
+
+
+/*增加checkbox的indeterminate状态 colahan 2017-01-10  设计：阿峰 start*/
+.tc-15-checkbox:indeterminate{
+    background-image: url(img/slice/svg/indeterminate.svg);
+    background-color: #006eff;
+    border: none;
+    background-position: inherit;
+}
+.tc-15-checkbox:indeterminate:hover{
+    background-color: #0068f2;
+}
+.tc-15-checkbox[disabled]:indeterminate{
+    background-image: url(img/slice/svg/indeterminate.svg);
+    background-color: #ddd;
+    background-position: inherit;
+}
+/*增加checkbox的indeterminate状态 end*/

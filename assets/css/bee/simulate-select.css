@@ -1,0 +1,157 @@
+.tc-15-simulate-select-wrap {
+	position: relative;
+	float: left;
+}
+.tc-15-simulate-select {
+	height: 30px;
+	min-width: 24px;
+	padding: 0;
+	border: 1px solid #ddd;
+	background: #fcfcfc;
+	color: #006eff;
+	font-size: 12px;
+	line-height: 29px;
+	text-align: left;
+	outline: none;
+	box-sizing: border-box;
+}
+.tc-15-simulate-select {
+	background-image: url(img/sel2.png);
+	background-repeat: no-repeat;
+	background-position: right 0;
+	background-image: none;
+	background-position: inherit;
+}
+.tc-15-simulate-select.show {
+	background-image: url(img/sel2.png);
+	background-repeat: no-repeat;
+	background-position: right -35px;
+	background-image: none;
+	background-position: inherit;
+}
+.tc-15-simulate-select:hover, .tc-15-simulate-select:focus {
+	background: #f2f2f2;
+	border-color: #ddd;
+	background-color: transparent;
+}
+
+.tc-15-simulate-select.m {
+	background-image: url(img/sel2.png);
+	background-repeat: no-repeat;
+	background-position: right -4px;
+	background-image: none;
+	background-position: inherit;
+}
+.show .tc-15-simulate-select.m {
+	/* background-image: url(img/sel2.png); */
+	/* background-repeat: no-repeat; */
+	/* background-position: right -39px; */
+	background-image: none;
+	background-position: inherit;
+}
+.tc-15-simulate-select.xl {
+	background-image: url(img/sel2.png);
+	background-repeat: no-repeat;
+	background-position: right 1px;
+}
+.show .tc-15-simulate-select.xl {
+	background-image: url(img/sel2.png);
+	background-repeat: no-repeat;
+	background-position: right -30px;
+}
+
+.tc-15-simulate-select:after{
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-image: url(img/slice/svg/calendar.svg);
+	display: inline-block;
+	margin-left: 0;
+	margin-right: 0;
+	vertical-align: -3px;
+	right: 10px;
+	position: absolute;
+	top: 6px;
+}
+.tc-15-calendar-select.show .tc-15-simulate-select:after{
+	background-image: url(img/slice/svg/calendar.svg);
+}
+.tc-15-calendar-select:hover .tc-15-simulate-select{
+	/*background-color: #f2f2f2;*/
+}
+
+.tc-15-simulate-select.m {
+	height: 30px;
+	min-width: 21px;
+	padding: 0 10px;
+	padding-right: 10px;
+	font-size: 12px;
+	line-height: 28px;
+	box-sizing: border-box;
+	min-width: 110px;
+}
+.tc-15-simulate-select.xl {
+	height: 43px;
+	min-width: 68px;
+	padding: 0 35px 0 25px;
+	line-height: 43px;
+}
+.tc-15-simulate-option {
+	font-size: 12px;
+	line-height: 30px;
+	position: absolute;
+	top: 32px;
+	min-width: 108px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #006eff;
+	border: 1px solid #d1d2d3;
+	border-radius: 0;
+	background: #fff;
+	z-index: 3;
+}
+.tc-15-simulate-option li {
+	display: block;
+	overflow: hidden;
+	padding: 0 8px;
+	cursor: pointer;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	color: #404a58;
+}
+.tc-15-simulate-option li:hover {
+	background: #f2f2f2;
+}
+.tc-15-simulate-option li:focus {
+	background: #006eff;
+	color: #fff;
+}
+.tc-15-simulate-option li em {
+	font-weight: bold
+}
+.tc-15-simulate-option.xl {
+	line-height: 35px;
+	font-size: 14px;
+	min-width: 118px;
+}
+/*in action-panel*/
+.tc-15-action-panel .tc-15-simulate-select {
+	float: left;
+	margin-right: 10px;
+}
+/*in page*/
+.tc-15-page .tc-15-page-select .tc-15-simulate-option {
+	top: auto;
+	bottom: 19px;
+	min-width: 48px;
+	max-height: 152px;
+	overflow: auto;
+	box-sizing: border-box;
+	margin-bottom: 5px;
+}
+.tc-15-page .tc-15-page-selected .tc-15-simulate-option {
+	margin-left: -4px;
+	margin-bottom: 12px;
+}

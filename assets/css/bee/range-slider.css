@@ -1,0 +1,329 @@
+.range-slider{
+	position:relative;
+    display:inline-block;
+    vertical-align:middle;
+    font-size:0;
+}
+.range-slider input[type=range] {
+    border:0;
+    margin:0;
+    padding:0;
+    height:27px;
+    overflow:hidden;
+    vertical-align:middle;
+
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+
+    /*required for proper track sizing in FF*/
+    width: 255px;
+}
+.range-slider input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range].slider-vertical{
+    -webkit-appearance:slider-vertical; 
+    /* for IE */
+    writing-mode:bt-lr;
+}
+
+/********** webkit **********/
+.range-slider input[type=range]::-webkit-slider-runnable-track {
+	position:relative;
+    width: 255px;
+    height: 5px;
+    background: #e2e5ec;
+    border: none;
+    border-radius: 2px;
+}
+.range-slider input[type=range]::-webkit-slider-runnable-track:after {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: #d7ebff;
+    border:1px solid #72ade8;
+    border-radius:2px;
+    width:0%;
+    height:5px;
+    box-sizing:border-box;
+    z-index:1;
+}
+
+.range-slider input[type=range]::-webkit-slider-thumb {
+	position:relative;
+    -webkit-appearance: none;
+    border: none;
+    height: 27px;
+    width: 17px;
+    background-image: url(img/slice/range/slider-thumb.png);
+    margin-top:-11px;
+    z-index:2;
+}
+
+.range-slider input[type=range]:hover::-webkit-slider-thumb,
+.range-slider input[type=range]:focus::-webkit-slider-thumb {
+    background-image: url(img/slice/range/slider-thumb-hover.png);
+}
+
+/********** firefox **********/
+.range-slider input[type=range]::-moz-range-track {
+    position:relative;
+    height: 5px;
+    background: #e2e5ec;
+    border: none;
+    border-radius:2px;
+}
+
+.range-slider input[type=range]::-moz-range-thumb {
+    position:relative;
+    border: none;
+    border-radius:0;
+    height: 27px;
+    width: 17px;
+    background-image: url(img/slice/range/slider-thumb.png);
+}
+
+input[type="range"]::-moz-range-progress{
+    background: #d7ebff;
+    border:1px solid #72ade8;
+    border-radius:2px;
+    height:5px;
+    box-sizing:border-box;
+}
+
+.range-slider input[type=range]:hover::-moz-range-thumb,
+.range-slider input[type=range]:focus::-moz-range-thumb {
+    background-image: url(img/slice/range/slider-thumb-hover.png);
+}
+
+.range-slider input[type="range"]::-moz-focus-outer{
+  border:none;
+}
+
+
+/********** IE10+ **********/
+.range-slider input[type=range]::-ms-track {
+    width: 255px;
+    height: 5px;
+    /*remove border and bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    border-width:0;
+    /*remove default tick marks*/
+    color: transparent; 
+}
+
+.range-slider input[type=range]::-ms-fill-lower {
+    background: #d7ebff;
+    border:1px solid #72ade8;
+    border-radius:2px;
+}
+
+.range-slider input[type=range]::-ms-fill-upper {
+    background: #e2e5ec;
+    border:1px solid #e2e5ec;
+    border-radius:2px;
+   
+}
+
+.range-slider input[type=range]::-ms-thumb {
+    position:relative;
+    border: none;
+    border-radius:0;
+    height: 27px;
+    width: 17px;
+    background-image: url(img/slice/range/slider-thumb.png);
+    background-color:transparent;
+}
+
+.range-slider input[type=range]:hover::-ms-thumb,
+.range-slider input[type=range]:focus::-ms-thumb{
+    background-image: url(img/slice/range/slider-thumb-hover.png);
+}
+
+.range-slider input[type=range]::-ms-tooltip{
+    display:none;
+}
+
+
+/********** IE8 9 模拟 **********/
+.range-ui{
+    display:inline-block;
+    vertical-align:middle;
+    width:255px;
+}
+.range-track{
+    display:none;
+}
+
+/* IE*/
+.range-slider input[type=range]{
+    display:none\9;
+}
+.range-slider .range-track{
+    display:inline-block\9;
+}
+
+/*≥ IE10 */
+_:-ms-input-placeholder, :root .range-slider input[type=range] {
+    display:block;
+}
+_:-ms-input-placeholder, :root .range-slider .range-track{
+    display:none;
+}
+
+.range-track{
+    position:relative;
+    width:255px;
+    height:27px;
+    font-size:0;
+    overflow:hidden;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+
+    /*display:inline-block;*/
+}
+.range-track:after{
+    content:'';
+    display:inline-block;
+    width:100%;
+    height:5px;
+    background: #e2e5ec;
+    border: none;
+    border-radius:2px;
+    margin-top:11px;
+}
+.range-thumb{
+    position:relative;
+    margin:0 8px 0 9px;
+}
+.range-thumb .range-handler{
+    position:absolute;
+    top:0;
+    left:50%;
+    height: 27px;
+    width: 17px;
+    margin-left:-9px;
+    background-image: url(img/slice/range/slider-thumb.png);
+    z-index:2;
+}
+.range-progress{
+    position:absolute;
+    top:11px;
+    left:0;
+    background: #d7ebff;
+    border:1px solid #72ade8;
+    border-radius:2px;
+    height:5px;
+    width:50%;
+    box-sizing:border-box;
+}
+.range-slider .range-track:hover .range-handler,
+.range-slider .range-track:focus .range-handler{
+    background-image: url(img/slice/range/slider-thumb-hover.png);
+}
+.range-slider .range-track:focus{
+    outline:0;
+}
+
+/* 刻度 */
+.range-ticks{
+    height:10px;
+    padding:0 8px 0 9px;
+    font-size:12px;
+    margin-top:-11px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.range-ticks-li{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.range-ticks-li li{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    position:relative;
+    text-align:right;
+    padding-top:10px;
+    color:#9799a3;
+    font-size:12px;
+    height:14px;
+    position:relative;
+}
+.range-ticks-li li:first-child{
+    width:0;
+}
+.range-ticks .range-ticks-li li:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '';
+    width: 1px;
+    height: 4px;
+    background-color: #B4B7BE;
+}
+
+.range-ticks .range-ticks-li li b{
+    position: absolute;
+    top: 10px;
+    right: 0;
+    white-space:nowrap;
+    /* 可惜IE8不支持 
+    -webkit-transform:translateX(50%);
+    -ms-transform:translateX(50%);
+    transform:translateX(50%);*/
+}
+.range-ticks .range-ticks-li li b:before{
+    content:'';
+    display:inline-block;
+    width:50%;
+}
+
+/* output */
+.range-number{
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:10px;
+}
+.range-editor {
+    display:inline-block;
+    font-size:12px;
+    width:33px;
+    height:25px;
+    line-height:25px;
+    padding:0 10px;
+    border:1px solid #d1d2d3;
+    border-radius:2px;
+    color:#006eff;
+    outline:none;
+    font-weight:bold;
+    text-align:center;
+    vertical-align:middle;
+}
+.range-editor:hover, 
+.range-editor:focus {
+    border-color: #006eff;
+}
+.range-number-unit{
+    vertical-align:middle;
+    font-size:14px;
+    color:#404a58;
+    margin-left:5px;
+}
+
+
+/********** 多滑块 **********/
+.range-slider-multiple input[type='range']{
+    display: none;
+}
+.range-slider-multiple .range-track{
+    display:block;
+}

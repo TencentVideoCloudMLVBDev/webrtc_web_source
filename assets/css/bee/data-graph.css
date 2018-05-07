@@ -1,0 +1,57 @@
+.tc-15-data-graph {
+	margin: 0 20px
+}
+.tc-15-data-graph:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.tc-15-data-graph li {
+	width: 100%;
+	float: left;
+}
+.tc-15-data-graph-title {
+	font-size: 14px;
+	line-height: 22px;
+	/*margin-top: 20px*/
+}
+.tc-15-data-graph-title:after {
+	content: "";
+	display: table;
+	clear: both
+}
+.tc-15-data-graph-title strong {
+	float: left;
+}
+.tc-15-data-graph-title span {
+	font-size: 12px;
+	padding-left: 15px;
+	float: right;
+	cursor: pointer;
+	color: #006eff;
+	background: url(img/down.png) left center no-repeat;
+}
+.tc-15-data-graph-title span:hover {
+	text-decoration: underline
+}
+.tc-15-data-graph-info {
+	height: 370px;
+	background: #f5f5f5;
+	margin-top: 10px;
+}
+.tc-15-data-graph.col2 li {
+	width: 50%;
+}
+.tc-15-data-graph.col3 li {
+	width: 33.33%;
+}
+.tc-15-data-graph.col4 li {
+	width: 25%;
+}
+.tc-15-data-graph.col2 .tc-15-data-graph-title, .tc-15-data-graph.col3 .tc-15-data-graph-title, .tc-15-data-graph.col4 .tc-15-data-graph-title {
+	margin-left: 30px
+}
+.tc-15-data-graph.col2 .tc-15-data-graph-info, .tc-15-data-graph.col3 .tc-15-data-graph-info, .tc-15-data-graph.col4 .tc-15-data-graph-info {
+	height: 200px;
+	margin-left: 30px;
+}

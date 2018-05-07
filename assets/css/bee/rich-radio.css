@@ -1,0 +1,93 @@
+.manage-area-title .tc-15-rich-radio .tc-15-btn{
+    padding: 0 10px;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.tc-15-rich-radio {
+    vertical-align: middle;
+    padding-left: 1px;
+    display: inline-block;
+    font-size: 0;
+    margin-bottom: -5px;
+    overflow: visible;
+}
+
+.tc-15-rich-radio .tc-15-btn {
+    float: left;
+    position: relative;
+    margin-left: -1px;
+    z-index: 0;
+    border-radius: 0;
+    border-color: #ddd;
+    background: #fff;
+    color: #000;
+    margin-bottom: 5px;
+    padding: 0 20px;
+}
+
+.tc-15-rich-radio .tc-15-btn .icon-hui{
+    background-color: #ff7800;
+    color: #fff;
+    font-size: 10px;
+    padding: 0px 3px;
+    position: absolute;
+    right: 0;
+    top: -5px;
+    height: auto;
+    line-height: normal;
+    z-index: 99;
+}
+
+
+.tc-15-rich-radio .tc-15-btn.first {
+    /* border-radius: 2px 0 0 2px; */
+}
+
+.tc-15-rich-radio .tc-15-btn.last {
+    /* border-radius: 0 2px 2px 0 */
+}
+
+.tc-15-rich-radio .tc-15-btn.checked,
+.tc-15-rich-radio .tc-15-btn.checked:hover {
+    z-index: 1;
+    border-color: #006eff;
+    background: #fff;
+    color: #006eff;
+}
+.tc-15-rich-radio .tc-15-btn:hover{
+    border-color: #ddd;
+    background-color: #f2f2f2;
+    color: #000;
+}
+
+.tc-15-rich-radio .tc-15-btn.disabled {
+    border-color: #ddd;
+    background: #f2f2f2;
+    color: #bbb;
+}
+
+.tc-15-rich-radio .tc-15-btn.disabled:hover,
+.tc-15-rich-radio .tc-15-btn.disabled:focus {
+    z-index: 0
+}
+
+.tc-15-rich-dialog .tc-15-rich-radio .tc-15-btn {
+    position: relative;
+    height:30px;
+    line-height: 30px;
+}
+.tc-15-rich-radio .tc-discount-icon{
+    background-color: #ff9d00;
+    color: #fff;
+    padding: 0 2px;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    line-height: initial;
+    z-index: 99;
+}
+.tc-15-rich-radio .new-mark-icon {
+    margin-left: 5px;
+    vertical-align: -3px;
+}

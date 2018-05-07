@@ -1,0 +1,119 @@
+
+.tc-15-radio[type=radio],
+input[type=radio]
+{
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    -webkit-appearance: none;
+    *background: none;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background-position: inherit;
+}
+.tc-15-radio[type=radio]:hover,
+.input[type=radio]:focus ,
+input[type=radio]:hover ,
+input[type=radio]:focus
+{
+    border-color: #bbb;
+    background-position: inherit;
+}
+.tc-15-radio[type=radio]:checked,
+input[type=radio]:checked
+{
+    background-image: url(img/slice/svg/radio.svg);
+    background-color: #006eff;
+    border: none;
+    background-position: inherit;
+}
+.tc-15-radio[type=radio]:checked:hover,
+input[type=radio]:checked:hover
+{
+    background-image: url(img/slice/svg/radio.svg);
+    border-color: transparent;
+    background-color: #0063e6;
+    background-position: inherit;
+}
+.tc-15-radio[type=radio]:checked:focus,
+input[type=radio]:checked:focus
+{
+    background-image: url(img/slice/svg/radio.svg);
+    background-color: #0063e6;
+    background-position: inherit;
+}
+
+.tc-15-radio[type=radio][disabled],
+input[type=radio][disabled]
+{
+    background-color: #f2f2f2;
+    background-position: inherit;
+}
+.tc-15-radio[type=radio][disabled]:hover,
+.tc-15-radio[type=radio][disabled]:focus,
+input[type=radio][disabled]:hover,
+input[type=radio][disabled]:focus
+{
+    border-color: #ddd;
+}
+.tc-15-checkbox[disabled]:checked:hover,
+.tc-15-checkbox[disabled]:checked:disabled,
+input[disabled]:checked:hover,
+input[disabled]:checked:disabled
+{
+background-color: #ddd;
+cursor: default;
+}
+
+
+
+.tc-15-radio[type=radio][disabled]:checked,
+input[type=radio][disabled]:checked
+{
+    background-image: url(img/slice/svg/radio.svg);
+    background-color: #ddd;
+    border: none;
+    background-position: inherit;
+}
+.tc-15-radio[disabled],
+.tc-15-radio[disabled] + label,
+.form-ctrl-label.disabled,
+.tc-15-radio-wrap.disabled{
+    cursor:default;
+    cursor:not-allowed;
+}
+
+/* 与label组合使用 */
+.form-ctrl-label-stacked{
+    display:block;
+    margin-bottom:10px;
+}
+.form-ctrl-label{
+    margin-right: 20px;
+}
+.form-ctrl-label,
+.form-ctrl-label-stacked,
+.tc-15-radio-wrap{
+    font-size: 12px;
+    cursor:pointer;
+    vertical-align:middle;
+    line-height:1;
+}
+.tc-15-radio + .form-ctrl-label,
+.tc-15-radio + label{
+    margin-left:5px;
+    color:#404a58;
+    vertical-align:middle;
+}
+.form-ctrl-label .tc-15-radio,
+.form-ctrl-label-stacked .tc-15-radio,
+.tc-15-radio-wrap .tc-15-radio{
+    vertical-align:-3px;
+    margin-right: 5px;
+}
+.tc-15-radio-wrap{
+    margin-left:20px;
+}

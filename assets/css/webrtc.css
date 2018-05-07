@@ -1,0 +1,17 @@
+.bg_blue{
+   background:#006eff
+}
+
+.edu-right-sidebar{width:270px;padding:9px 15px;height: auto}
+.edu-chatroom-speaking .tc-15-input-textarea{padding:10px 5px;}
+.edu-right-chatroom{ height: calc( 100vh - 110px);}
+.edu-chatroom-notification{padding:0 10px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 140px;
+   word-wrap: break-word;
+   overflow: auto;
+}
+.edu-chatroom-list{padding:0}

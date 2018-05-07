@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="38px" viewBox="0 0 36 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>创建课堂提示</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="pc端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="无直播" transform="translate(-594.000000, -366.000000)" stroke-width="1.5">
+            <g id="创建课堂提示" transform="translate(594.000000, 367.000000)">
+                <g id="Group" stroke="#999999">
+                    <path d="M1.5,2.75 C1.08578644,2.75 0.75,3.08578644 0.75,3.5 L0.75,25.5 C0.75,25.9142136 1.08578644,26.25 1.5,26.25 L34.4769897,26.25 C34.8912033,26.25 35.2269897,25.9142136 35.2269897,25.5 L35.2269897,3.5 C35.2269897,3.08578644 34.8912033,2.75 34.4769897,2.75 L1.5,2.75 Z" id="Rectangle"></path>
+                    <path d="M18,2.47485352 L18,0" id="Line" stroke-linecap="round"></path>
+                    <path d="M18,36 L18,26.5407715" id="Line-Copy" stroke-linecap="round"></path>
+                    <path d="M28,35 L22.5,26.5" id="Line-Copy-2" stroke-linecap="round"></path>
+                    <path d="M14,35 L8.5,26.5" id="Line-Copy-3" stroke-linecap="round" transform="translate(11.000000, 30.500000) scale(-1, 1) translate(-11.000000, -30.500000) "></path>
+                    <circle id="Oval" cx="25.5" cy="14.5" r="4.75"></circle>
+                </g>
+                <path d="M5.5,10.75 L11.5,10.75" id="Line-2" stroke="#999999" stroke-linecap="round"></path>
+                <path d="M5.5,14.75 L15.2424927,14.75" id="Line-2-Copy" stroke="#999999" stroke-linecap="round"></path>
+                <path d="M5.5,18.75 L15.2498169,18.75" id="Line-2-Copy-2" stroke="#979797" stroke-linecap="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

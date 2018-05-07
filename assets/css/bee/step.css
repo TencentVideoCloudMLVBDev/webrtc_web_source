@@ -1,0 +1,181 @@
+.tc-15-step {
+	padding: 0;
+	margin: 0;
+	line-height: 28px;
+	color: #888;
+	-webkit-user-select: none;
+	max-width: 1360px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+	counter-reset: step;
+	font-size: 0;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+	margin-top: -2px;
+}
+.secondary-main .tc-15-step{
+	margin-left:0;
+	margin-right:0;
+}
+.tc-15-step:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.tc-15-step li {
+	float: none;
+	text-align: center;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	color: #bbb;
+}
+.tc-15-step li.current{
+	font-weight: bold;
+}
+.tc-15-step-num {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	border: 1px solid #006eff;
+	border-radius: 50%;
+	margin-right: 10px;
+	text-align: center;
+	color: #006eff;
+	font-size: 0;
+	vertical-align: middle;
+	margin-top: -1px;
+}
+.tc-15-step li .tc-15-step-num:before,
+.tc-15-step li.disabled .tc-15-step-num:before{
+	 counter-increment: step;
+	 content: counter(step);
+	 font-size: 0;
+}
+.tc-15-step li.disabled .tc-15-step-num:before{
+	counter-increment: step;
+	content: counter(step);
+	font-size: 0 !important;
+}
+
+.tc-15-step li .tc-15-step-num:after{
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: 5px;
+	top: 6px;
+	background-image: url(img/slice/svg/step-num.svg);
+	background-color: transparent;
+}
+
+.tc-15-step .current .tc-15-step-num{
+	background-color: #0068f2;
+	color: #fff;
+	border-color: #0068f2;
+}
+.tc-15-step li.current ~ li .tc-15-step-name{
+	color: #bbb;
+}
+.tc-15-step li.current ~ li .tc-15-step-num{
+	border-color: #bbb;
+	font-size: 12px;
+	vertical-align: middle;
+	color: #bbb;
+}
+.tc-15-step li.current .tc-15-step-num:before,
+.tc-15-step li.current ~ li .tc-15-step-num:before{
+	font-size: 12px;
+}
+
+.tc-15-step li.current .tc-15-step-num:after,
+.tc-15-step li.disabled .tc-15-step-num:after,
+.tc-15-step li.current ~ li .tc-15-step-num:after{
+	display: none;
+}
+.tc-15-step-arrow {
+	position: inherit;
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 40px;
+	margin-right: 40px;
+	background-image: url(img/slice/svg/step-arrow.svg);
+}
+.tc-15-step li .tc-15-step-name{
+	display: inline-block;
+	vertical-align: middle;
+	color: #000;
+	font-size: 12px;
+	box-sizing: border-box;
+}
+.tc-15-step li.succeed .tc-15-step-name{
+	color:#000;
+}
+.tc-15-step li.succeed .tc-15-step-num {
+	position: relative;
+	border-color: #006eff;
+	font-size: 0;
+	/* vertical-align: 5px; */
+}
+.tc-15-step li.succeed .tc-15-step-num:before{
+	font-size: 0;
+}
+.tc-15-step li.succeed .tc-15-step-num:after {
+	content: "";
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: 4px;
+	top: 4px;
+	background-image: url(img/slice/svg/step-num.svg);
+	background-color: transparent;
+}
+
+.tc-15-step li:last-child .tc-15-step-arrow{
+	display: none;
+}
+
+.tc-15-step li.disabled {
+	color: #bbb;
+}
+.tc-15-step li.disabled .tc-15-step-num {
+	border-color: #bbb;
+	font-size: 12px;
+	color: #bbb;
+	vertical-align: middle;
+}
+.tc-15-step li.last .tc-15-step-arrow {
+	display: none;
+}
+.tc-15-step.col2 li {
+	width: inherit;
+}
+.tc-15-step.col3 li {
+	width: inherit;
+}
+.tc-15-step.col4 li {
+	width: inherit;
+}
+.tc-15-step.col5 li {
+	width: inherit;
+}
+.tc-15-step.col6 li {
+	width: inherit;
+}
+.tc-15-step.col7 li {
+	width: inherit;
+}
+.tc-15-step.col8 li {
+	width: inherit;
+}
+.tc-15-step.col9 li {
+	width: inherit;
+}
+.tc-15-step.col10 li {
+	width: inherit;
+}

@@ -1,0 +1,235 @@
+.sidebar-panel {
+    /*position:absolute;
+    top:0;*/
+    position:fixed;
+	top:48px;
+	bottom:0;
+	right:0;
+	width:795px;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background-color:#fff;
+	border-left:1px solid #d1d5de;
+	box-shadow: -3px 0px 3px 0px rgba(73, 73, 87, 0.12);
+	font-size:14px;
+	z-index:160;
+	height:initial;
+}
+
+.sidebar-panel-container {
+    position:relative;
+	height:100%;
+	padding:0 20px 20px;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+.sidebar-panel .btn-close{
+	position:absolute;
+	width:26px;
+	height:26px;
+	overflow:hidden;
+	line-height:99px;
+	top: 27px;
+	right:20px;
+	z-index:10;
+}
+.sidebar-panel .btn-close:before{
+	width:16px;
+	height:16px;
+	display: block;
+	content: '';
+	background-image:url(img/slice/svg/btn-dismiss.svg);
+	margin-top: 6px;
+	margin-left: 5px;
+}
+.sidebar-panel .btn-close:hover{
+	background-color: #f2f2f2;
+}
+.sidebar-panel .btn-close:hover:before{
+	background-image:url(img/slice/details/btn-dismiss.svg?fill=#0071CE);
+}
+
+
+.sidebar-panel-hd{
+	position:relative;
+	padding: 25px 0;
+	font-size:0;
+}
+.sidebar-panel-hd h3{
+	font-size:22px;
+	font-weight:normal;
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	width: 145px;
+}
+.sidebar-panel-hd h3 .entry-name-txt{
+	display:inline-block;
+	max-width:18em;
+	white-space:nowrap;
+	overflow:hidden;
+	-ms-text-overflow:ellipsis;
+	text-overflow:ellipsis;
+	vertical-align:top;
+}
+
+.sidebar-panel-hd h3.run-in{
+	display:inline-block;
+	vertical-align:middle;
+	margin-right:20px;
+}
+.details-hd-meta{
+	vertical-align:middle;
+	font-size:14px;
+	color:#999;
+	margin-top:2px;
+	display:inline-block;
+	white-space:nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	width: 145px;
+}
+.sidebar-panel-bd{
+	position:absolute;
+	top: 98px;
+	bottom:0;
+	left:20px;
+	right:20px;
+}
+.single-line-hd + .sidebar-panel-bd{
+	top:63px;
+}
+
+/* 详情面板内容 */
+.sidebar-panel .tc-15-table-panel{
+	margin-left:0;
+	margin-right:0;
+}
+
+.sidebar-panel .charts-panel{
+	position:relative;
+	padding:0;
+	height:100%;
+}
+.sidebar-panel .charts-panel .chart-wrap{
+	position:absolute;
+	top:70px;
+	bottom:30px;
+	left:0;
+	right:0;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+.sidebar-panel .chart-grid .gap-cell{
+	width:20px;
+}
+
+
+
+/* 左右翻页 */
+.pagination{
+	font-size:0;
+}
+.btn-page{
+	display:inline-block;
+	height: 20px;
+	line-height: 20px;
+	width: 24px;
+	border:1px solid #d1d2d3;
+	text-align:center;
+	background-color:#fcfcfc;
+	cursor:pointer;
+	font-size:0 !important;
+	position:relative;
+}
+.btn-page.s{
+	height:18px;
+	line-height:18px;
+	width:18px;
+}
+.btn-page:hover,
+.btn-page:focus{
+	background-color:#F2F2F2;
+}
+.btn-page-disabled,
+.btn-page-disabled:hover,
+.btn-page-disabled:focus{
+	background-color: #f2f2f2;
+	border-color:#D5D5D5;
+	cursor:default;
+}
+.pagination .page-prev{
+	border-right: none;
+}
+.btn-page .icon-page-prev{
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	margin:auto;
+	width:16px;
+	height: 16px;
+	vertical-align:middle;
+	background-image:url(img/slice/pagination/page-prev.svg);
+}
+.btn-page .icon-page-next{
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	left:0;
+	margin:auto;
+	width:16px;
+	height: 16px;
+	vertical-align:middle;
+	background-image:url(img/slice/pagination/page-next.svg);
+}
+.btn-page-disabled .icon-page-prev{
+	background-image:url(img/slice/pagination/page-prev.svg?fill=#bbb);
+}
+.btn-page-disabled .icon-page-next{
+	background-image:url(img/slice/pagination/page-next.svg?fill=#bbb);
+}
+.sidebar-panel .pagination{
+	position:absolute;
+	top: 28px;
+	left: 180px;
+	z-index:10;
+}
+.btn-page.s .icon-page-prev{
+	width:6px;
+	height:9px;
+	background-image:url(img/slice/pagination/page-prev.svg);
+}
+.btn-page.s .icon-page-next{
+	width:6px;
+	height:9px;
+	background-image:url(img/slice/pagination/page-next.svg);
+}
+.btn-page-disabled.s .icon-page-prev{
+	background-image:url(img/slice/pagination/page-prev.svg?fill=#bbb);
+}
+.btn-page-disabled.s .icon-page-next{
+	background-image:url(img/slice/pagination/page-next.svg?fill=#bbb);
+}
+
+
+
+/* 兼容vpc */
+.vpn-flow-wrap .param-box{
+	border-top:0 none;
+	padding:0;
+	margin:0;
+}
+.vpn-flow-wrap .param-box .param-bd{
+	padding-left:10px;
+}
+/* 兼容负载均衡 */
+.sidebar-panel-container.sidebar-balancing{
+	padding-left:0;
+	padding-right:0;
+}

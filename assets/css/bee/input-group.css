@@ -1,0 +1,59 @@
+/*网址输入框*/
+.tc-input-group-wrap{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.tc-input-group{
+    display: table;
+    min-width: 180px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    table-layout: fixed;
+}
+
+.tc-input-group-wrap.s .tc-input-group{
+    /* min-width: 270px; */
+}
+.tc-input-group-wrap.xl .tc-input-group
+{
+    min-width: 330px;
+}
+
+
+.tc-input-group .tc-input-group-addon{
+    display: table-cell;
+    -webkit-user-select:none;
+    cursor: default;
+    margin-right: -1px;
+    width: auto;
+    width: 20px;
+    height: 30px;
+    line-height: 28px;
+    padding: 0px 10px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+.tc-input-group .tc-input-group-addon:last-child{
+    border-left:none;
+    border-right:1px solid #ddd;
+}
+.tc-input-group .tc-15-input-text.m,
+.tc-input-group .tc-15-input-text,
+.tc-input-group .tc-15-select,
+.tc-input-group .tc-15-select.m,
+.tc-input-group .tc-15-dropdown
+
+{
+    display: table-cell;
+    min-width: 100%;
+    width: initial;
+}
+.tc-input-group .tc-15-select{
+    min-width: 130px;
+}
+

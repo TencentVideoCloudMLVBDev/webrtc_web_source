@@ -1,0 +1,196 @@
+
+/**
+ * 搜索框
+ * by wenjuli
+ */
+.search-box{
+    position:relative;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    padding-right: 0;
+    height: 30px;
+    border: none;
+    border-radius: 0;
+}
+.search-input-wrap{
+    position:relative;
+    height:100%;
+}
+.search-input-wrap .btn-rm-txt{
+    position:absolute;
+    background-image: url(img/slice/svg/clear-icon.svg);
+    background-position: inherit;
+    top: 7px;
+    right: 36px;
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    text-indent:-99px;
+    z-index:2;
+}
+.search-input-wrap .btn-rm-txt:hover{
+    background-image: url(img/slice/svg/clear-icon.svg);
+    background-position: inherit;
+}
+.search-box .search-input{
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    height: 30px;
+    line-height: 30px;
+    width:100%;
+    resize:none;
+    vertical-align:top;
+    border-radius:0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    position:absolute;
+    top:0px;
+    left:0px;
+    padding-right:30px;
+    overflow:hidden;
+    outline:none;
+    white-space:nowrap;
+    background-color:#fff;
+    box-sizing: border-box;
+}
+.search-box.multi-search-box .search-input{
+    overflow-x:hidden;
+    overflow-y:hidden;
+    white-space:pre-wrap;
+    width: 100%;
+    line-height: 30px;
+}
+
+.search-box.multi-search-box .search-input:focus,
+.search-box.multi-search-box.expanded .search-input{
+    height:150px;
+    z-index:3;
+    overflow-y:auto;
+}
+.search-box .search-btn{
+    position:absolute;
+    top:1px;
+    right: 1px;
+    width: 16px;
+    height: 16px;
+    -webkit-appearance:none;
+    border:0 none;
+    text-indent:-999px;
+    cursor:pointer;
+    outline:0 none;
+    background: url(img/slice/svg/icon-search.svg) #fff no-repeat center center;
+    padding: 6px;
+}
+.search-box .search-btn:focus,
+.search-box .search-btn:hover{
+    background-color:#f2f2f2;
+}
+
+/* 小号搜索框 */
+.search-box.m{
+    height: 30px;
+    padding-right: 0;
+    border: none;
+}
+.search-box.m .search-input{
+    height: 30px;
+    /*line-height: 20px;*/
+    font-size:12px;
+}
+.search-box.m .search-input-wrap .btn-rm-txt{
+    top: 6px;
+}
+.search-box.m .search-btn{
+    width: 16px;
+    height: 16px;
+    background: url(img/slice/svg/icon-search.svg) #fff no-repeat center center;
+    padding: 6px;
+}
+.search-box.m .search-btn:hover{
+    background-color: #f2f2f2;
+}
+
+
+/* 简洁搜索框 */
+.search-box-simple,
+.search-box-simple .search-input{
+    border-color:transparent;
+    border-bottom-color:#d1d2d3;
+    border-radius:0;
+}
+.search-box-simple{
+    padding-right:25px;
+}
+.search-box-simple.m{
+    padding-right:20px;
+}
+.search-box-simple .search-input{
+    padding-right:0;
+    padding-left:0;
+}
+.search-box-simple .search-btn{
+    width:24px;
+    background-image: url(img/slice/selector/icon-search-black.png);
+}
+.search-box-simple.m .search-btn{
+    /* width:19px; */
+    background: url(img/slice/svg/icon-search.svg) #fff no-repeat center center;
+}
+.search-box-simple .search-btn:focus, 
+.search-box-simple .search-btn:hover{
+    background-color:transparent;
+}
+
+/*联想搜索下拉框*/
+
+
+.search-box .dropdown-menu{
+    border:1px solid #ddd;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    z-index: 9;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.search-box .dropdown-menu .dropdown-menu-list{
+
+}
+.mod-console-bd .search-box li i{
+    margin-right: 5px;
+    vertical-align: -3px;
+}
+.search-box .dropdown-menu .dropdown-menu-list li a{
+    height: 30px;
+    line-height: 30px;
+    color: #666;
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+}
+.search-box .dropdown-menu .dropdown-menu-list li a i{
+    margin-right: 5px;
+}
+.search-box .dropdown-menu .dropdown-menu-list li a em{
+    color: #006eff;
+}
+
+.search-box .dropdown-menu .dropdown-menu-list li a:hover{
+    background-color: #f2f2f2;
+}
+.search-box .dropdown-menu .links{
+    padding: 10px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

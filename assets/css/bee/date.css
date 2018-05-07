@@ -1,0 +1,34 @@
+.tc-date-wrap {
+	font-size: 12px;
+	margin: 20px 0;
+	color: #3b3b3b;
+}
+.tc-date-wrap .tit {
+	margin: 0 5px;
+}
+.tc-date-wrap .text {
+	line-height: 25px;
+	width: 103px;
+	height: 25px;
+	text-indent: 10px;
+	border: 1px solid #d1d2d3;
+	border-radius: 2px;
+}
+.tc-date-wrap .link {
+	line-height: 25px;
+	float: right;
+	text-decoration: none;
+	color: #006eff;
+}
+.tc-date-wrap .btn-search {
+	line-height: 25px;
+	display: inline-block;
+	width: 51px;
+	height: 25px;
+	text-align: center;
+	text-decoration: none;
+	color: #006eff;
+	border: 1px solid #d1d2d3;
+	border-radius: 2px;
+	background-color: #fff;
+}

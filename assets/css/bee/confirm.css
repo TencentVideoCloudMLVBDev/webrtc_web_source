@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+.tc-15-confirm-popout {
+    position: absolute;
+    min-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #fff;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    max-width: inherit;
+}
+
+.tc-15-confirm-popout .tc-15-confirm-popout-bd {
+    padding: 0;
+    position: static!important;
+    left:50%;
+}
+
+.tc-15-confirm-popout .tc-15-confirm-popout-ft {
+    margin-top: 24px;
+    text-align: right;
+    font-size: 0;
+    background-color: transparent;
+    padding: 0;
+    border-top: none;
+}
+.tc-15-confirm-popout .tc-15-confirm-popout-ft .tc-link-btn{
+    margin-left: 10px;
+    font-size: 12px;
+    margin-bottom: -5px;
+    line-height: initial;
+}
+.tc-15-confirm-popout .tc-15-confirm-popout-ft .tc-link-btn.black{
+    color: #000;
+
+}
+.tc-15-confirm-popout .tc-15-confirm-popout-ft .tc-15-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    vertical-align: middle;
+    text-decoration: none;
+    height: inherit;
+    min-width: inherit;
+    line-height: inherit;
+    border: none;
+    color: #006eff;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-bottom: -5px;
+}
+.tc-15-confirm-popout .tc-15-confirm-popout-ft .tc-15-btn:hover,
+.tc-15-confirm-popout .tc-15-confirm-popout-ft .tc-15-btn:focus{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+.tc-15-confirm-popout .tc-15-confirm-popout-ft .tc-15-btn.weak{
+    color: #000;
+    margin-right: -5px;
+}
+/* 小三角 */
+
+.tc-15-confirm-popout .tc-15-confirm-popout-bd:before,
+.tc-15-confirm-popout .tc-15-confirm-popout-bd:after {
+    font-size: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: '';
+    border: 8px dashed transparent;
+    margin-left: -10px;
+}
+
+.tc-15-confirm-popout .tc-15-confirm-popout-bd:after {
+    border: 7px dashed transparent;
+    margin-left:-9px;
+}
+/*向上*/
+
+.tc-15-confirm-popout-top .tc-15-confirm-popout-bd:before,
+.tc-15-confirm-popout-top .tc-15-confirm-popout-bd:after {
+    bottom: 100%;
+    left: inherit;
+    right: inherit;
+    border-bottom-style: solid;
+}
+
+.tc-15-confirm-popout-top .tc-15-confirm-popout-bd:before {
+    border-bottom-color: #ddd;
+}
+
+.tc-15-confirm-popout-top .tc-15-confirm-popout-bd:after {
+    /*margin-left: 1px;*/
+    border-bottom-color: #fff;
+}
+/*向下*/
+.tc-15-confirm-popout-bottom .tc-15-confirm-popout-bd:before,
+.tc-15-confirm-popout-bottom .tc-15-confirm-popout-bd:after {
+    top: 100%;
+    left: inherit;
+    right: inherit;
+    border-top-style: solid;
+}
+
+.tc-15-confirm-popout-bottom .tc-15-confirm-popout-bd:before {
+    border-top-color: #ddd;
+}
+
+.tc-15-confirm-popout-bottom .tc-15-confirm-popout-bd:after {
+    border-top-color: #fff;
+}
+
+/*向左*/
+.tc-15-confirm-popout-left .tc-15-confirm-popout-bd:before,
+.tc-15-confirm-popout-left .tc-15-confirm-popout-bd:after {
+    top: 22px;
+    left: -5px;
+    right: inherit;
+    border-right-style: solid;
+}
+
+.tc-15-confirm-popout-left .tc-15-confirm-popout-bd:before {
+    border-right-color: #ddd;
+    border-width: 7px;
+}
+
+.tc-15-confirm-popout-left .tc-15-confirm-popout-bd:after {
+    border-right-color: #fff;
+    left: -5px;
+    top: 22px;
+    border-width: 7px;
+}
+
+
+
+/* 小三角居左 */
+.tc-15-confirm-popout-top.align-start .tc-15-confirm-popout-bd,
+.tc-15-confirm-popout-bottom.align-start .tc-15-confirm-popout-bd {
+    left:30px; /*因为有个margin-left:-10所以为30px*/
+}
+
+
+/* 小三角居右 */
+
+.tc-15-confirm-popout-top.align-end .tc-15-confirm-popout-bd,
+.tc-15-confirm-popout-bottom.align-end .tc-15-confirm-popout-bd {
+    left: auto;
+    right: 20px;
+}
+
+.tc-15-confirm-popout-top.align-end .tc-15-confirm-popout-bd:after,
+.tc-15-confirm-popout-bottom.align-end .tc-15-confirm-popout-bd:after {
+    margin-right: 1px;
+}

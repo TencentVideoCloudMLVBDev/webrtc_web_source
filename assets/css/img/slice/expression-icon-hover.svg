@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>表情-hover/press</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="22" height="22"></rect>
+    </defs>
+    <g id="pc端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="表情-hover/press">
+            <g id="表情">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Mask" fill="#D8D8D8" opacity="0" xlink:href="#path-1"></use>
+                <g mask="url(#mask-2)" id="Group">
+                    <g transform="translate(1.000000, 1.000000)">
+                        <g>
+                            <circle id="Combined-Shape" stroke="#006eff" stroke-width="2" cx="10.5" cy="10.5" r="9.5"></circle>
+                            <path d="M6.54132378,13.0168314 C7.50557751,12.2938895 13.5139664,12.3172074 14.4471189,13.0168314 C15.4904152,13.7990348 13.1352369,15.6203994 10.4999718,15.6203994 C7.86470679,15.6203994 5.52912872,13.7757169 6.54132378,13.0168314 Z" id="Path-2" fill="#006eff"></path>
+                            <circle id="Oval-3" fill="#006eff" cx="6.825" cy="8.925" r="1.575"></circle>
+                            <circle id="Oval-3-Copy" fill="#006eff" cx="14.175" cy="8.925" r="1.575"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

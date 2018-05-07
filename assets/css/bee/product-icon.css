@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+i[class*=pd-]{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pd-cloud{
+    background-image: url(img/slice/product/pd-cloud.svg);
+}
+.pd-eip{
+    background-image: url(img/slice/product/pd-eip.svg);
+}
+.pd-monitor{
+    background-image: url(img/slice/product/pd-monitor.svg);
+}
+.pd-safe{
+    background-image: url(img/slice/product/pd-safe.svg);
+}
+.pd-ssh{
+    background-image: url(img/slice/product/pd-ssh.svg);
+}
+.pd-vpc{
+    background-image: url(img/slice/product/pd-vpc.svg);
+
+}

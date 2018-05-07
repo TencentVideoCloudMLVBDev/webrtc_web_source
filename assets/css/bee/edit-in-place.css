@@ -1,0 +1,65 @@
+.tc-15-edit-in-place {
+    display: inline-block;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.tc-15-edit-in-place .tc-15-input-text-wrap {
+    display: block;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.tc-15-edit-in-place .tc-15-input-text {
+    float: left;
+}
+
+.tc-15-edit-in-place .tc-15-input-onlyread {
+    float: left;
+    color: #000;
+    font-size: 14px;
+    line-height: 27px;
+    margin-left: 5px;
+}
+
+.tc-15-edit-in-place .tc-15-input-tips {
+    margin: 10px 0 0
+}
+
+.tc-15-edit-in-place .tc-15-btn {
+    float: left;
+    margin-right: 5px
+}
+
+
+
+/* 新版 by wenjuli*/
+.in-place-editor{
+    display:inline-block;
+    padding:10px;
+    overflow:hidden;
+    border:1px solid #BABEC2;
+    border-radius:2px;
+    background-color:#fff;
+}
+.in-place-editor .text-suffix{
+    font-size:12px;
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:5px;
+}
+.in-place-editor .form-input-help{
+    margin-top:5px;
+}
+.in-place-editor .action-line{
+    border-top:1px solid #D1D2D3;
+    padding-top:10px;
+    margin-top:10px;
+    font-size:0;
+}
+.in-place-editor .action-line .tc-15-btn{
+    margin-right:5px;
+}

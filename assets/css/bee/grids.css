@@ -1,0 +1,165 @@
+
+.tc-g {
+    margin-left:-10px;
+    margin-right:-10px;
+    font-size:0;
+}
+/*.tc-g:before,
+.tc-g:after{
+    display: table;
+    content: '';
+}
+.tc-g:after{
+    clear: both;
+}*/
+
+.tc-g [class *= "tc-g-u"] {
+    /*float: left;*/
+    display:inline-block;
+    vertical-align:top;
+    font-size:12px;
+
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.tc-g-u-1-24 {
+    width: 4.1667%;
+}
+
+.tc-g-u-1-12,
+.tc-g-u-2-24 {
+    width: 8.3333%;
+}
+
+.tc-g-u-1-8,
+.tc-g-u-3-24 {
+    width: 12.5000%;
+}
+
+.tc-g-u-1-6,
+.tc-g-u-4-24 {
+    width: 16.6667%;
+}
+
+.tc-g-u-1-5 {
+    width: 20%;
+}
+
+.tc-g-u-5-24 {
+    width: 20.8333%;
+}
+
+.tc-g-u-1-4,
+.tc-g-u-6-24 {
+    width: 25%;
+}
+
+.tc-g-u-7-24 {
+    width: 29.1667%;
+}
+
+.tc-g-u-1-3,
+.tc-g-u-8-24 {
+    width: 33.3333%;
+}
+
+.tc-g-u-3-8,
+.tc-g-u-9-24 {
+    width: 37.5000%;
+}
+
+.tc-g-u-2-5 {
+    width: 40%;
+}
+
+.tc-g-u-5-12,
+.tc-g-u-10-24 {
+    width: 41.6667%;
+}
+
+.tc-g-u-11-24 {
+    width: 45.8333%;
+}
+
+.tc-g-u-1-2,
+.tc-g-u-12-24 {
+    width: 50%;
+}
+
+.tc-g-u-13-24 {
+    width: 54.1667%;
+}
+
+.tc-g-u-7-12,
+.tc-g-u-14-24 {
+    width: 58.3333%;
+}
+
+.tc-g-u-3-5 {
+    width: 60%;
+}
+
+.tc-g-u-5-8,
+.tc-g-u-15-24 {
+    width: 62.5000%;
+}
+
+.tc-g-u-2-3,
+.tc-g-u-16-24 {
+    width: 66.6667%;
+}
+
+.tc-g-u-17-24 {
+    width: 70.8333%;
+}
+
+.tc-g-u-3-4,
+.tc-g-u-18-24 {
+    width: 75%;
+}
+
+.tc-g-u-19-24 {
+    width: 79.1667%;
+}
+
+.tc-g-u-4-5 {
+    width: 80%;
+}
+
+.tc-g-u-5-6,
+.tc-g-u-20-24 {
+    width: 83.3333%;
+}
+
+.tc-g-u-7-8,
+.tc-g-u-21-24 {
+    width: 87.5000%;
+}
+
+.tc-g-u-11-12,
+.tc-g-u-22-24 {
+    width: 91.6667%;
+}
+
+.tc-g-u-23-24 {
+    width: 95.8333%;
+}
+
+.tc-g-u-1,
+.tc-g-u-1-1,
+.tc-g-u-5-5,
+.tc-g-u-24-24 {
+    width: 100%;
+}
+
+/*模块之间有分割线*/
+.tc-g.with-divider [class*=tc-g-u]{
+    border-left:1px solid #E5E8EE;
+}
+.tc-g.with-divider [class*=tc-g-u]:first-child{
+    border-left:0 none;
+}

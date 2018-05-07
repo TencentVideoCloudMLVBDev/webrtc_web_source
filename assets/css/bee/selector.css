@@ -1,0 +1,208 @@
+/** 
+ * 选择器
+ * by wenjuli
+ * 依赖：search-box.css
+ */
+.tc-15-mod-selector{
+    
+}
+.tc-15-mod-selector-tb{
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+.tc-15-mod-selector .tc-15-option-cell{
+    display:table-cell;
+    font-size:12px;
+    position:relative;
+}
+.tc-15-mod-selector .separator-cell{
+    width:38px;
+    text-align:center;
+    vertical-align:middle;
+}
+.tc-15-mod-selector .separator-cell .icon-sep{
+    display: inline-block;
+    vertical-align:middle;
+    width:21px;
+    height:10px;
+    background-image:url(img/slice/selector/icon-sep.png);
+}
+.tc-15-option-cell .tc-15-option-hd{
+    height:31px;
+    line-height:31px;
+}
+.tc-15-mod-selector-area h4,
+.tc-15-option-cell .tc-15-option-hd h4{
+    font-size:12px;
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:16px;
+}
+
+.tc-15-option-bd{
+    height:380px;
+}
+
+
+
+/* 对搜索框的异化 */
+.tc-15-mod-selector .search-box{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    margin-bottom:-1px;
+}
+.tc-15-mod-selector .search-box .search-input{
+    border-bottom-left-radius:0;
+}
+
+/* 选项列表 */
+.tc-15-option-box{
+    border:none;
+    overflow-y:auto;
+    background-color:#fff;
+    text-align:center;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    height:350px;
+    border:1px solid #ddd;
+}
+.tc-15-option-list li,
+.tc-15-option-box .info-row{
+    padding-left:10px;
+    height:50px;
+    line-height:50px;
+    position:relative;
+    font-size: 12px;
+    color:#454a51;
+    cursor:default;
+    text-align:left;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    border-bottom:1px solid #e6ebf2;
+    position:relative;
+}
+.tc-15-option-box .info-row{
+    padding:0 10px;
+    text-align:center;
+}
+
+.dialog_layer_v2 .tc-15-option-box .tc-15-table-panel,
+.tc-15-rich-dialog .tc-15-option-box .tc-15-table-panel
+{
+    border:none;
+}
+
+
+
+.tc-15-option-list li:hover,
+.tc-15-option-list .on{
+    background-color: #f2f2f2;
+}
+.tc-15-option-list .selected,
+.tc-15-option-list .selected:hover{
+    /* background-color:#bfd8fc; */
+}
+.tc-15-option-list li .tc-15-checkbox{
+    position:absolute;
+    top:17px;
+}
+.tc-15-option-list li .opt-txt{
+    /*display:inline-block;*/
+    display:block;
+    vertical-align:middle;
+    line-height:1;
+    height:49px;
+}
+.tc-15-option-list li .opt-txt:before{
+    display:inline-block;
+    content:'';
+    height:100%;
+    width:0;
+    font-size:0;
+    vertical-align:middle;
+}
+.tc-15-option-list li label.opt-txt{
+    cursor: pointer;
+}
+.tc-15-checkbox + .opt-txt{
+    margin-left:26px;
+}
+.tc-15-option-list li .opt-txt .opt-txt-inner{
+    line-height:1.5;
+    font-size:12px;
+    display:inline-block;
+    vertical-align:middle;
+}
+.opt-txt .item-name,
+.opt-txt .item-descr{
+    display:block;
+    max-width:16em;
+    white-space:nowrap;
+    overflow:hidden;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+}
+.item-descr{
+    color:#ababab;
+}
+
+.tc-15-option-list li .opt-act{
+    position:absolute;
+    top:0;
+    right:20px;
+    height:100%;
+    padding:0 10px;
+    text-align:center;
+}
+.tc-15-option-list li .opt-act .icon-del{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    overflow:hidden;
+    line-height:99;
+    background-image:url(img/slice/svg/btn-dismiss.svg);
+    vertical-align:middle;
+    background-position: inherit;
+}
+.tc-15-option-list li .opt-act .icon-del:hover{
+    background-image:url(img/slice/svg/btn-dismiss-hover.svg);
+}
+
+.options-right .tc-15-option-box{
+    height: 100%;
+}
+
+.tc-15-mod-selector-tips{
+    color:#ababab;
+    margin-top:5px;
+    font-size:14px;
+}
+
+.tc-15-option-box .info-box{
+    height:100%;
+    font-size:14px;
+    text-align:center;
+}
+.tc-15-option-box .info-box:before{
+    display:inline-block;
+    content:"";
+    height:100%;
+    width:0;
+    font-size:0;
+    vertical-align:middle;
+}
+.tc-15-option-box .info-box-inner{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align:middle;
+}
+.tc-15-option-box .n-loading-icon{
+    margin-right:10px;
+    vertical-align:-4px;
+}
+.tc-15-option-box .n-error-icon{
+    margin-right:10px;
+    vertical-align:-3px;
+}

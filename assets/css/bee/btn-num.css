@@ -1,0 +1,124 @@
+/* 数字按钮 */
+
+.input-num-inner {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    position: relative;
+    display: inline-block;
+    height: 35px;
+    width: 85px;
+    font-size: 12px;
+}
+
+.input-num-inner+.tip-word {
+    color: #000
+}
+
+.input-num .minus,
+.input-num .plus {
+    width: 30px;
+    height: 16px;
+    border: 1px solid #ddd;
+    background: #fff;
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    font-size: 0;
+}
+
+.input-num .minus:hover,
+.input-num .plus:hover {
+    cursor: pointer
+}
+
+.input-num .minus {
+    border-radius: 0;
+    top: 17px;
+    right: 0;
+}
+
+.input-num .plus {
+    border-radius: 0;
+    top: 0;
+    right: 0;
+}
+
+.input-num .num {
+    padding: 0;
+    width: 54px;
+    height: 33px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-family: "microsoft yahei";
+    position: relative;
+    text-align: center;
+    box-sizing: content-box;
+}
+
+.num-plus-icon,
+.num-minus-icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.input-num .plus:hover,
+.input-num .minus:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.input-num .plus.disabled:hover,
+.input-num .minus.disabled:hover {
+    background-color: #fff;
+}
+
+.num-plus-icon {
+    background-image: url(img/slice/svg/page-prev.svg);
+    background-position: inherit;
+}
+
+.num-minus-icon {
+    background-image: url(img/slice/svg/page-next.svg);
+    background-position: inherit;
+}
+
+.input-num .minus:focus,
+.input-num .num:focus,
+.input-num .num:hover,
+.input-num .plus:focus {
+    border-color: #ddd;
+    z-index: 1
+}
+
+.input-num .minus.disabled,
+.input-num .plus.disabled {
+    cursor: default
+}
+
+.input-num .minus.disabled .num-minus-icon {
+    background-image: url(img/slice/btn-num/arrow-down-black-disabled-16.png);
+}
+
+.input-num .plus.disabled .num-plus-icon {
+    background-image: url(img/slice/btn-num/arrow-up-black-disabled-16.png);
+}
+
+.input-num .minus.disabled:focus,
+.input-num .plus.disabled:focus {
+    border-color: #bbb
+}
+
+.input-num.error .num {
+    border: 1px solid #ddd;
+    color: #bbb;
+    z-index: 3
+}
+
+.input-num.error .num:focus {
+    border: 1px solid #ddd;
+    outline: 0
+}

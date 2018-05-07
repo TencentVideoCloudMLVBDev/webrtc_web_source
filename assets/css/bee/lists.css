@@ -1,0 +1,148 @@
+@charset "utf-8";
+
+/* 图表列表 */
+.chart-grid{
+    display:table;
+    table-layout:fixed;
+    width:100%;
+    margin-bottom:26px;
+    border-bottom:1px solid #E6EBF2;
+}
+.chart-caption{
+    display:table-caption;
+    margin-bottom:14px;
+}
+.chart-row{
+    display:table-row;
+}
+.chart-cell{
+    display:table-cell;
+    padding-bottom:20px;
+}
+.gap-cell{
+    width:80px;
+}
+.chart-cell .chart-title{
+    font-size:14px;
+}
+.chart-title .text-unit{
+    font-size:12px;
+    color:#A2A2A2;
+    font-weight:normal;
+}
+.chart-main{
+    margin-top:10px;
+    background-color:#fdfdfd;
+    font-size:0;
+}
+
+
+/* 参数列表 */
+.param-box{
+    padding: 0;
+}
+.param-box + .param-box{
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.param-box hr{
+    margin: 20px 0;
+}
+
+.param-box .param-hd{
+    line-height:1.6;
+    margin-bottom:10px;
+    color: #000;
+    margin-bottom: 11px;
+    height: 30px;
+    line-height: 30px;
+}
+.param-box .param-hd h3{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.param-box .param-hd .tc-link-btn{
+    float: right;
+    line-height: 20px;
+    position: relative;
+    font-size: 12px;
+}
+.param-box .param-hd .link-edit{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+.param-box .param-hd .link-edit .pencil-icon{
+    margin: 0 5px 0 0;
+    vertical-align: -2px;
+}
+.param-box .param-bd{
+    padding-left: 0;
+}
+.item-descr-list{
+    display:table;
+}
+.item-descr-list > li{
+    display:table-row;
+    font-size: 12px;
+    line-height:1.7;
+}
+.item-descr-list .item-descr-tit,
+.item-descr-list .item-descr-txt{
+    display:table-cell;
+    vertical-align:top;
+    padding-bottom: 16px;
+}
+.item-descr-list .item-descr-tit{
+    color: #888;
+    padding-right:20px;
+    white-space:nowrap;
+    text-align:left;
+    width:auto;
+}
+.item-descr-list .item-descr-txt{
+    color: #444;
+    word-break: break-all;
+}
+
+/* 固定宽度6em，超过换行 */
+.item-descr-list.fixed-layout .item-descr-tit{
+    white-space:normal;
+    width: auto;
+}
+
+.param-box .tc-15-table-panel{
+    margin-top: 8px;
+}
+
+/* 自定义列表字段 */
+.customize-column .list-wrap {
+    padding-left: 2%;
+    width: 100%;
+    box-sizing: border-box;
+}
+.customize-column .tc-15-msg{
+    margin-left: 0;
+    margin-right: 0;
+}
+.customize-column .list-wrap .list-mod {
+    width: 33%;
+    float: left;
+}
+.customize-column .list-wrap li {
+    margin-bottom: 10px;
+}
+.customize-column .list-wrap li .form-ctrl-label{
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+
+

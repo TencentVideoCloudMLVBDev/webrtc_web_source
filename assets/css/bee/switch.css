@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+.tc-15-switch{
+	position:relative;
+	display:inline-block;
+	width: 35px;
+	height: 20px;
+	/*-webkit-user-select:none;*/
+	/*-moz-user-select:none;*/
+	/*-ms-user-select:none;*/
+	/*user-select:none;*/
+	vertical-align:middle;
+	/* cursor: pointer; */
+}
+.form-unit .tc-15-switch{
+	margin-right:5px;
+}
+.tc-15-switch-input{
+	position:absolute;
+	top:0;
+	left:0;
+	opacity:0;
+}
+
+/* 辅助节点 */
+.tc-15-switch-helper{
+	position:relative;
+	display:inline-block;
+	width:100%;
+	height:100%;
+	border-radius: 26px;
+	overflow:hidden;
+	text-indent:-99px;
+	background-color: #bbb;
+	padding:0 !important;
+	transition-duration:0.4s;
+	transition-property:background-color;
+	font-size: 0;
+	cursor: pointer;
+}
+/* 小圆点 */
+.tc-15-switch-helper:before{
+	content:'';
+	position:absolute;
+	top:2px;
+	left:2px;
+	/*float:left;
+	margin-top:2px;
+	margin-left:2px;*/
+	width: 16px;
+	height: 16px;
+	border-radius: 22px;
+	background-color:#fff;
+	pointer-events:none;
+	transition-timing-function:cubic-bezier(.54, 1.85, .5, 1); /*(0.5,0,0.5,1)*/
+	transition-duration:0.4s;
+	/*transition-property:transform;*/
+	transition-property:left;
+}
+.tc-15-switch-input:checked + .tc-15-switch-helper:before{
+	/*IE9不支持translate，又没有针对IE9的hack，只好用left搞*/
+	/*-webkit-transform:translate3d(30px, 0, 0);
+	-ms-transform:translate3d(30px, 0, 0);
+	transform:translate3d(30px, 0, 0);*/
+	left: 17px;
+}
+
+.tc-15-switch:hover .tc-15-switch-helper:before{
+	background-color: #fff;
+}
+
+.tc-15-switch .switch-loading{
+	display:none;
+	width:14px;
+	height:14px;
+	background:url(img/input-loading.gif) 0 0 no-repeat;
+	position:absolute;
+	top:50%;
+	left:6px;
+	margin:-7px 0 0 0;
+}
+.tc-15-switch-checked .switch-loading{
+	right:7px;
+	left:auto;
+}
+.tc-15-switch.indeterminate .switch-loading{
+	display:block;
+}
+
+/* 对号，错号小图标*/
+.tc-15-switch-helper:after{
+	position:absolute;
+	top:8px;
+	right:10px;
+	content:'';
+	width:12px;
+	height:12px;
+	background-image: none;
+}
+.tc-15-switch-input:checked + .tc-15-switch-helper:after{
+	right:auto;
+	left:10px;
+	background-image: none;
+}
+
+.indeterminate .tc-15-switch-helper:after{
+	top:7px;
+	right:9px;
+	width:14px;
+	height:14px;
+	background: none;
+}
+.indeterminate .tc-15-switch-input:checked + .tc-15-switch-helper:after{
+	right:auto;
+	left:9px;
+	background: none;
+}
+
+
+.tc-15-switch-input:checked + .tc-15-switch-helper{
+	background-color: #006eff;
+}
+.tc-15-switch-input:disabled + .tc-15-switch-helper{
+	background-color: #e5e5e5;
+	cursor: default;
+}
+.tc-15-switch-input:checked:disabled + .tc-15-switch-helper{
+	background-color: #79b0f9;
+	cursor: default;
+}
+
+
+/**
+ * IE8降级
+ * 不支持特性：
+ * 		1.border-radius
+ * 		2.兄弟选择器（+）
+ * 		3.transiton
+ * 		4.transform
+ */
+@media \0screen {
+	.tc-15-switch-helper:before{
+		width:27px;
+	}
+	.tc-15-switch-helper:after{
+		right:8px;
+	}
+	.tc-15-switch-checked .tc-15-switch-helper{
+		background-color:#006eff;
+	}
+    .tc-15-switch-checked .tc-15-switch-helper:before{
+		left:29px;
+	}
+	.tc-15-switch-checked .tc-15-switch-helper:after{
+		right:auto;
+		left:8px;
+		background-image:url(img/slice/switch-on-flag.png);
+	}
+
+	.tc-15-switch-disabled .tc-15-switch-helper{
+		background-color:#E8E8E8;
+	}
+    
+    .tc-15-switch-checked.tc-15-switch-disabled .tc-15-switch-helper{
+    	background-color:#BFD8FC;
+    }
+
+    .indeterminate.tc-15-switch-checked .tc-15-switch-helper:after{
+		right:auto;
+		left:9px;
+		background:url(img/switch-loading-blue.gif) 0 0 no-repeat;
+	}
+
+}

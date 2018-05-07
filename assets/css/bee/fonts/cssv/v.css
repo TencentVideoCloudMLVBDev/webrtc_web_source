@@ -1,0 +1,14 @@
+:root {
+    --primary1: red;
+    --primary2: yellow;
+    --primary3: blue;
+}
+
+.btn--active {
+    --bg: green;
+}
+
+.btn {
+    --bg: red;
+    background: var(--bg);
+}

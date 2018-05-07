@@ -1,0 +1,42 @@
+.tc-15-tag-list {
+	padding: 10px 20px;
+	background: #fbfbfb;
+	margin-top: 5px;
+	clear: both;
+}
+.tc-15-tag-list:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.tc-15-tag {
+	float: left;
+	margin-right: 10px;
+	height: 25px;
+	font-size: 12px;
+	line-height: 26px;
+	border: 1px solid #ddd;
+	background: #fff;
+	padding: 0 30px 0 10px;
+	color: #000;
+	border-radius: 0;
+	position: relative;
+	cursor: pointer;
+}
+.tc-15-tag:hover, .tc-15-tag:focus {
+	border-color: #ddd;
+	background: #f2f2f2;
+}
+.tc-15-tag-clear {
+	height: 27px;
+	line-height: 27px;
+	font-size: 12px;
+	padding: 0 10px;
+	color: #006eff;
+	cursor: pointer;
+	float: left;
+}
+.tc-15-tag-clear:hover, .tc-15-tag-clear:focus {
+	color: #006eff;
+}
+

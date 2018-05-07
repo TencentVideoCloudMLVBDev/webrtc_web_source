@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="24px" viewBox="0 0 28 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>画笔工具-normal</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="pc端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画笔工具-normal" fill="#DEDEDE">
+            <g id="编辑" transform="translate(5.000000, 3.000000)" fill-rule="nonzero">
+                <path d="M15.7376338,0 L13,2.73747109 L16.2623662,6 L19,3.26252891 L15.7376338,0 Z M0,14.6617819 L0,18 L3.4326378,18 L15,7.28018757 L11.6276686,4 L0,14.6617819 Z" id="Shape"></path>
+            </g>
+            <polygon id="Rectangle-6" points="27 18 27 22 23 22"></polygon>
+        </g>
+    </g>
+</svg>

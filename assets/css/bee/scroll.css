@@ -1,0 +1,36 @@
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 17px;
+    height: 17px;
+    background-color: transparent;
+    border-radius: 9px;
+}
+
+::-webkit-scrollbar:hover {
+    background-color: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dbdbdb;
+    border-radius: 9px;
+    background-clip: content-box;
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c2c2c2;
+    background-clip: content-box;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb {
+    background: #3f454d;
+    background-clip: content-box;
+    border: 5px solid transparent;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb:hover {
+    background: #545c66;
+    background-clip: content-box;
+}
+

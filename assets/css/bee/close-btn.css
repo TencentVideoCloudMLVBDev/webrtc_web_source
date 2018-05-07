@@ -1,0 +1,42 @@
+.tc-15-btn-close {
+	line-height: 100;
+	overflow: hidden;
+	outline: none;
+}
+
+.tc-15-btn-close:before{
+	content: '';
+	width: 16px;
+	height: 16px;
+	background-image: url(img/slice/svg/btn-dismiss.svg);
+	display: block;
+}
+
+.manage-area-aside .tc-15-btn-close {
+	position: absolute;
+	z-index: 10;
+	top: 25px;
+	right: 30px;
+}
+.tc-15-rich-dialog-hd .tc-15-btn-close {
+	position: absolute;
+	width: 26px;
+	height: 26px;
+	top: 0;
+	right: -7px;
+	padding: 5px;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.tc-15-rich-dialog-hd .tc-15-btn-close:hover{
+	background-color: #f2f2f2;
+}
+
+.tc-15-tag .tc-15-btn-close {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	background-image: none;
+}

@@ -1,0 +1,252 @@
+@charset "utf-8";
+
+.tc-15-multiselect input {
+  outline: 0;
+  -webkit-appearance: none;
+}
+.tc-15-multiselect-style {
+  min-width: 180px;
+  max-width: 180px;
+}
+.tc-15-multiselect-style a.tc-15-dropdown-link {
+  max-width: 180px;
+}
+.tc-15-multiselect {
+  display: none;
+  position: absolute;
+  margin-top: 5px;
+  min-width: 360px;
+  background-color: #fff;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  z-index: 10;
+}
+.tc-15-multiselect-active .tc-15-multiselect {
+  display: block;
+}
+.tc-15-multiselect-active .tc-15-dropdown-link em {
+  display: block;
+  max-width: 100%;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tc-15-multiselect .tc-15-multiselect-bd {
+  overflow: hidden;
+}
+.tc-15-multiselect-ft {
+  font-size: 0;
+  border: 1px solid #ddd;
+  text-align: right;
+  white-space: nowrap;
+  padding: 10px;
+}
+.tc-15-multiselect-ft button {
+  margin: 0 5px;
+}
+.tc-15-multiselect-ft button:last-child {
+  margin-right: 0;
+}
+.tc-15-multiselect-list {
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-list .search-wrap {
+  position: relative;
+  height: 30px;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-list .search-wrap .typing-keyword {
+  height: 100%;
+}
+.tc-15-multiselect-list .search-wrap .input-keyword-text {
+  width: 100%;
+  color: #000;
+  line-height: 20px;
+  padding: 4px 30px 4px 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-list .search-wrap .input-keyword-text:focus {
+  border-color: #006eff;
+  outline: 0;
+}
+.tc-15-multiselect-list .search-wrap .input-keyword-text::-webkit-input-placeholder {
+  color: #888;
+}
+.tc-15-multiselect-list .search-wrap .input-keyword-text::-moz-placeholder {
+  color: #888;
+}
+.tc-15-multiselect-list .search-wrap .input-keyword-text:-ms-input-placeholder {
+  color: #888;
+}
+.tc-15-multiselect-list .search-wrap .input-keyword-text:-moz-placeholder {
+  color: #888;
+}
+.tc-15-multiselect-list .search-wrap .btn-rm-txt {
+  display: none;
+  position: absolute;
+  top: 7px;
+  right: 30px;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  text-indent: -99px;
+  background-image: url(img/slice/svg/clear-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  cursor: pointer;
+}
+.tc-15-multiselect-list .search-wrap .btn-rm-txt:hover {
+  background-image: url(img/slice/svg/clear-icon.svg?fill=#444444);
+}
+.tc-15-multiselect-list.searching .search-wrap .btn-rm-txt {
+  display: inline-block;
+}
+.tc-15-multiselect-list.searching .search-wrap .input-keyword-text {
+  padding: 4px 50px 4px 10px;
+}
+.tc-15-multiselect-list .search-wrap .search-btn {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  text-indent: -999px;
+  background-image: url(img/slice/svg/icon-search.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+}
+.tc-15-multiselect-list .search-wrap .search-btn:hover {
+  background-image: url(img/slice/svg/icon-search.svg?fill=#444444);
+}
+.tc-15-multiselect-list .tc-15-multiselect-menu {
+  height: 250px;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-list .tc-15-multiselect-menu li,
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu li {
+  height: 30px;
+}
+.tc-15-multiselect-list .tc-15-multiselect-menu li:hover,
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu li:hover {
+  background-color: #f2f2f2;
+}
+.tc-15-multiselect-list .tc-15-multiselect-menu li.empty-help-txt:hover,
+.tc-15-multiselect-list .tc-15-multiselect-menu li.loading-status:hover,
+.tc-15-multiselect-list .tc-15-multiselect-menu li.failed-status:hover,
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu li.empty-help-txt:hover,
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu li.loading-status:hover,
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu li.failed-status:hover {
+  background-color: #fff;
+}
+.tc-15-multiselect-list .tc-15-multiselect-menu .tc-15-checkbox-wrap {
+  display: block;
+  font-size: 12px;
+  line-height: 30px;
+  margin-left: 0;
+  padding: 0 20px 0 10px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .match-item em {
+  color: #006eff;
+}
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .loading-status div,
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .failed-status div {
+  display: block;
+  font-size: 0;
+  color: #888;
+  width: 100%;
+  margin-left: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .loading-status i,
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .failed-status i {
+  float: left;
+  margin-top: 7px;
+  margin-right: 5px;
+}
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .loading-status span,
+.tc-15-multiselect-list.searching .tc-15-multiselect-menu .failed-status span {
+  float: left;
+  font-size: 12px;
+  line-height: 30px;
+}
+.tc-15-multiselect-selected {
+  float: left;
+  width: 50%;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-bottom: 0;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-selected .selected-wrap {
+  height: 29px;
+  line-height: 29px;
+  padding: 0 10px;
+}
+.tc-15-multiselect-selected .selected-wrap span {
+  display: inline-block;
+  font-size: 12px;
+  color: #888;
+}
+.tc-15-multiselect-selected .selected-wrap a {
+  float: right;
+}
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu {
+  height: 250px;
+  text-align: left;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu .selected-item {
+  display: block;
+  font-size: 12px;
+  max-width: 100%;
+  line-height: 30px;
+  margin-left: 0;
+  padding: 0 30px 0 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tc-15-multiselect-selected .tc-15-multiselect-selected-menu .selected-item span {
+  display: inline-block;
+  width: 100%;
+  color: #888;
+  box-sizing: border-box;
+}
+.tc-15-multiselect-selected.unselected-status .selected-wrap a {
+  color: #bbb;
+  cursor: default;
+}
+.tc-15-multiselect-selected.unselected-status .selected-wrap a:hover {
+  text-decoration: none;
+}
+.tc-15-multiselect .empty-help-txt div {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  width: 100%;
+  line-height: 30px;
+  margin-left: 0;
+  padding: 0 10px;
+  box-sizing: border-box;
+}

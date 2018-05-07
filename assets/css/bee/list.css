@@ -1,0 +1,139 @@
+.tc-15-list-wrap {
+	padding: 20px 0 28px;
+	margin: 0 20px;
+	font-size: 14px;
+	position: relative;
+}
+.tc-15-list-wrap:after, .tc-15-list-content:after, .tc-15-list-wrap li:after {
+	display: table;
+	clear: both;
+	content: '';
+}
+.tc-15-list-legend {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 52px;
+	color: #454a51;
+	border-top: 1px solid #edeef2;
+}
+.tc-15-list-wrap li {
+	padding: 3px 0;
+	line-height: 35px;
+}
+.tc-15-list-tit {
+	float: left;
+	width: 80px;
+	padding-right: 15px;
+	text-align: left;
+	color: #999;
+}
+.tc-15-list-tit[aria-required="true"]:after {
+	content: "*";
+	color: #e1504a;
+}
+.tc-15-list-det {
+	float: left;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.tc-15-list-det a {
+	color: #006eff;
+	margin: 0 0.8em;
+	text-decoration: none
+}
+.tc-15-list-det a:hover {
+	text-decoration: underline;
+}
+.tc-15-list-wrap.col2, .tc-15-list-wrap.col3 {
+	padding-top: 0;
+	margin-top: 15px;
+	line-height: 28px;
+}
+.tc-15-list-wrap.col2 .tc-15-list-content, .tc-15-list-wrap.col3 .tc-15-list-content {
+	padding: 7px 0;
+	border: 1px solid #cbcfd9;
+	border-width: 1px 0;
+	position: relative;
+}
+.tc-15-list-wrap.col2 .tc-15-list-legend, .tc-15-list-wrap.col3 .tc-15-list-legend {
+	font-size: 14px;
+	line-height: 29px;
+	padding-left: 10px;
+}
+.tc-15-list-wrap.col2 ul {
+	float: left;
+	width: 49.6%;
+}
+.tc-15-list-wrap.col2 li.even, .tc-15-list-wrap.col3 li.even {
+	margin-bottom: 18px
+}
+.manage-area-aside .tc-15-list-wrap.col2 li.even,.manage-area-aside .tc-15-list-wrap.col3 li.even{
+	margin-bottom:0;
+}
+.tc-15-list-wrap.col2 ul.v-hr {
+	border-right: 1px solid #e5e7ec;
+}
+.tc-15-list-wrap.col2 .tc-15-list-tit, .tc-15-list-wrap.col3 .tc-15-list-tit {
+	width: 76px;
+}
+.tc-15-list-wrap.col2 .tc-15-list-det {
+	width: 63%;
+}
+.tc-15-list-wrap.col3 ul {
+	float: left;
+	width: 33.2%;
+}
+.tc-15-list-wrap.col3 ul.v-hr {
+	border-right: 1px solid #e5e7ec;
+}
+.tc-15-list-wrap.col3 .tc-15-list-tit {
+	width: 76px;
+	padding-right: 14px;
+}
+.tc-15-list-wrap.col2 .display-btn, .tc-15-list-wrap.col3 .display-btn {
+	width: 64px;
+	height: 14px;
+	border: 1px solid #cbcfd9;
+	border-top: 0;
+	border-radius: 0 0 3px 3px;
+	position: absolute;
+	bottom: 13px;
+	left: 50%;
+	margin: 0 0 0 -33px;
+	cursor: pointer;
+	background: #f5f7fa url(img/ud.png) no-repeat
+}
+.tc-15-list-wrap.col2 .display-btn.show, .tc-15-list-wrap.col3 .display-btn.show {
+	background-position: center -23px;
+}
+.tc-15-list-wrap.col2 .display-btn.hidden, .tc-15-list-wrap.col3 .display-btn.hidden {
+	background-position: center -3px;
+}
+.tc-15-list-wrap.form .tc-15-input-text-wrap {
+	line-height: 12px;
+}
+.tc-15-list-wrap.form li {
+	padding: 10px 0;
+}
+.tc-15-list-wrap.form .tc-15-list-tit {
+}
+.tc-15-list-btn-wrap {
+	padding-left: 90px;
+	margin-top: 18px;
+	display: block;
+}
+.tc-15-list-btn-wrap > button {
+	float: left;
+	margin-right: 10px
+}
+.tc-15-rich-dialog .tc-15-list-wrap {
+	border: 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 37px;
+}
+.tc-15-rich-dialog .tc-15-list-wrap li {
+	min-height: 27px;
+	line-height: 27px;
+	padding: 5px 0;
+}

@@ -1,0 +1,85 @@
+@charset "utf-8";
+/********************* 表格 start *********************/
+
+/*表格操作欄 - overflow導致日曆下拉無法顯示*/
+.tc-15-action-panel{
+	overflow-x: initial;
+}
+
+/*將單元格左右padding20px更改為原來的10px*/
+.tc-15-table-panel .tc-15-table-box td,
+.tc-15-table-panel .tc-15-table-box th{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*表格、分頁模擬卡片效果，在卡片裡面去掉模擬效果*/
+.tc-15-page,
+.tc-15-table-panel{
+	/* box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); */
+}
+.tc-panel .tc-15-page,
+.tc-panel .tc-15-table-panel{
+	box-shadow: none;
+}
+
+/*調整翻頁間隙*/
+.tc-panel.panel-table .tc-15-page,
+.tc-15-page{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+/********************* 表格 end *********************/
+
+/********************* 日曆組件 start *********************/
+
+/*在表格操作欄裡面，日曆icon定位問題*/
+.tc-15-action-panel .tc-15-simulate-select{
+	float: none;
+	margin-right: 0;
+}
+
+/*日曆選擇選中日期時樣式錯誤*/
+.tc-15-calendar td.tc-15-calendar-last,
+.tc-15-calendar td.tc-15-calendar-first{
+	color: #fff;
+}
+.tc-15-calendar td.tc-15-calendar-first:before,
+.tc-15-calendar td.tc-15-calendar-first:hover:before,
+.tc-15-calendar td.tc-15-calendar-last:before,
+.tc-15-calendar td.tc-15-calendar-last:hover:before{
+	width: 50%;
+	border-right: none;
+	background-image: none;
+	background-color: #f2f2f2;
+	border: none;
+}
+.tc-15-calendar td.tc-15-calendar-first:after,
+.tc-15-calendar td.tc-15-calendar-last:after{
+	content: '';
+	position: absolute;
+	display: block;
+	width: 25px;
+	height: 25px;
+	top: 0px;
+	border-radius: 50%;
+	z-index: -1;
+	background-color: #006eff;
+	left: 0px;
+}
+.tc-15-calendar td.tc-15-calendar-first:before,
+.tc-15-calendar td.tc-15-calendar-first:hover:before{
+	right: 0;
+	left: auto;
+}
+.tc-15-calendar td.tc-15-calendar-last:before,
+.tc-15-calendar td.tc-15-calendar-last:hover:before{
+    width: 50%;
+    left: 0;
+}
+.tc-15-calendar td.tc-15-calendar-current,
+.tc-15-calendar td.tc-15-calendar-current:hover{
+	background-color: #f2f2f2;
+	color: inherit;
+}
+/********************* 日曆組件 end *********************/

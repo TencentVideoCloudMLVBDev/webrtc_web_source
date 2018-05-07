@@ -1,0 +1,401 @@
+@charset "utf-8";
+.icon-arrow-left{
+    width:16px;
+    height:16px;
+    display: inline-block;
+    background-image:url(img/slice/svg/left-arrow-icon.svg);
+}
+.icon-arrow-right{
+    width:16px;
+    height:16px;
+    display: inline-block;
+    background-image:url(img/slice/svg/right-arrow-icon.svg);
+}
+.tc-15-tab {
+    font-size: 0;
+    position: relative;
+    border-bottom: none;
+    margin-bottom: 20px;
+    overflow: inherit;
+}
+.tc-15-tab.secondary-title{
+    margin-top: -21px;
+    background-color: transparent;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.tc-15-tab.secondary-title > .tc-15-tablist{
+    background-color: #fff;
+    padding: 0 20px;
+}
+.tc-15-tab.mt-20{
+    margin-top: -21px;
+}
+
+.tc-15-tablist {
+    line-height: inherit;
+    height: auto;
+    padding: 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 0;
+    margin-bottom: 20px;
+}
+
+.tc-15-tablist li {
+    display: inline-block;
+    position: relative;
+    margin-top: -1px;
+    margin-left: 10px;
+    line-height: 29px;
+}
+
+.tc-15-tablist li:first-child {
+    margin-left: 0;
+}
+
+.tc-15-tablist li a,
+.tc-15-tablist li a:hover {
+    text-decoration: none;
+}
+.tc-15-tab .tc-15-tablist li.disabled a,
+.tc-15-tab .tc-15-tablist li.disabled a:hover
+{
+    color: #bbb;
+    cursor: default;
+    border-bottom: none;
+}
+
+
+.tc-15-tablist li a {
+    display: block;
+    height: 100%;
+    font-size: 14px;
+    padding: 0 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    border-bottom: 0;
+    background: transparent;
+    color: #000;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+.tc-15-tablist li a:hover {
+    position: relative;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+    color: #000;
+    background: transparent;
+    font-size: 14px;
+    border-bottom: 2px solid #006eff;
+}
+
+.tc-15-tablist li.tc-cur a {
+    position: relative;
+    margin-bottom: -1px;
+    padding-bottom: 1px;
+    color: #000;
+    background: transparent;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px solid #006eff;
+}
+.tc-15-tab .tc-15-tablist .sub-tablist{
+    position: absolute;
+    white-space: nowrap;
+    margin-top: 8px;
+    display: none;
+    left: 0;
+}
+.tc-15-tab .tc-15-tablist .sub-tablist a{
+    font-size: 12px;
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    line-height: 1;
+    height: inherit;
+}
+.tc-15-tab .tc-15-tablist .sub-tablist a:last-child{
+    border-right: none;
+}
+.tc-15-tab .tc-15-tablist .sub-tablist a:hover{
+    border-bottom: none;
+    color: #006eff;
+    height: inherit;
+    line-height: 1;
+    border-right: 1px solid #ddd;
+}
+.tc-15-tab .tc-15-tablist .sub-tablist a:hover:last-child{
+    border-right: none;
+}
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist a,
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist a:hover
+{
+    border-bottom: none;
+    font-weight: normal;
+    color: #888;
+}
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist a:hover{
+    color: #000;
+}
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist a.current{
+    color: #006eff;
+    font-weight: bold;
+}
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist a.current:hover{
+    color: #006eff;
+}
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist a:hover{
+    color: #000;
+}
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur .sub-tablist{
+    display: block;
+    font-size: 12px;
+}
+
+.tc-15-tab.tc-sub-tab{
+    /* padding-bottom: 10px; */
+}
+
+.tc-15-tab.s .tc-15-tablist {
+    height: 29px;
+    line-height: 28px;
+}
+
+.tc-15-tab.s .tc-15-tablist li a {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+
+
+
+/* 无框tab */
+.tc-15-tab-alt > .tc-15-tablist {
+    padding: 0;
+    height: inherit;
+    line-height: normal;
+    display: block;
+    /*overflow-x: hidden;*/
+    /*overflow-y: initial;*/
+    vertical-align: middle;
+    white-space: nowrap;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+.tc-15-tab-alt.tc-sub-tab > .tc-15-tablist{
+    white-space: nowrap !important;
+    overflow: initial !important;
+    margin-bottom: 48px;
+}
+
+
+
+.tc-15-tab-alt > .tc-15-tablist li {
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: static;
+}
+
+.tc-15-tab-alt > .tc-15-tablist li:first-child {
+    margin-left: 0;
+}
+
+.tc-15-tab-alt > .tc-15-tablist li a,
+.tc-15-tab-alt > .tc-15-tablist li a:hover {
+    border: 0;
+    padding: 0 10px;
+    background-color: transparent;
+    color: #444;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 30px;
+    line-height: 30px;
+}
+
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur a,
+.tc-15-tab-alt > .tc-15-tablist li.tc-cur a:hover,
+.tc-15-tab-alt > .tc-15-tablist li a:hover
+{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #000;
+    border-bottom: 2px solid #006eff;
+    font-weight: bold;
+}
+.tc-15-tab-alt > .tc-15-tablist li a:hover{
+    font-weight:normal;
+}
+
+/* tab嵌套 */
+
+/*.tc-15-tab .tc-15-tab {*/
+    /*margin-top: 20px;*/
+/*}*/
+
+
+/*带关闭功能的tab S*/
+.tc-15-tab li.tc-cur .icon-close,
+.tc-15-tab li .icon-close {
+    position: absolute;
+    outline: none;
+    right: 6px;
+    top: 2px;
+    height: 16px;
+    width: 16px;
+    font: 400 14px Tahoma;
+    color: #a2a2a2;
+    background-color: #fff;
+    background: transparent;
+}
+
+.tc-15-tab.s li.tc-cur .icon-close,
+.tc-15-tab.s li .icon-close {
+    right: 0;
+    top: 0;
+    padding: 0;
+}
+/*带关闭功能的tab E*/
+.tc-15-tab .tc-icon-btn,
+.tc-15-tab .tc-link-btn{
+    padding: 5px;
+    font-size: 0;
+    vertical-align: middle;
+    position: absolute;
+    background-color: #fff;
+    z-index: 9;
+    margin-top: 3px;
+    top: 1px;
+    /* right: 0; */
+}
+.tc-15-tab .tc-icon-btn:hover,
+.tc-15-tab .tc-link-btn:hover{
+    background-color: #f2f2f2;
+}
+.tc-15-tab .tc-icon-btn:last-child,
+.tc-15-tab .tc-icon-btn:nth-last-child(2)
+{
+    margin-left: -26px;
+    top: 0;
+    right: 0;
+}
+
+
+.tc-15-tab .tab-panel{
+    font-size: 12px;
+}
+
+/*可编辑tab*/
+.tc-super-tab{
+    border: 1px solid #ddd;
+}
+.tc-super-tab .text{
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+}
+.tc-super-tab .tc-super-tablist{
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.tc-super-tab .tc-super-tablist li{
+    border:1px solid #ddd;
+    border-top: none;
+    border-bottom: none;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 150px;
+    max-width: 150px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    vertical-align: middle;
+    position: relative;
+    margin-right: -1px;
+}
+.tc-super-tab .tc-super-tablist li.tc-cur{
+    background-color: #fff;
+}
+.tc-super-tab .tc-super-tab-btn-box{
+    position: absolute;
+    top: 1px;
+    right: 0;
+    background-color: #f2f2f2;
+    height: 28px;
+    line-height: 28px;
+    width: 64px;
+    text-align: center;
+    display: none;
+    z-index: 99;
+}
+.tc-super-tab .tc-super-tablist li.tc-cur .tc-super-tab-btn-box{
+    background-color: #fff;
+}
+.tc-super-tab .tc-super-tablist li:hover .tc-super-tab-btn-box{
+    display: block;
+}
+.tc-super-tab .tc-super-tablist li:first-child{
+    border-left: none;
+}
+.tc-super-tab .tc-tab-btn{
+    display: inline-block;
+    margin-right: 7px;
+}
+.tc-super-tab .tc-tab-btn:nth-last-child(2){
+    margin-right: 7px;
+}
+.tc-super-tab .tc-tab-btn:hover + .tc-15-confirm-popout,
+.tc-super-tab .tc-tab-btn.hover + .tc-15-confirm-popout
+{
+    display: block;
+}
+.tc-super-tab .add-tab-btn{
+    margin-left: 20px;
+}
+.tc-super-tab .tab-panel{
+    border-top:1px solid #ddd;
+    padding: 15px;
+}
+.tc-super-tab .tc-super-tablist .tc-15-confirm-popout{
+    min-width: inherit;
+    position: absolute;
+    top: 30px;
+    left: -35px;
+    display: none;
+    transition: all .2s;
+}
+/*分页*/
+.tc-super-tab-hd{
+    position: relative;
+}
+.tc-super-tab-hd .tc-tab-page{
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin-top:-1px;
+}
+.tc-super-tab-hd .tc-tab-page .tc-15-page-pre,
+.tc-super-tab-hd .tc-tab-page .tc-15-page-next{
+    height: 30px;
+    line-height: 30px;
+    border:none;
+    width: 30px;
+    padding-top: 3px;
+}
+/*分页end*/
+
+
+
+
+
+

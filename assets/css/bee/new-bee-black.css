@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+
+.main {
+    background-color: #ededed !important;
+}
+.menu{
+    background-color: #333;
+    color: #fff;
+}
+.aside .menu>h2{
+    color: #fff !important;
+}
+
+.menu .act{
+    color: #fff !important;
+}
+.aside .btn-fold-menu{
+    display: none;
+}
+
+.menu .view-all:hover, .menu-list a{
+    color: #fff !important;
+}
+
+.menu-list a:hover{
+    background-color: transparent !important;
+}
+
+.menu .menu-list a:hover:after,
+.menu .menu-list a:hover:before{
+    display: none !important;
+}
+.menu-list a:hover{
+    background-color: #4c4c4c;
+}
+
+.menu .menu-list a:hover{
+    background-color: #4c4c4c !important
+}
+
+.manage-area{
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+
+.manage-area .manage-area-title{
+    padding-left:20px !important;
+    padding-right:20px !important;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+.edu-header{
+	height:50px;
+	line-height: 50px;
+	background-color:#262626;
+	color:#fff;
+	text-align:center;
+}
+.edu-header h1{
+	display:inline-block;
+	float:left;
+	padding-left:20px;
+}
+.edu-header h1 img{
+	font-size:0px;vertical-align:-6px;
+}
+.edu-class-title{
+	display:inline-block;
+}
+.edu-header-login{
+	display:inline-block;
+	float:right;
+	padding-right:20px;
+}
+.edu-header-login a{
+	margin-left:10px;
+	color:#fff;
+}

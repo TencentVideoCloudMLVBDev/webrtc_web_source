@@ -1,0 +1,528 @@
+@charset "utf-8";
+
+/* 公用样式放此处 */
+
+/*line*/
+hr{
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+
+/* 视觉隐藏，屏幕阅读器可见 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+a.disabled{
+    color: #bbb !important;
+    cursor: default !important;
+    text-decoration: none !important;
+}
+
+/*数字字体：0~9*/
+/*@font-face {*/
+    /*font-family: 'qcloud-num';*/
+    /*/!*IE*!/*/
+    /*src: url('fonts/qcloud-num.eot');*/
+    /*/!*现代浏览器*!/*/
+    /*src: url('fonts/qcloud-num.eot?#font-spider') format('embedded-opentype'), url('fonts/qcloud-num.woff') format('woff'), url('fonts/qcloud-num.ttf') format('truetype'), url('fonts/qcloud-num.svg') format('svg');*/
+    /*font-weight: normal;*/
+/*}*/
+
+.tc-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+.tc-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 20px;
+}
+.tc-scroll::-webkit-scrollbar-track {
+    border-radius: 20px;
+}
+
+/*各种居中*/
+.max-width-center{
+    max-width: 1360px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+
+/* 表格和左右布局 */
+.d-itb{
+    display:inline-table;
+}
+.d-tb {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.d-tbc {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.right-cell {
+    text-align: right;
+}
+
+.justify-grid {
+    display: table;
+    width: 100%;
+    /*table-layout: fixed;*/
+}
+
+.justify-grid .col {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+}
+
+.justify-grid .col:first-child {
+    text-align: left;
+}
+
+
+/* 临时解决bug， all.css除去后删掉 */
+/*去除硬件加速，和position:fixed结合使用，浏览器的行为不一致 */
+.container {
+    transform: none !important;
+}
+
+
+/* 文本对齐和截断显式 */
+
+.text-vm{
+    vertical-align: middle;
+    font-size:12px;
+}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+.text-center{text-align:center;}
+.text-justify{text-align:justify;}
+.text-nowrap,
+.text-truncate,
+.ellipsis{
+    white-space:nowrap;
+}
+.text-truncate,
+.ellipsis{
+    display: inline-block;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+
+/* 间距 */
+.m-x-0 {
+    margin-right:0 !important;
+    margin-left:0 !important;
+}
+.m-y-0 {
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
+.p-x-0 {
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+.p-y-0 {
+    padding-top:0 !important;
+    padding-bottom:0 !important;
+}
+
+/********** 文字颜色 **********/
+
+/* 链接颜色 */
+a{color:#006eff;}
+/* 表格文字颜色 */
+.text{color:#444 !important;font-size: 12px;vertical-align: middle;}
+/* 表单label文字色、bubble文字色 */
+.text-label{color:#888 !important; font-size:12px;}
+/* 弱色,灰色,disabled色 */
+.text-weak{color:#bbb !important;}
+/* 应用于控件色、导航，比表格文字略深 */
+.text-strong{color:#000 !important;} 
+/* 链接蓝色、按钮背景色 */
+.text-primary{color:#006eff !important;}
+/* 成功绿色 */
+.text-success{color:#0abf5b !important;}
+/* 警示黄色 */
+.text-warning{color:#ff9d00 !important;}
+/* 出错红色 */
+.text-danger{color:#e54545 !important;} 
+
+/********** 背景色 **********/
+
+/* 成功绿色 */
+.bg-success{background-color:#0abf5b; color:#fff;} 
+/* 警示黄色 */
+.bg-warning{background-color:#ff9d00; color:#fff;}
+/* 出错红色 */
+.bg-danger{background-color:#e54545; color:#fff;} 
+
+/* 浮动与清除浮动 */
+.pull-left{
+    float:left !important;
+}
+.pull-right{
+    float:right !important;
+}
+.clearfix:before,
+.clearfix:after{
+    display:table;
+    content:'';
+}
+.clearfix:after{
+    clear:both;
+}
+
+/* 子元素相对于父元素水平、垂直方向居中对齐 */
+.center-middle{
+    text-align:center;
+    white-space:nowrap;
+    font-size:0;
+}
+.center-middle:before{
+    display:inline-block;
+    content:'';
+    height:100%;
+    width:0;
+    vertical-align:middle;
+}
+
+
+/********** 表单验证 **********/
+.form-unit{
+    font-size:0;
+    position:relative;
+}
+.form-unit .form-input-help{
+    font-size:12px;
+    color: #888;
+    vertical-align:middle;
+    margin-top: 8px;
+}
+.form-unit .icon-valid-flag{
+    display:none;
+    width:16px;
+    height: 16px;
+    vertical-align:middle;
+    margin-left: 10px;
+}
+.form-unit .text{
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.form-unit .tc-15-input-textarea{
+    vertical-align:top;
+}
+.form-unit .valid-bubble{
+    margin-top:1px;
+    display:none;
+}
+.form-unit .valid-bubble .tc-15-bubble-inner{
+    left:20px;
+}
+/* 验证中 */
+.valid-result{
+    font-size:12px;
+    display: none;
+    vertical-align: middle;
+    margin-left: 10px;
+    color: #888;
+}
+.show-valid-result .valid-result{
+    display: inline-block;
+}
+.show-valid-result.is-error .valid-result{
+    color: #E1504A;
+}
+/* 验证成功 */
+.is-success .icon-valid-flag{
+    display: inline-block;
+    background-image: url(img/slice/svg/success-icon.svg);
+    background-position: inherit;
+}
+
+/* 验证错误 */
+.is-error .icon-valid-flag{
+    display: inline-block;
+    background-image: url(img/slice/svg/error-icon.svg);
+    background-position: inherit;
+}
+.is-error .tc-15-input-text,
+.is-error .tc-15-input-textarea,
+.is-error .tc-15-input-text:hover,
+.is-error .tc-15-input-textarea:hover,
+.is-error .tc-15-input-text:focus,
+.is-error .tc-15-input-textarea:focus{
+    color:#E1504A;
+    border-color:#E1504A;
+}
+.is-error .form-input-help,
+.is-error .form-ctrl-label{
+    color:#E1504A;
+}
+.is-error .form-ctrl-label{
+    color:#000;
+}
+.is-error .valid-bubble{
+    display:block;
+}
+.is-error span.form-input-help{
+    margin-left: 10px;
+}
+
+
+
+/**
+ * 表单左右两列自适应布局
+ * 两列的宽度均为动态值
+ */
+.form-list{
+    display:table;
+    font-size: 12px;
+}
+.form-list > li,
+.form-list .form-list-item{
+    display:table-row;
+}
+.form-label,
+.form-input,
+.form-output{
+    display:table-cell;
+    vertical-align: top;
+    padding-bottom: 16px;
+}
+.form-list > li:last-child .form-label,
+.form-list > li:last-child .form-input,
+.form-list > li:last-child .form-output{
+    padding-bottom: 0;
+}
+.form-input{
+    color: #000;
+}
+
+
+
+.form-label{
+    line-height: 30px;
+    vertical-align: baseline;
+}
+
+.form-label input + span ,
+.form-ctrl-label input + span{
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 5px;
+    line-height: 16px;
+}
+
+
+.pure-text-row .form-label,
+.pure-text-row .form-input,
+.pure-text-row .form-ctrl-label,
+.pure-text-row .form-ctrl-label-stacked{
+    line-height: 25px;
+}
+.form-list .form-label label,
+.form-list .form-label .label{
+    display:inline-block;
+    color: #888;
+    padding-right: 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.form-list .form-label label .plaint-icon,
+.form-list .form-label .label .plaint-icon{
+    vertical-align: -4px;
+    margin-left: 5px;
+}
+
+.form-list.fixed-layout .form-label label{
+    white-space:normal;
+    width:6em;
+}
+
+.form-list .form-label.required label:after{
+    display: inline-block;
+    content:'*';
+    vertical-align: middle;
+    color:#e1504a;
+    margin-left:3px;
+}
+.form-list.fixed-layout .form-label.required label{
+    width:7em;
+}
+
+.form-input .inline-help-text {
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 12px;
+}
+.form-unit .inline-help-text{
+    margin-left:5px;
+}
+/* 块级帮助文本 */
+.block-help-text{
+    font-size: 12px;
+    line-height: 1.8;
+    color: #ababab;
+}
+
+/*********** media object ***********/
+.media,
+.media-body {
+  overflow:hidden;
+  zoom:1;
+}
+.media-body {
+  width:10000px;
+}
+.media-left,
+.media-right,
+.media-body {
+  display:table-cell;
+  vertical-align:top;
+  text-align:left;
+}
+.media-middle {
+  vertical-align:middle;
+}
+.media-bottom {
+  vertical-align:bottom;
+}
+.media-object {
+  display:block;
+}
+.media-object.img-thumbnail {
+  max-width:none;
+}
+.media-right {
+  padding-left:10px;
+}
+.media-left {
+  padding-right:10px;
+}
+.media-heading {
+  margin-top:0;
+  margin-bottom:5px;
+}
+.media-list {
+  padding-left:0;
+  list-style:none;
+}
+
+/* media水平居中 */
+.media-horiz-center{
+    display:table;
+    margin-left:auto;
+    margin-right:auto;
+}
+.media-horiz-center .media-body{
+    width:auto;
+}
+
+/* 页面内操作反馈 */
+.page-feedback .media-left{
+    padding-right:20px;
+}
+.page-feedback .media-heading{
+    font-size:20px;
+    margin-bottom:10px;
+}
+.page-feedback .page-feedback-text{
+    font-size:14px;
+    line-height:1.5;
+    color:#A2A2A2;
+}
+.page-feedback .action-line{
+    margin-top:25px;
+}
+
+/* 公共数字提醒 */
+.tc-badge{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 15px;
+    padding: 0 3px;
+    color: #fff;
+    border-radius: 2px;
+    background-color: #e1504a;
+    white-space: nowrap;
+    font-family: 'Tahoma';
+    font-size: 12px;
+    font-weight:normal !important;
+}
+.tc-badge .icon-count-more{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    vertical-align: super;
+    background-image: url(img/slice/icon-count-more.png);
+}
+.tc-badge:empty {
+    display: none;
+}
+
+/* 红点新标志 */
+.new-dot-mark{
+    display:inline-block;
+    font-size:0;
+    line-height:1;
+    width:5px;
+    height:5px;
+    background-color:#ED711F;
+    border-radius:50%;
+    vertical-align:middle;
+    margin-left:3px;
+}
+.tc-15-rich-radio .new-dot-mark{
+    vertical-align:text-top;
+}
+
+/* 价格 */
+.cost,
+.original-cost{
+    color: #ff7800;
+    font-size:24px;
+    font-family: 'Microsoft Yahei','helvetica neue','hiragino sans gb';
+}
+.cost strong,
+.original-cost strong{
+    font-weight:normal;
+}
+.original-cost{
+    font-size:14px;
+    color:#a2a2a2;
+    text-decoration:line-through;
+}
+.original-cost.normal{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+.form-list .form-input .tc-15-rich-radio .tc-15-btn{
+    margin-right: 0;
+}
+
