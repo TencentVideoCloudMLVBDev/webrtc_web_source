@@ -61,10 +61,10 @@ var MainView = {
                         <!-- 内容快 start -->                                                                                                                                                                                \
                         <div class="edu-area-main">                                                                                                                                                                          \
                             <!--tab1 摄像头 Start -->                                                                                                                                                                        \
-                            <div v-show="mode == \'camera\'" style="background-color: black;display: flex;justify-content: center;">                                                                                                                                 \
+                            <div v-show="mode == \'camera\'" style="background-color: black;text-align:center;justify-content: center;height: 60vh;">                                                                                                                                 \
                                 <!-- <div id="videoview" class="edu-main-video-play" style=" margin: 0 auto; width: 720px; height: 540px;"> -->                                                                                      \
                                 <!-- </div> -->                                                                                                                                                                                      \
-                                <video id="localVideo" style=" margin: 0 auto; width: 100%; height: calc( 100vh - 335px );" muted autoplay playinline></video>                                                                                                                                    \
+                                <video id="localVideo" style=" margin: 0 auto; width: 100%;    height: 100%;" muted autoplay playinline></video>                                                                                                                                    \
                             </div>                                                                                                                                                                                           \
                             <!--tab1 摄像头 End -->                                                                                                                                                                          \
                             <!--tab2 白板 Start -->                                                                                                                                                                          \
@@ -232,13 +232,13 @@ var MainView = {
     if (!query) {
       alert("请先登录!");
     } else if (query.cmd == "create") {
-      this.selfRole = '教师'
+      this.selfRole = ''
       this.canDraw = true;
       this.isRoomCreator = true;
       this.courseName = query.courseName || '新房间';
       this.selfName = query.creator;
     } else if (query.cmd == "enter") {
-      this.selfRole = '学生';
+      this.selfRole = '';
       this.canDraw = false;
       this.isRoomCreator = false;
       this.selfName = query.userName;
@@ -330,9 +330,9 @@ var MainView = {
       var query = this.$route.query;
       var RTC = this.RTC = new WebRTCAPI({
         sdkAppId: self.sdkAppID,
-        openid: self.selfId,
+        userId: self.selfId,
         userSig: self.userSig,
-        accountType: self.accountType
+        accountType: self.accountType,
       },function(){
         if (query.cmd == "create") {
           self.actionCreateRoom(query);
@@ -358,25 +358,25 @@ var MainView = {
         if (info.stream) {
             var temp = []
             for (var i = 0; i < self.members.length; i++) {
-              if (self.members[i].openId != info.openId) {
+              if (self.members[i].userId != info.userId) {
                 temp.push(self.members[i])
               }
             }
             var member = {
               id: info.videoId,
-              name: info.openId,
+              name: info.userId,
               request: false,
               role: '主播',
               roleText: '连麦',
               ts: Date.now(),
               stream: info.stream,
-              openId: info.openId
+              userId: info.userId
             };
             temp.push(member);
             self.members = temp;
 
           } else {
-            console.info(info.openId + "进入了房间");
+            console.info(info.userId + "进入了房间");
           }
       });
 
@@ -484,9 +484,15 @@ var MainView = {
       self.courseId = courseInfo.courseId;
       self.courseName = courseInfo.courseName;
       //创建房间
+      console.error({
+        roomid: parseInt(self.courseId),
+        role: 'user',
+        privateMapKey: courseInfo.privateMapKey
+      })
       this.RTC.createRoom({
         roomid: parseInt(self.courseId),
-        role: 'user'
+        role: 'user',
+        privateMapKey: courseInfo.privateMapKey
       }, function(){
         console.info('ENTER RTC ROOM OK')
       },function (result) {
@@ -506,14 +512,13 @@ var MainView = {
       //本地存储，刷新的时候还是同一个房间号
       if( localStorage.getItem('course_info') ){
         var courseInfo = JSON.parse( localStorage.getItem('course_info') )
-        console.error( ' localstorage', courseInfo)
         self.afterCreateRoom( courseInfo );
         WebRTCRoom.startHeartBeat(self.selfId, courseInfo.courseId);
       }else{
         WebRTCRoom.createRoom(self.selfId, self.selfName, query.courseName, function (res) {
           //本地存储，刷新的时候还是同一个房间号
-          localStorage.setItem('course_info',JSON.stringify( {courseId:res.data.roomID, courseName: query.courseName } ));
-          self.afterCreateRoom( {courseId:res.data.roomID, courseName: query.courseName } )
+          localStorage.setItem('course_info',JSON.stringify( {courseId:res.data.roomID, courseName: query.courseName, privateMapKey: res.data.privateMapKey } ));
+          self.afterCreateRoom( {courseId:res.data.roomID, courseName: query.courseName, privateMapKey: res.data.privateMapKey } )
         }, function (res) {
           // error, 返回
           self.goHomeRouter();
@@ -530,7 +535,8 @@ var MainView = {
         //进房间
         self.RTC.createRoom({
           roomid: parseInt(self.courseId),
-          role: 'user'
+          role: 'user',
+          privateMapKey: res.privateMapKey
         }, function (result) {
           
         }, function (){

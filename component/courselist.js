@@ -29,7 +29,7 @@ var CourseList = {
                 </div>                                                                             \
 			</div>                                                                                 \
             <div class="edu-index-class-prompt" v-if="courseItems.length === 0">                   \
-                <p>暂时没有直播，请创建课堂</p>                                                    \
+                <p>暂时没有直播，请创建音视频房间</p>                                                    \
             </div>                                                                                 \
         </div>                                                                                     \
         <!-- 创建课堂 e -->                                                                        \
@@ -47,7 +47,7 @@ var CourseList = {
                 <div class="tc-15-rich-dialog-ft-btn-wrap">                                        \
                     <button  v-if="!joinFlag" class="tc-15-btn" v-on:click="onCreateButtonClick">创建房间</button>   \
                     <button  v-if="joinFlag" class="tc-15-btn" v-on:click="onjoinButtonClick">进入房间</button>   \
-                    <!--<button class="tc-15-btn weak" v-on:click="onjoinButtonClick">加入课堂</button> -->\
+                    <!--<button class="tc-15-btn weak" v-on:click="onjoinButtonClick">加入房间</button> -->\
                 </div>                                                                             \
             </div>                                                                                 \
             <!-- 创建和加入课堂 e -->                                                              \

@@ -1,6 +1,6 @@
 var WebRTCRoom = (function () {
     
-    var serverDomain = '//xzb.qcloud.com/webrtc/weapp/webrtc_room',
+    var serverDomain = 'https://xzb.qcloud.com/webrtc/weapp/webrtc_room',
     requestNum = 0,
     heart = '',				// 判断心跳变量
     heartBeatReq = null,

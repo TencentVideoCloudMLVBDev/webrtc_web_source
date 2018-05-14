@@ -5,14 +5,14 @@ var CreateCourse = {
 		<div class="edu-index-logo" style="display: flex;justify-content: center;">                                                             \
 			<img  src="./assets/webrtc-logo-min.png" alt="" />                                     \
 		</div>                                                                                   \
-		<!-- 输入直播课堂 s -->                                                                  \
+		<!-- 输入直播房间 s -->                                                                  \
 		<div class="edu-index-class-input">                                                      \
 			<ul>                                                                                 \
-				<li><input type="text" placeholder="请输入课堂名称" v-model="courseName" /></li> \
+				<li><input type="text" placeholder="请输入房间名称" v-model="courseName" /></li> \
 				<li><input type="text" placeholder="请输入你的昵称" v-model="nickName" /></li> \
 			</ul>	                                                                             \
 		</div>                                                                       			 \
-		<!-- 输入直播课堂 e -->                                                                  \
+		<!-- 输入直播房间 e -->                                                                  \
                                                                                                  \
 		<!-- 按钮 s -->                                                                          \
 		<div class="edu-index-button">                                                           \
