@@ -9,6 +9,9 @@
 
 ### Client
 也可以下载本仓库代码进行本地开发调试。
+你可以使用我们的demo直接运行测试。
+**如需修改成自己的SdkAppid，请务必确认您在调试前根据 [开通服务](https://cloud.tencent.com/document/product/647/17195) 的指引完成应用的创建和白名单的申请开通流程。**
+https://cloud.tencent.com/document/product/647/16788
 
 
 | 目录 | 说明 | 
