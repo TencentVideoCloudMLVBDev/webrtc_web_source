@@ -24,6 +24,10 @@ var IM = (function () {
     );
   }
 
+  function logout() {
+    webim.logout();
+  }
+
   function createGroup(groupId, userID, succ, fail) {
     var options = {
       'GroupId': String(groupId),
@@ -246,6 +250,7 @@ var IM = (function () {
 
   return {
     login: login,
+    logout,
     sendRoomTextMsg: sendRoomTextMsg,
     createGroup: createGroup,
     joinGroup: joinGroup,

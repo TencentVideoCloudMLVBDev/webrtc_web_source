@@ -93,7 +93,7 @@ var MainView = {
                                 <li class="edu-member-box" v-for="(item, index) in members" :key="index">                                                                                                                    \
                                     <!-- 互动人员图片 start -->                                                                                                                                                              \
                                     <div class="edu-member-img" :id="\'video_\'+(item.id)">                                                                                                                                    \
-                                        <img :id="\'img_\'+(item.id)"  v-show="item.reqeust" srcset="../assets/css/img/default.png 1x, ../assets/css/img/default@2x.png 2x" src="../assets/css/img/default.png" alt="default"> \
+                                        <img :id="\'img_\'+(item.id)"  v-show="item.reqeust" srcset="./assets/css/img/default.png 1x, ./assets/css/img/default@2x.png 2x" src="./assets/css/img/default.png" alt="default"> \
                                         <video :id="\'v_\'+(item.id)" style=" margin: 0 auto; width: 100%; height: 100%;" autoplay playsinline></video>\
                                     </div>                                                                                                                                                                                   \
                                     <!-- 互动人员图片 end -->                                                                                                                                                                \
@@ -108,7 +108,7 @@ var MainView = {
                                 <li class="edu-member-box" v-for="(item, index) in requestMembers" :key="index">                                                                                                             \
                                     <!-- 互动人员图片 start -->                                                                                                                                                              \
                                     <div class="edu-member-img">                                                                                                                                                             \
-                                        <img srcset="../assets/css/img/default.png 1x, ../assets/css/img/default@2x.png 2x" src="../assets/css/img/default.png" alt="default">                                               \
+                                        <img srcset="./assets/css/img/default.png 1x, ./assets/css/img/default@2x.png 2x" src="./assets/css/img/default.png" alt="default">                                               \
                                           <!--学生请求发言 start -->                                                                                                                                                         \
                                           <div class="request-speak">                                                                                                                                                        \
                                               <div class="request-speak-bd">                                                                                                                                                 \
@@ -223,7 +223,8 @@ var MainView = {
       canDraw: false,
       getMemberListSto: null,
       userAuthData: { // 用户鉴权信息
-      }
+      },
+      heartBeatTask: null // 心跳任务定时器
     };
   },
   mounted: function () {
@@ -516,14 +517,14 @@ var MainView = {
         var courseInfo = JSON.parse(localStorage.getItem('course_info'))
         console.log(' localstorage', courseInfo)
         self.afterCreateRoom(courseInfo);
-        WebRTCRoom.startHeartBeat(self.userID, courseInfo.courseId, function() {}, function() {
+        self.heartBeatTask = WebRTCRoom.startHeartBeat(self.userID, courseInfo.courseId, function () {}, function () {
           self.$toast.center('心跳包超时，请重试~');
           self.goHomeRouter();
         });
       } else {
         WebRTCRoom.createRoom(self.userID, self.selfName, query.courseName, function (res) {
           // 发送心跳包
-          WebRTCRoom.startHeartBeat(self.userID, res.data.roomID, function() {}, function() {
+          self.heartBeatTask = WebRTCRoom.startHeartBeat(self.userID, res.data.roomID, function () {}, function () {
             self.$toast.center('心跳包超时，请重试~');
             self.goHomeRouter();
           });
@@ -551,7 +552,7 @@ var MainView = {
       WebRTCRoom.enterRoom(self.userID, query.userName, self.courseId, function (res) {
 
         // 发送心跳包
-        WebRTCRoom.startHeartBeat(self.userID, res.data.roomID, function() {}, function() {
+        self.heartBeatTask = WebRTCRoom.startHeartBeat(self.userID, res.data.roomID, function () {}, function () {
           self.$toast.center('心跳包超时，请重试~');
           self.goHomeRouter();
         });
@@ -677,12 +678,40 @@ var MainView = {
     },
 
     onSketchpadDataGen: function (boardData) {
-      IM.sendBoardMsg({
-        groupId: this.courseId,
-        msg: boardData,
-        nickName: this.selfName,
-        identifier: this.userID
-      });
+      if (boardData.indexOf('"action":401') > -1) {
+        var boardBg = this.$refs.sketchpadCom.getBoardBg() || {};
+        var boardId = JSON.parse(boardData).value.boardId; // 白板数据
+
+        // 如果有图片则补发图片
+        var bgUrl = boardBg[boardId] && boardBg[boardId].url || '';
+        this.sendBoardBgPicMsg(boardId, bgUrl);
+        setTimeout(() => {
+          IM.sendBoardMsg({
+            groupId: this.courseId,
+            msg: boardData,
+            nickName: this.selfName,
+            identifier: this.userID
+          });
+        }, 500);
+      } else if(boardData.indexOf('"action":201') > -1) { // 更换背景
+        var currentBoard = this.$refs.sketchpadCom.getCurrentBoard();
+        IM.sendBoardMsg({
+          groupId: this.courseId,
+          msg: boardData,
+          nickName: this.selfName,
+          identifier: this.userID
+        });
+        setTimeout(() => {
+          this.sendSwitchBoardMsg(currentBoard);
+        }, 500);
+      } else {
+        IM.sendBoardMsg({
+          groupId: this.courseId,
+          msg: boardData,
+          nickName: this.selfName,
+          identifier: this.userID
+        });
+      }
     },
 
 
@@ -694,8 +723,8 @@ var MainView = {
         if (!this.isRoomCreator) {
           var whiteBoardMsgs = msgsObj.whiteBoardMsgs || [];
           whiteBoardMsgs.forEach((item, index) => {
-            (function(index, item){
-              setTimeout(()=>{
+            (function (index, item) {
+              setTimeout(() => {
                 self.inputSketchpadData = item;
               }, index * 50);
             })(index, item);
@@ -717,21 +746,81 @@ var MainView = {
             if (body.type == 'request' && body.action == 'currentBoard') {
               if (this.$refs.sketchpadCom) {
                 var currentBoard = this.$refs.sketchpadCom.getCurrentBoard();
+                var boardBg = this.$refs.sketchpadCom.getBoardBg() || {};
                 IM.sendBoardMsg({
                   groupId: this.courseId,
                   msg: JSON.stringify({
                     action: body.action,
                     currentBoard: currentBoard
+                    //,boardBg: JSON.stringify(boardBg)
                   }),
                   nickName: this.selfName,
                   identifier: this.userID
                 });
-              }
 
+                // 如果有图片则补发图片
+                var bgUrl = boardBg[currentBoard] && boardBg[currentBoard].url;
+                if (bgUrl) {
+                  this.sendBoardBgPicMsg(currentBoard, bgUrl);
+                  setTimeout(() => {
+                    this.sendSwitchBoardMsg(currentBoard);
+                  }, 500);
+                }
+              }
             }
           }
         })
       }
+    },
+
+    sendBoardBgPicMsg(boardId, url) {
+      var data = JSON.stringify({
+        seq: 1,
+        timestamp: new Date().getTime(),
+        value: {
+          actions: [{
+            action: 201,
+            cleanBoard: 0,
+            mode: 0,
+            time: new Date().getTime() / 1000,
+            seq: new Date().getTime(),
+            url: url
+          }],
+          boardId: boardId,
+          operator: this.userID
+        }
+      });
+      IM.sendBoardMsg({
+        groupId: this.courseId,
+        msg: data,
+        nickName: this.selfName,
+        identifier: this.userID
+      });
+    },
+
+    sendSwitchBoardMsg(boardId) {
+      var data = JSON.stringify({
+        seq: 1,
+        timestamp: new Date().getTime(),
+        value: {
+          actions: [{
+            "action": 401,
+            "time": new Date().getTime() / 1000,
+            "seq": new Date().getTime(),
+            "toBoardId": boardId,
+            "deleteBoards": []
+          }],
+          boardId: boardId,
+          operator: this.userID
+        }
+      });
+      IM.sendBoardMsg({
+        groupId: this.courseId,
+        msg: data,
+        nickName: this.selfName,
+        identifier: this.userID
+      });
+
     },
 
     initIM: function () {
@@ -759,5 +848,11 @@ var MainView = {
       );
     }
 
-  } //methods
+  },
+
+  beforeDestroy() {
+    IM.logout();
+    this.stopRenderMemberList();
+    clearInterval(this.heartBeatTask);
+  }
 };
