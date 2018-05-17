@@ -32,8 +32,8 @@ var MainView = {
                                     <span class="edu-sidebar-list-state">{{ selfRole }}</span>                                                                                                                               \
                                     <a v-show="canLink" style="margin-left: 10px;" href="javascript:;;" @click="togglePusher">{{ togglePusherText }}</a>                                                                     \
                                 </li>                                                                                                                                                                                        \
-                                <li v-for="item in member_list" v-if="item.userID != selfId" :key="\'edu-sidebar-\'+(item.id)">                                                                                                        \
-                                    <span>{{ item.nickName }}</span>                                                                                                                                                             \
+                                <li v-for="item in member_list" v-if="item.userID != userID" :key="\'edu-sidebar-\'+(item.userID)">                                                                                                        \
+                                    <span>{{ item.nickName || item.userID}}</span>                                                                                                                                                             \
                                 </li>                                                                                                                                                                                        \
                             </ul>                                                                                                                                                                                            \
                         </div>                                                                                                                                                                                               \
@@ -61,15 +61,15 @@ var MainView = {
                         <!-- 内容快 start -->                                                                                                                                                                                \
                         <div class="edu-area-main">                                                                                                                                                                          \
                             <!--tab1 摄像头 Start -->                                                                                                                                                                        \
-                            <div v-show="mode == \'camera\'" style="background-color: black;text-align:center;justify-content: center;height: 60vh;">                                                                                                                                 \
+                            <div v-show="mode == \'camera\'" style="background-color: black;display: flex;justify-content: center;">                                                                                                                                 \
                                 <!-- <div id="videoview" class="edu-main-video-play" style=" margin: 0 auto; width: 720px; height: 540px;"> -->                                                                                      \
                                 <!-- </div> -->                                                                                                                                                                                      \
-                                <video id="localVideo" style=" margin: 0 auto; width: 100%;    height: 100%;" muted autoplay playinline></video>                                                                                                                                    \
+                                <video id="localVideo" style=" margin: 0 auto; width: 100%; height: calc( 100vh - 335px );" muted autoplay playinline></video>                                                                                                                                    \
                             </div>                                                                                                                                                                                           \
                             <!--tab1 摄像头 End -->                                                                                                                                                                          \
                             <!--tab2 白板 Start -->                                                                                                                                                                          \
                             <div v-show="mode == \'whiteboard\'">  \
-                              <sketchpad v-if="showSketchpad" :canDraw="canDraw" :toggleSketchPage="toggleSketchPage"  @sketchpadData="onSketchpadDataGen" :inputData="inputSketchpadData"   :imOptions="imOptions" :userAuthData="userAuthData" />  \
+                              <sketchpad ref="sketchpadCom" v-if="showSketchpad" :canDraw="canDraw" :toggleSketchPage="toggleSketchPage"  @sketchpadData="onSketchpadDataGen" :inputData="inputSketchpadData"   :imOptions="imOptions" :userAuthData="userAuthData" />  \
                             </div> \
                             <!--tab2 白板 End -->                                                                                                                                                                            \
                         </div>                                                                                                                                                                                               \
@@ -182,7 +182,7 @@ var MainView = {
       courseId: null, //房间id
       selfName: null,
       selfRole: '主播',
-      selfId: null, //用户id
+      userID: null, //用户id
       canLink: false,
       showSelfPreviewed: 0,
       toggleSketchPage: false,
@@ -193,7 +193,7 @@ var MainView = {
       members: [
         // { name: "李明", id: "2343", reqeust: true, ts: new Date()-30*60*1000},
       ],
-      member_list:[],
+      member_list: [],
       requestMembers: [],
       refleshTask: null,
       requestingPushers: [{
@@ -202,8 +202,8 @@ var MainView = {
       }],
       pusherVideosDisplay: [false, false, false, false, false, false],
       pushers: {},
-      msgs:[], // chat list
-      nameMap:{
+      msgs: [], // chat list
+      nameMap: {
         "@TIM#SYSTEM": ''
       }, // userId : nickName
       messages: [
@@ -232,33 +232,41 @@ var MainView = {
     if (!query) {
       alert("请先登录!");
     } else if (query.cmd == "create") {
-      this.selfRole = ''
+      this.userID = query.userID;
+      this.selfRole = '教师'
       this.canDraw = true;
       this.isRoomCreator = true;
       this.courseName = query.courseName || '新房间';
       this.selfName = query.creator;
     } else if (query.cmd == "enter") {
-      this.selfRole = '';
-      this.canDraw = false;
-      this.isRoomCreator = false;
+      this.userID = query.userID;
+      if (query.roomCreator === this.userID) { // 相当于老师重新加入房间
+        this.selfRole = '教师';
+        this.canDraw = true;
+        this.isRoomCreator = true;
+      } else {
+        this.selfRole = '学生';
+        this.canDraw = false;
+        this.isRoomCreator = false;
+      }
       this.selfName = query.userName;
       this.roomID = query.roomID;
     } else if (query.cmd != "create" && query.cmd != "enter") {
       alert("发生错误，无法识别身份");
     }
-    this.selfId = localStorage.getItem("selfId") ||  query.userId
     var self = this;
     WebRTCRoom.getLoginInfo(
-      self.selfId ,
+      self.userID,
       function (res) {
         self.userAuthData = res.data;
-        self.selfId = res.data.userID;
+        self.userID = res.data.userID;
         self.userSig = res.data.userSig;
         self.accountType = res.data.accountType;
         self.sdkAppID = res.data.sdkAppID;
-        localStorage.setItem("selfId", self.selfId)
+        localStorage.setItem("userID", self.userID)
         self.initRTC();
-    }, function (res) {});
+      },
+      function (res) {});
   },
 
   watch: {
@@ -325,63 +333,63 @@ var MainView = {
   },
 
   methods: {
-    initRTC: function(){
+    initRTC: function () {
       var self = this;
       var query = this.$route.query;
       var RTC = this.RTC = new WebRTCAPI({
         sdkAppId: self.sdkAppID,
-        userId: self.selfId,
+        openid: self.userID,
         userSig: self.userSig,
-        accountType: self.accountType,
-      },function(){
+        accountType: self.accountType
+      }, function () {
         if (query.cmd == "create") {
           self.actionCreateRoom(query);
         } else if (query.cmd == "enter") {
           self.actionEnterRoom(query);
         }
-      },function(error){
-        console.error( error )
+      }, function (error) {
+        console.error(error)
       });
 
-    
-      RTC.on("onLocalStreamAdd", function( info ) {
+
+      RTC.on("onLocalStreamAdd", function (info) {
         var videoElement = document.getElementById("localVideo");
         videoElement.srcObject = info.stream;
         videoElement.muted = true;
       });
 
-      RTC.on("onRemoteStreamUpdate", function( info ){
+      RTC.on("onRemoteStreamUpdate", function (info) {
         var videoElement = document.getElementById("v_" + info.videoId);
-        if( videoElement ){
+        if (videoElement) {
           videoElement.srcObject = null;
         }
         if (info.stream) {
-            var temp = []
-            for (var i = 0; i < self.members.length; i++) {
-              if (self.members[i].userId != info.userId) {
-                temp.push(self.members[i])
-              }
+          var temp = []
+          for (var i = 0; i < self.members.length; i++) {
+            if (self.members[i].openId != info.openId) {
+              temp.push(self.members[i])
             }
-            var member = {
-              id: info.videoId,
-              name: info.userId,
-              request: false,
-              role: '主播',
-              roleText: '连麦',
-              ts: Date.now(),
-              stream: info.stream,
-              userId: info.userId
-            };
-            temp.push(member);
-            self.members = temp;
-
-          } else {
-            console.info(info.userId + "进入了房间");
           }
+          var member = {
+            id: info.videoId,
+            name: info.openId,
+            request: false,
+            role: '主播',
+            roleText: '连麦',
+            ts: Date.now(),
+            stream: info.stream,
+            openId: info.openId
+          };
+          temp.push(member);
+          self.members = temp;
+
+        } else {
+          console.info(info.openId + "进入了房间");
+        }
       });
 
-      
-      RTC.on("onRemoteStreamRemove", function( info ){
+
+      RTC.on("onRemoteStreamRemove", function (info) {
         var videoElement = document.getElementById("v_" + info.videoId);
         if (videoElement) {
           videoElement.srcObject = null;
@@ -394,19 +402,19 @@ var MainView = {
         }
         self.members = temp;
       });
-  
-      RTC.on("onKickOut",function(){
+
+      RTC.on("onKickOut", function () {
         console.warn("其他地方登录，被踢下线");
         self.goHomeRouter();
       });
-  
-      RTC.on("onWebSocketClose",function(){
+
+      RTC.on("onWebSocketClose", function () {
         console.warn("websocket断开");
         self.goHomeRouter();
       });
-  
-  
-      RTC.on("onRelayTimeout",function(){
+
+
+      RTC.on("onRelayTimeout", function () {
         console.warn("服务器超时断开");
         self.goHomeRouter();
       });
@@ -436,33 +444,33 @@ var MainView = {
       }
     },
 
-    getMemberList: function(){
+    getMemberList: function () {
       var self = this;
-      WebRTCRoom.get_room_members( self.courseId, function(data){
-        console.debug( data )
-        if( data.data.code === 0){
-          data.data.members.forEach(function(item){
+      WebRTCRoom.get_room_members(self.courseId, function (data) {
+        console.debug(data)
+        if (data.data.code === 0) {
+          data.data.members.forEach(function (item) {
             self.nameMap[item.userID] = item.nickName
           })
           self.member_list = data.data.members;
         }
-      }, function( err ){
-        if( err && err.errCode === 3){
+      }, function (err) {
+        if (err && err.errCode === 3) {
           self.goHomeRouter();
         }
       })
     },
 
-    renderMemberList: function(){
+    renderMemberList: function () {
       var self = this
       this.stopRenderMemberList();
       self.getMemberList();
-      this.getMemberListSto = setTimeout(function(){
+      this.getMemberListSto = setTimeout(function () {
         self.renderMemberList();
-      },3000);
+      }, 3000);
     },
-    stopRenderMemberList: function(){
-        clearTimeout( this.getMemberListSto )
+    stopRenderMemberList: function () {
+      clearTimeout(this.getMemberListSto)
     },
 
     refleshRequestMembers: function () {
@@ -479,23 +487,17 @@ var MainView = {
       console.log('reflesh: ', JSON.stringify(self.requestMembers))
     },
 
-    afterCreateRoom: function( courseInfo ){
+    afterCreateRoom: function (courseInfo) {
       var self = this
       self.courseId = courseInfo.courseId;
       self.courseName = courseInfo.courseName;
       //创建房间
-      console.error({
-        roomid: parseInt(self.courseId),
-        role: 'user',
-        privateMapKey: courseInfo.privateMapKey
-      })
       this.RTC.createRoom({
         roomid: parseInt(self.courseId),
-        role: 'user',
-        privateMapKey: courseInfo.privateMapKey
-      }, function(){
+        role: 'miniwhite'
+      }, function () {
         console.info('ENTER RTC ROOM OK')
-      },function (result) {
+      }, function (result) {
         if (result) {
           console.error("ENTER RTC ROOM failed");
           self.goHomeRouter();
@@ -510,15 +512,30 @@ var MainView = {
       var self = this;
 
       //本地存储，刷新的时候还是同一个房间号
-      if( localStorage.getItem('course_info') ){
-        var courseInfo = JSON.parse( localStorage.getItem('course_info') )
-        self.afterCreateRoom( courseInfo );
-        WebRTCRoom.startHeartBeat(self.selfId, courseInfo.courseId);
-      }else{
-        WebRTCRoom.createRoom(self.selfId, self.selfName, query.courseName, function (res) {
+      if (localStorage.getItem('course_info')) {
+        var courseInfo = JSON.parse(localStorage.getItem('course_info'))
+        console.log(' localstorage', courseInfo)
+        self.afterCreateRoom(courseInfo);
+        WebRTCRoom.startHeartBeat(self.userID, courseInfo.courseId, function() {}, function() {
+          self.$toast.center('心跳包超时，请重试~');
+          self.goHomeRouter();
+        });
+      } else {
+        WebRTCRoom.createRoom(self.userID, self.selfName, query.courseName, function (res) {
+          // 发送心跳包
+          WebRTCRoom.startHeartBeat(self.userID, res.data.roomID, function() {}, function() {
+            self.$toast.center('心跳包超时，请重试~');
+            self.goHomeRouter();
+          });
           //本地存储，刷新的时候还是同一个房间号
-          localStorage.setItem('course_info',JSON.stringify( {courseId:res.data.roomID, courseName: query.courseName, privateMapKey: res.data.privateMapKey } ));
-          self.afterCreateRoom( {courseId:res.data.roomID, courseName: query.courseName, privateMapKey: res.data.privateMapKey } )
+          localStorage.setItem('course_info', JSON.stringify({
+            courseId: res.data.roomID,
+            courseName: query.courseName
+          }));
+          self.afterCreateRoom({
+            courseId: res.data.roomID,
+            courseName: query.courseName
+          })
         }, function (res) {
           // error, 返回
           self.goHomeRouter();
@@ -531,15 +548,21 @@ var MainView = {
       self.courseId = query.roomID;
       self.courseName = query.roomInfo;
       self.selfName = query.userName;
-      WebRTCRoom.enterRoom(self.selfId, query.userName, self.courseId, function (res) {
+      WebRTCRoom.enterRoom(self.userID, query.userName, self.courseId, function (res) {
+
+        // 发送心跳包
+        WebRTCRoom.startHeartBeat(self.userID, res.data.roomID, function() {}, function() {
+          self.$toast.center('心跳包超时，请重试~');
+          self.goHomeRouter();
+        });
+
         //进房间
         self.RTC.createRoom({
           roomid: parseInt(self.courseId),
-          role: 'user',
-          privateMapKey: res.privateMapKey
+          role: 'miniwhite'
         }, function (result) {
-          
-        }, function (){
+
+        }, function () {
           if (result) {
             console.error("webrtc建房失败");
             self.goHomeRouter();
@@ -580,7 +603,7 @@ var MainView = {
 
     joinPusherBtnClick: function () {
       var self = this;
-      console.log("请求连麦: userID= ", self.selfId, ' userName=', self.selfName);
+      console.log("请求连麦: userID= ", self.userID, ' userName=', self.selfName);
       self.showSelfPreviewed = true;
     },
 
@@ -611,19 +634,19 @@ var MainView = {
       var msg = this.inputMessage;
       this.inputMessage = "";
       if (msg && msg.length > 0) {
-        console.log("sending Msg: ", msg , {
+        console.log("sending Msg: ", msg, {
           groupId: self.courseId,
           msg: msg,
           nickName: self.selfName,
-          identifier: self.selfId
+          identifier: self.userID
         });
       }
-      // IM.sendMsg( self.selfId, self.courseId, msg);
+      // IM.sendMsg( self.userID, self.courseId, msg);
       IM.sendRoomTextMsg({
         groupId: self.courseId,
         msg: msg,
         nickName: self.selfName,
-        identifier: self.selfId
+        identifier: self.userID
       });
     },
 
@@ -640,9 +663,9 @@ var MainView = {
       var self = this;
       // WebRTCAPI.init({}, {});
       localStorage.removeItem('course_info');
-      this.RTC.quit();
+      this.RTC && this.RTC.quit();
       this.stopRenderMemberList();
-      WebRTCRoom.quitRoom(self.selfId, self.courseId, function (res) {
+      WebRTCRoom && WebRTCRoom.quitRoom(self.userID, self.courseId, function (res) {
         self.$router.push({
           path: '/'
         });
@@ -658,49 +681,77 @@ var MainView = {
         groupId: this.courseId,
         msg: boardData,
         nickName: this.selfName,
-        identifier: this.selfId
+        identifier: this.userID
       });
     },
 
 
+    onBigGroupMsgNotify: function (newMsgList) {
+      var self = this;
+      if (newMsgList && newMsgList.length > 0) {
+        var msgsObj = IM.parseMsgs(newMsgList)
+        this.msgs = this.msgs.concat(msgsObj.textMsgs);
+        if (!this.isRoomCreator) {
+          var whiteBoardMsgs = msgsObj.whiteBoardMsgs || [];
+          whiteBoardMsgs.forEach((item, index) => {
+            (function(index, item){
+              setTimeout(()=>{
+                self.inputSketchpadData = item;
+              }, index * 50);
+            })(index, item);
+          });
 
-    onBigGroupMsgNotify: function (msgList) {
-      for (var i = msgList.length - 1; i >= 0; i--) { //遍历消息，按照时间从后往前
-          var msg = msgList[i];
-          //console.warn(msg);
-          webim.Log.warn('receive a new avchatroom group msg: ' + msg.getFromAccountNick());
-          //显示收到的消息
-          showMsg(msg);
+
+        }
       }
     },
 
+    onMsgNotify: function (msgs) {
+      var self = this;
+      if (msgs && msgs.length > 0) {
+        var msgsObj = IM.parseMsgs(msgs)
+        msgsObj.textMsgs.forEach((msg) => {
+          var content = JSON.parse(msg.content);
+          if (content.cmd === 'sketchpad') {
+            var body = JSON.parse(content.data.msg);
+            if (body.type == 'request' && body.action == 'currentBoard') {
+              if (this.$refs.sketchpadCom) {
+                var currentBoard = this.$refs.sketchpadCom.getCurrentBoard();
+                IM.sendBoardMsg({
+                  groupId: this.courseId,
+                  msg: JSON.stringify({
+                    action: body.action,
+                    currentBoard: currentBoard
+                  }),
+                  nickName: this.selfName,
+                  identifier: this.userID
+                });
+              }
 
-    onMsgNotify: function(newMsgList) {
-      if( newMsgList && newMsgList.length > 0 ){
-        var msgsObj = IM.parseMsgs( newMsgList )
-        this.msgs = this.msgs.concat( msgsObj.textMsgs );
-        if(!this.isRoomCreator) {
-          this.inputSketchpadData = msgsObj.whiteBoardMsgs || '';
-        }
+            }
+          }
+        })
       }
     },
 
     initIM: function () {
       var self = this;
+      self.onMsgNotify.bind(this);
       var loginInfo = {
         sdkAppID: self.sdkAppID,
         appIDAt3rd: self.sdkAppID,
-        identifier: self.selfId,
+        identifier: self.userID,
         identifierNick: self.selfName,
         accountType: self.accountType,
         userSig: self.userSig
       };
-      console.debug('initIM', loginInfo )
+      console.debug('initIM', loginInfo)
       IM.login(loginInfo, {
-          "onBigGroupMsgNotify": self.onMsgNotify
+          "onBigGroupMsgNotify": self.onBigGroupMsgNotify,
+          "onMsgNotify": self.onMsgNotify
         },
         function (resp) {
-          IM.joinGroup( self.courseId , self.selfId )
+          IM.joinGroup(self.courseId, self.userID)
         },
         function (err) {
           alert(err.ErrorInfo);

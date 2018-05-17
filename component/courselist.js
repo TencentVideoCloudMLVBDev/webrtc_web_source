@@ -1,16 +1,16 @@
-
-function getRandomName(){
-    var randomNames = ['曹操', '刘备', '李白', '诸葛亮', '赵子龙', '孙权', '张飞']
-    var index = Math.ceil(Math.random()*100)%randomNames.length;
-    return randomNames[index];
+function getRandomName() {
+  var randomNames = ['曹操', '刘备', '李白', '诸葛亮', '赵子龙', '孙权', '张飞']
+  var index = Math.ceil(Math.random() * 100) % randomNames.length;
+  return randomNames[index];
 }
-function randomUserId(){
-    var userid = "userid_web_" + Date.now().toString();
-    return userid;
+
+function randomUserId() {
+  var userid = "userid_web_" + Date.now().toString();
+  return userid;
 }
 
 var CourseList = {
-  template:'\
+  template: '\
   <div class="edu-index-body">                                                                       \
   <div class="edu-index-pop-ups" style="margin: 0 auto;">                                          \
         <div class="edu-index-logo" style="display: flex;justify-content: center;">                                                               \
@@ -29,7 +29,7 @@ var CourseList = {
                 </div>                                                                             \
 			</div>                                                                                 \
             <div class="edu-index-class-prompt" v-if="courseItems.length === 0">                   \
-                <p>暂时没有直播，请创建音视频房间</p>                                                    \
+                <p>暂时没有直播，请创建课堂</p>                                                    \
             </div>                                                                                 \
         </div>                                                                                     \
         <!-- 创建课堂 e -->                                                                        \
@@ -47,7 +47,7 @@ var CourseList = {
                 <div class="tc-15-rich-dialog-ft-btn-wrap">                                        \
                     <button  v-if="!joinFlag" class="tc-15-btn" v-on:click="onCreateButtonClick">创建房间</button>   \
                     <button  v-if="joinFlag" class="tc-15-btn" v-on:click="onjoinButtonClick">进入房间</button>   \
-                    <!--<button class="tc-15-btn weak" v-on:click="onjoinButtonClick">加入房间</button> -->\
+                    <!--<button class="tc-15-btn weak" v-on:click="onjoinButtonClick">加入课堂</button> -->\
                 </div>                                                                             \
             </div>                                                                                 \
             <!-- 创建和加入课堂 e -->                                                              \
@@ -56,83 +56,89 @@ var CourseList = {
     </div>                                                                                         \
     </div>',
 
-    name: "CourseList",
-    data: function() {
-        return{
-            loginInfo: {
-                userID: '',
-                userName: '',
-            },
-            room:null,
-            joinFlag:false,
-            nickName:null,
-            hasClass: false,
-            courseItems: [],
-        };
-    },
-    mounted: function() {
-      this.loginInfo.userName = null;
-      this.loginInfo.userID = randomUserId();
-      this.updateCourseList();
-      localStorage.removeItem('course_info');
-    },
-    beforeDestroy: function(){
-        clearTimeout( this.courseListSto )
-    },
-    methods: {
-      join: function(idx){
-          this.room = this.courseItems[idx];
-          this.joinFlag = true;
-          return;
+  name: "CourseList",
+  data: function () {
+    return {
+      loginInfo: {
+        userID: '',
+        userName: '',
       },
-      onCreateButtonClick: function(){
-          var self = this;          
-          console.log('onCreateButtonClick: self.loginInfo.userName = ', self.loginInfo.userName)
-          this.$router.push({path: 'create', query:{name: self.loginInfo.userName}})
-      },
-      onjoinButtonClick: function(){
-        //   this.$router.push({path: '/join'})
-        var self = this;
-        if( !self.loginInfo.userName ){
-            alert('昵称不能为空!')
-            return;
+      room: null,
+      joinFlag: false,
+      nickName: null,
+      hasClass: false,
+      courseItems: [],
+    };
+  },
+  mounted: function () {
+    this.loginInfo.userName = null;
+    this.loginInfo.userID = localStorage.getItem('userID') || randomUserId();
+    this.updateCourseList();
+    localStorage.removeItem('course_info');
+  },
+  beforeDestroy: function () {
+    clearTimeout(this.courseListSto)
+  },
+  methods: {
+    join: function (idx) {
+      this.room = this.courseItems[idx];
+      this.joinFlag = true;
+      return;
+    },
+    onCreateButtonClick: function () {
+      var self = this;
+      console.log('onCreateButtonClick: self.loginInfo.userName = ', self.loginInfo.userName)
+      this.$router.push({
+        path: 'create',
+        query: {
+          name: self.loginInfo.userName,
+          userID: self.loginInfo.userID
         }
-        console.log("跳转加入",JSON.stringify(self.room))          
-          this.$router.push({
-              path: 'main',
-              query: {
-                  cmd: 'enter',
-                  roomID: self.room.roomID,
-                  roomInfo: self.room.roomInfo,
-                  userName: self.loginInfo.userName,
-                  userId: self.loginInfo.userID
-              }
-          })
-      },
-      updateCourseList: function(){
-        console.log('updateCourseList() called');
-        var self = this;
-        WebRTCRoom.getRoomList(0, 20,
-            function(res) {
-                self.courseItems = []
-                if (res.data && res.data.rooms) {
-                    var rooms = res.data.rooms;
-                    rooms.forEach(function (room) {
-                        self.courseItems.push(room)
-                    });
-                    
-                   console.log('courseItems: ', JSON.stringify(self.courseItems)); 
-                   clearTimeout( self.courseListSto )
-                   self.courseListSto = setTimeout( function(){
-                    self.updateCourseList();
-                   },2000);
-                }
-            },
-            function(res) {
-                self.courseItems = []
-                console.warn('获取房间列表失败', JSON.stringify(res))
-            });
+      })
+    },
+    onjoinButtonClick: function () {
+      var self = this;
+      if (!self.loginInfo.userName) {
+        alert('昵称不能为空!')
+        return;
       }
+      console.log("跳转加入", JSON.stringify(self.room))
+      this.$router.push({
+        path: 'main',
+        query: {
+          cmd: 'enter',
+          roomID: self.room.roomID,
+          roomInfo: self.room.roomInfo,
+          userName: self.loginInfo.userName,
+          userID: self.loginInfo.userID,
+          roomCreator: self.room.roomCreator
+        }
+      })
+    },
+    updateCourseList: function () {
+      console.log('updateCourseList() called');
+      var self = this;
+      WebRTCRoom.getRoomList(0, 20,
+        function (res) {
+          self.courseItems = []
+          if (res.data && res.data.rooms) {
+            var rooms = res.data.rooms;
+            rooms.forEach(function (room) {
+              self.courseItems.push(room)
+            });
+
+            console.log('courseItems: ', JSON.stringify(self.courseItems));
+            clearTimeout(self.courseListSto)
+            self.courseListSto = setTimeout(function () {
+              self.updateCourseList();
+            }, 2000);
+          }
+        },
+        function (res) {
+          self.courseItems = []
+          console.warn('获取房间列表失败', JSON.stringify(res))
+        });
+    }
   },
 
 };

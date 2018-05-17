@@ -308,19 +308,19 @@ var Sketchpad = {
       }).then(function (res) {
         var page = res.body.user_returncode;
         if (page) {
-          alert('文件上传成功');
+          self.$toast.center('文件上传成功~');
           // 根据页数发消息
           var time = +new Date();
           for (var i = 0; i < page; i++) {
             (function (index) {
               setTimeout(function () {
-                var boardId = 'board_' + time + '_' + index;
-                self.paint.addBackgroundPic(boardId, previewUrl + (index + 1), true);
+                self.paint.addBackgroundPic(previewUrl + (index + 1), true);
               }, index * 100);
             })(i);
           }
         } else {
-          alert('文件只有0页');
+          self.$toast.center('文件上传失败，请重试~');
+          // alert('文件只有0页');
         }
       }, function (r) {
         console.log('ProxyUrlEror ', JSON.stringify(r))
@@ -450,6 +450,7 @@ var Sketchpad = {
             console.log("---> cos info: ", JSON.stringify(self.cos));
           },
           function (response) {
+            self.$toast.center('心跳包超时，请重试~');
             console.error("获取cos配置失败: ", JSON.stringify(response));
           }
         );
@@ -464,7 +465,6 @@ var Sketchpad = {
         id: "sketchpad",
         user: "sketchpad",
         canDraw: this.canDraw,
-        conf_id: 100,
         tlsData: {
           identifier: this.userAuthData.userID,
           userSig: this.userAuthData.userSig,
@@ -494,16 +494,32 @@ var Sketchpad = {
           }
         }]
       });
+    },
+
+    getCurrentBoard() {
+      return this.paint.getCurrentBoard();
+    },
+
+    getSeq() {
+      return this.paint.getSeq();
     }
   },
 
   mounted: function () {
+    var self = this;
     this.initCosInfo();
     this.initWhiteBoard();
+    window.onresize = function() {
+      self.paint.board.resize();
+      self.paint.board.el.setAttribute('width', self.paint.board.width);
+      self.paint.board.el.setAttribute('height', self.paint.board.height);
+      self.paint.board.img.setAttribute('width', self.paint.board.width);
+      self.paint.board.img.setAttribute('height', self.paint.board.height);
+      self.paint.board.draw();
+    }
   },
   watch: {
     inputData: function (newVal, oldVal) {
-      console.log("--->SketchPad.vue newVal: ", newVal, " onVal: ", oldVal);
       this.paint.addData(JSON.parse(newVal));
     },
     page: {

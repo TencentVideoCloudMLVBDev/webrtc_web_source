@@ -25,6 +25,13 @@ var router = new VueRouter({
     ]
 });
 
+Vue.use(Toast, {
+    defaultType: 'center',
+    duration: 3000,
+    wordWrap: true,
+    width: '150px'
+});
+
 new Vue({
     el: '#vue-app',
     //components:{'courselist': courseView},
