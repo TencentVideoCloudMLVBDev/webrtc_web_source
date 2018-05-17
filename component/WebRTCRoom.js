@@ -131,7 +131,8 @@ var WebRTCRoom = (function () {
             url: '/get_room_list',
             data: {
                 index: index,
-                count: count
+                count: count,
+                roomType:'meeting'
             },
             success: success,
             fail: fail
@@ -145,7 +146,8 @@ var WebRTCRoom = (function () {
             data: {
                 userID: userID,
                 nickName: nickName,
-                roomInfo: roomInfo
+                roomInfo: roomInfo,
+                roomType:'meeting'
             },
             success: function(res) {
                 console.warn("创建房间成功:", res);
