@@ -133,7 +133,6 @@
 .edu-member-list-inner{
 	/*min-width: 3000px;*/
 	width:100%;
-	height:100%;
 	white-space: nowrap;
 	overflow-x:auto;
 	overflow-y:hidden;
@@ -144,7 +143,6 @@
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
-	height:100%;
 }
 .edu-member-box:hover:after{
 	border:2px solid #006eff;
@@ -163,8 +161,8 @@
 }
 	/*互动人员图片 start*/
 	.edu-member-box .edu-member-img{
-		width: 250px;
-		height:100%;
+		width: 200px;
+		height: 180px;
 		position: relative;
 	}
 	.edu-member-box .edu-member-img img{width: 100%;height: 100%;}

@@ -84,11 +84,11 @@ var IM = (function () {
 
   function parseMsgs(newMsgList) {
     var textMsgs = [];
-    var whiteBoardMsgs = '';
+    var whiteBoardMsgs = [];
     for (var i in newMsgList) { //遍历新消息
       var msg = parseMsg(newMsgList[i]);
       if (msg && msg.type === 'TXWhiteBoardExt') {
-        whiteBoardMsgs = msg.data;
+        whiteBoardMsgs.push(msg.data);
       } else {
         textMsgs.push(msg)
       }
