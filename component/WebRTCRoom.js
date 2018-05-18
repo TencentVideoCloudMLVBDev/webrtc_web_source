@@ -209,9 +209,11 @@ var WebRTCRoom = (function () {
     });
   }
 
-  function startHeartBeat(userID, roomID) {
+  function startHeartBeat(userID, roomID, succ, fail) {
     heart = '1';
-    heartBeat(userID, roomID);
+    return setInterval(() => {
+      heartBeat(userID, roomID, succ, fail);
+    }, 7000);
   }
 
   function stopHeartBeat() {
@@ -239,22 +241,11 @@ var WebRTCRoom = (function () {
           roomID: roomID
         });
         succ && succ(userID, roomID);
-        if (heart) {
-          setTimeout(() => {
-            heartBeat(userID, roomID, succ, fail);
-          }, 7000);
-        }
       },
       fail: function (res) {
         heartBeatFailCount++;
         if (heartBeatFailCount > 2) {
           fail && fail(userID, roomID);
-        } else {
-          if (heart) {
-            setTimeout(() => {
-              heartBeat(userID, roomID, succ, fail);
-            }, 7000);
-          }
         }
       }
     })

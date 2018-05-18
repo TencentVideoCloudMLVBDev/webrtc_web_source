@@ -463,7 +463,7 @@ var Sketchpad = {
       var self = this;
       this.paint = new Sketch({
         id: "sketchpad",
-        user: "sketchpad",
+        user: this.userAuthData.userID,
         canDraw: this.canDraw,
         tlsData: {
           identifier: this.userAuthData.userID,
@@ -498,6 +498,11 @@ var Sketchpad = {
 
     getCurrentBoard() {
       return this.paint.getCurrentBoard();
+    },
+
+    // 获取当前白板的背景图片
+    getBoardBg() {
+      return this.paint.board.backgroundPic;
     },
 
     getSeq() {
