@@ -1,43 +1,47 @@
-
-<h2> Demo 体验 </h2>
+## Demo 体验 
 
 用 Chrome 浏览器打开 [体验地址](https://sxb.qcloud.com/miniApp/#/)，即可体验 Chrome（WebRTC） + 微信（小程序）的视频通话功能，如下图所示：
 
 ![](https://main.qcloudimg.com/raw/81edf044e0a40ccfd4794b91185f1f82.jpg)
 
+
+
 ## 源码调试
 
 ### Client
-也可以下载本仓库代码进行本地开发调试。
-你可以使用我们的demo直接运行测试。
-**如需修改成自己的SdkAppid，请务必确认您在调试前根据 [开通服务](https://cloud.tencent.com/document/product/647/17195) 的指引完成应用的创建和白名单的申请开通流程。**
-https://cloud.tencent.com/document/product/647/16788
-
-
-| 目录 | 说明 | 
+你可以直接下载本仓库代码进行本地开发调试。
+**如需修改成自己的SdkAppid，请务必确认您在调试前根据 [开通服务](https://cloud.tencent.com/document/product/647/17195) 的指引完成应用的创建和白名单的申请开通流程。
+| 目录 | 说明 |
 |:-------:|---------|
-| index.html | Demo主页面 | 
-| vue| vue框架代码 | 
-| third | 第三方 js 文件 | 
-| assets | demo的资源文件 | 
-| component | Demo页面的主要业务逻辑位于该文件夹下的各个 js 文件中 | 
+| index.html | Demo主页面 |
+| vue| vue框架代码 |
+| third | 第三方 js 文件 |
+| assets | demo的资源文件 |
+| component | Demo页面的主要业务逻辑位于该文件夹下的各个 js 文件中 |
+
 
 ### Server
-点击 [webrtc_server_list.zip](http://dldir1.qq.com/hudongzhibo/mlvb/webrtc_server_list.zip) 可以下载一份 **java** 版本的 Server 端源码，这份代码的主要作用是实现了一个简单的（无鉴权的）房间列表，可以支持创建通话房间，关闭通话房间等功能。如果您只是希望打通视频通话（在 Chrome 和 小程序端 写死一个 roomid），则不太需要这部分代码的帮助。 
+如果你需要使用自己的后台服务，可以参考[webrtc_server_java项目](https://github.com/TencentVideoCloudMLVBDev/webrtc_server_java) 安装部署一个后台服务。
 
-| 目录 | 说明 | 
-|:-------:|---------|
-|README.pdf | 介绍了如何使用这份后台代码 | 
-|后台接口表.pdf| 介绍了这份后台代码的内部实现细节 | 
-| src | java 版本的后台房间列表源代码 | 
+
+
+
+## 简单的示例代码 
+如果你觉得demo的业务属性太强，并不方便你理解我们的SDK，我们还准备了一些简单的示例代码，方便你直接体验 ，理解接口和辅助开发。
+示例代码请前往我们的另一个git仓库： 
+
+https://github.com/TencentVideoCloudMLVBDev/webrtc_web_samples
+
+
 
 ## 对接原理
+
 下面这幅图简单介绍了如何将 WebRTC 方案整合到您的现有的业务系统中：
 ![](https://main.qcloudimg.com/raw/6670541d971f3a133027342b29265aaf.png)
 
 ### step1: 搭建业务服务器
 业务服务器的作用主要是向PC端网页和微信小程序派发 userid、usersig、roomid、 privateMapKey 这些进行视频通话所必须的信息。其中roomid 和 userid 都可以由您的业务后台自由决定，只要确保不会出现 id重叠 就可以。usersig 和 privateMapKey 的计算则需要参考示例源码[（java | PHP）](https://cloud.tencent.com/document/product/454/7873#Server)。
- 
+
 ### step2: 对接 Chrome
 虽然谷歌给出了很多的文档和教程介绍如何使用使用 WebRTC，但是官方文档过于追求灵活性，所以理解成本很高，腾讯云推出了一个简化版的封装接口，阅读腾讯云 [WebRTC API](https://cloud.tencent.com/document/product/647/16865) 了解如何通过几个函数的调用就能完成 WebRTC 的 Chrome 端对接。
 
