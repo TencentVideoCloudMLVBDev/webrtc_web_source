@@ -43,7 +43,7 @@ var MainView = {
                                                                                                                                                                                                                              \
                  <!-- 主界面 start -->                                                                                                                                                                                       \
                 <div class="edu-main" style="overflow-y: scroll">                                                                                                                                                            \
-                    <div style=" margin-right:320px; margin-left: 20px; height: 100%;">                                                                                                                                             \
+                    <div class="edu-main-content-wrapper" >                                                                                                                                             \
                     <!-- tab start -->                                                                                                                                                                                       \
                         <div class="tc-15-tab tc-15-tab-alt customize-tab-bg" >                                                                                                                                              \
                             <div role="tablist" class="tc-15-tablist edu-tab-tablist">                                                                                                                                       \
@@ -59,15 +59,7 @@ var MainView = {
                           </div>                                                                                                                                                                                             \
                         <!-- tab end -->                                                                                                                                                                                     \
                         <!-- 内容快 start -->                                                                                                                                                                                \
-                        <div class="edu-area-main">                                                                                                                                                                          \
-                            <!--tab1 摄像头 Start -->                                                                                                                                                                        \
-                            <div v-show="mode == \'camera\'" style="background-color: black;display: flex;justify-content: center;">                                                                                                                                 \
-                                <!-- <div id="videoview" class="edu-main-video-play" style=" margin: 0 auto; width: 720px; height: 540px;"> -->                                                                                      \
-                                <!-- </div> -->                                                                                                                                                                                      \
-                                <video id="localVideo" style=" margin: 0 auto; width: 100%; height: calc( 100vh - 335px );" muted autoplay playinline></video>                                                                                                                                    \
-                            </div>                                                                                                                                                                                           \
-                            <!--tab1 摄像头 End -->                                                                                                                                                                          \
-                            <!--tab2 白板 Start -->                                                                                                                                                                          \
+                        <div class="edu-area-main">                                                                                                                                                                        \
                             <div v-show="mode == \'whiteboard\'">  \
                               <sketchpad ref="sketchpadCom" v-if="showSketchpad" :canDraw="canDraw" :toggleSketchPage="toggleSketchPage"  @sketchpadData="onSketchpadDataGen" :inputData="inputSketchpadData"   :imOptions="imOptions" :userAuthData="userAuthData" />  \
                             </div> \
@@ -89,20 +81,17 @@ var MainView = {
                                         </div>                                                                                                                                                                               \
                                     </div>                                                                                                                                                                                   \
                                 </li>                                                                                                                                                                                        \
-                                                                                                                                                                                                                             \
+                                <li class="edu-member-box"  v-show="mode == \'camera\'">                                                                                                                               \
+                                  <div class="edu-member-img" >                                                                                                                                    \
+                                    <video id="localVideo" style=" margin: 0 auto; width: 100%; height: 100%;" muted autoplay playinline></video>                                                         \
+                                  </div>                                                                                                                                                                                   \
+                                </li>                                                                                                                                                                                         \
                                 <li class="edu-member-box" v-for="(item, index) in members" :key="index">                                                                                                                    \
                                     <!-- 互动人员图片 start -->                                                                                                                                                              \
                                     <div class="edu-member-img" :id="\'video_\'+(item.id)">                                                                                                                                    \
                                         <img :id="\'img_\'+(item.id)"  v-show="item.reqeust" srcset="./assets/css/img/default.png 1x, ./assets/css/img/default@2x.png 2x" src="./assets/css/img/default.png" alt="default"> \
                                         <video :id="\'v_\'+(item.id)" style=" margin: 0 auto; width: 100%; height: 100%;" autoplay playsinline></video>\
-                                    </div>                                                                                                                                                                                   \
-                                    <!-- 互动人员图片 end -->                                                                                                                                                                \
-                                    <!-- 互动信息 start -->                                                                                                                                                                  \
-                                    <div class="edu-member-body">                                                                                                                                                            \
-                                        <div class="edu-member-body-info">                                                                                                                                                   \
-                                            <span class="edu-member-name">{{ nameMap[item.name] || item.name}}</span>                                                                                                                               \
-                                        </div>                                                                                                                                                                               \
-                                    </div>                                                                                                                                                                                   \
+                                    </div>                                                                                                                                                                               \
                                 </li>                                                                                                                                                                                        \
                                                                                                                                                                                                                              \
                                 <li class="edu-member-box" v-for="(item, index) in requestMembers" :key="index">                                                                                                             \
@@ -337,6 +326,11 @@ var MainView = {
     initRTC: function () {
       var self = this;
       var query = this.$route.query;
+
+      trtc_report.send({
+        type:"event",
+        event:1206
+      });
       var RTC = this.RTC = new WebRTCAPI({
         sdkAppId: self.sdkAppID,
         openid: self.userID,
@@ -497,6 +491,11 @@ var MainView = {
         roomid: parseInt(self.courseId),
         role: 'miniwhite'
       }, function () {
+        
+        trtc_report.send({
+          type:"event",
+          event:1207
+        });
         console.info('ENTER RTC ROOM OK')
       }, function (result) {
         if (result) {
@@ -563,6 +562,10 @@ var MainView = {
           role: 'miniwhite'
         }, function (result) {
 
+          trtc_report.send({
+            type:"event",
+            event:1208
+          });
         }, function () {
           if (result) {
             console.error("webrtc建房失败");
