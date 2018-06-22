@@ -29,7 +29,7 @@ Vue.use(Toast, {
     defaultType: 'center',
     duration: 3000,
     wordWrap: true,
-    width: '150px'
+    width: '500px'
 });
 
 new Vue({

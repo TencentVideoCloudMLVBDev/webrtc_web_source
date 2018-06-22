@@ -490,10 +490,18 @@ var Sketchpad = {
         event: [{
           type: 'mousedown',
           fn: function (event) {
+            if(!self.canDraw) { //学生角色
+              self.$toast.center('您的角色是学生，只能观看白板，无法操作，如需体验教师角色，请自己创建房间');
+            }
             self.toggleToolName = null;
           }
         }]
+
       });
+
+      if(!self.canDraw) { //学生角色
+        self.$toast.center('您的角色是学生，只能观看白板，无法操作，如需体验教师角色，请自己创建房间');
+      }
     },
 
     getCurrentBoard() {
