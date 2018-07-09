@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <TITLE>腾讯云教育直播室</TITLE>
-    <style>    
+    <style>
         .joinButton {
         background: transparent;
         }
@@ -17,9 +17,9 @@
             cursor: pointer;
         }
         .tc-member-list-container {
-            margin-top: 10px; 
-            width: 100%; 
-            height: 210px; 
+            margin-top: 10px;
+            width: 100%;
+            height: 210px;
             background-color: #eee;
         }
         #sketchpad {
@@ -44,14 +44,14 @@
             color: #ebebeb;
             text-align: center;
             vertical-align: middle;
-            line-height: 100px; 
+            line-height: 100px;
         }
     </style>
     <!--<link href="./assets/css/global-compat.css" rel="stylesheet" >-->
     <link href="./assets/css/index.css" rel="stylesheet" >
     <link href="./assets/css/webrtc.css" rel="stylesheet" >
     <link rel="stylesheet" href="./third/toast/toast.css">
-    
+
     <script src="./vue/vue.js"></script>
     <script src="./vue/vue-router.js"></script>
     <script src="./vue/vue-resource.js"></script>
@@ -67,10 +67,10 @@
   </head>
   <body class="bg_blue">
     <div id="vue-app">
-        <router-view></router-view>                                                                                            
+        <router-view></router-view>
     </div>
 
-    <script type="text/javascript" src="./report.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./component/report.min.js" charset="utf-8"></script>
     <script>
         var trtc_report = new trtcReport({
             sdkappid: 1400037025
@@ -86,8 +86,15 @@
     <script type="text/javascript" src="./component/joinclass.js" charset="utf-8"></script>
     <script type="text/javascript" src="./component/mainwindow.js" charset="utf-8"></script>
     <script type="text/javascript" src="./component/app.js?v=20180518" charset="utf-8"></script>
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121844058-1"></script>
     <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-121844058-1');
     </script>
+
   </body>
 </html>
